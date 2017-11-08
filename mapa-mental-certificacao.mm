@@ -1,6 +1,6 @@
-<map version="0.9.0">
+<map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1509400680493" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o">
+<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1510153608911" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o">
 <node CREATED="1508186603022" ID="ID_490295773" MODIFIED="1509400670885" POSITION="right" STYLE="fork" TEXT="Protocolo HTTP">
 <node CREATED="1508186641763" ID="ID_549836734" MODIFIED="1509400670885" TEXT="GET - Solicita&#xe7;&#xe3;o simples"/>
 <node CREATED="1508186659228" ID="ID_1537363229" MODIFIED="1509400670885" TEXT="POST - Solicita&#xe7;&#xe3;o de um recurso com informa&#xe7;&#xf5;es do usu&#xe1;rio. Ex: Formul&#xe1;rio"/>
@@ -42,7 +42,7 @@
 <node CREATED="1509051017536" ID="ID_357585972" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletResponse">
 <node CREATED="1509051036183" ID="ID_757927878" MODIFIED="1509400670903" TEXT="m&#xe9;todos getBufferSize(), setContentType(), getOutPutStream(), getWriter(), setContentLenght()"/>
 </node>
-<node CREATED="1509051179734" HGAP="-72" ID="ID_1742763790" MODIFIED="1509400670903" POSITION="left" TEXT="Interface - HttpServletResponse" VSHIFT="93">
+<node CREATED="1509051179734" HGAP="-72" ID="ID_1742763790" MODIFIED="1510153606023" POSITION="left" TEXT="Interface - HttpServletResponse" VSHIFT="93">
 <node CREATED="1509051207670" ID="ID_1655201396" MODIFIED="1509400670903" TEXT="add/cookie(), addHeader(), encodeURL(), sendError(), setStatus(), sendRedirect()"/>
 </node>
 <node CREATED="1509051285797" ID="ID_1513252555" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletRequest">
@@ -124,6 +124,14 @@
 <node CREATED="1510003072661" ID="ID_630865135" MODIFIED="1510003087517" TEXT="sessionWillPassivate"/>
 </node>
 </node>
+</node>
+</node>
+<node CREATED="1510153609632" ID="ID_1195321547" MODIFIED="1510153636498" POSITION="left" TEXT="&lt;&lt; interface &gt;&gt; javax.servlet.RequestDispatcher">
+<node CREATED="1510153638380" ID="ID_597379388" MODIFIED="1510153654144" TEXT="forward(HttpServletRequest, HttpServletResponse)"/>
+<node CREATED="1510153655851" ID="ID_1898085351" MODIFIED="1510153673886" TEXT="include(HttpServletRequest, HttpServletResponse)"/>
+<node CREATED="1510153676242" ID="ID_934419623" MODIFIED="1510153686062" TEXT="Como obt&#xea;-lo">
+<node CREATED="1510153687257" ID="ID_85284212" MODIFIED="1510153714428" TEXT="request.getRequestDispatcher(&quot;teste.jsp&quot;); - caminho relativo"/>
+<node CREATED="1510153716071" ID="ID_601688953" MODIFIED="1510153749865" TEXT="getServletContext().getRequestDispatcher(&quot;/teste.jsp&quot;); - raiz da aplica&#xe7;&#xe3;o"/>
 </node>
 </node>
 </node>
