@@ -56,7 +56,7 @@
 <node CREATED="1509054191224" ID="ID_1856006342" MODIFIED="1509400670907" POSITION="right" TEXT="Classe abstrata GenericServlet">
 <node CREATED="1509054210865" ID="ID_377899945" MODIFIED="1509400670907" TEXT="service(ServletRequest, ServletResponse), init(ServletConfig), init(), destroy(), getServletConfig(), getServletInfo(), getInitParameter(String), getInitParameternames(), getServletContext(), log(String), log(String, Throwable)"/>
 </node>
-<node CREATED="1509054333224" HGAP="-111" ID="ID_708576079" MODIFIED="1509400670909" POSITION="left" TEXT="Interface - ServletConfig" VSHIFT="42">
+<node CREATED="1509054333224" HGAP="-111" ID="ID_708576079" MODIFIED="1510232414801" POSITION="left" TEXT="Interface - ServletConfig" VSHIFT="42">
 <node CREATED="1509054357489" ID="ID_866106118" MODIFIED="1509400670910" TEXT="getInitParameter(String), Enumeration - getInitParameterNames(), getServletContext(), getServletNames()"/>
 </node>
 <node CREATED="1509400683852" ID="ID_1912751497" MODIFIED="1510001683506" POSITION="right" TEXT="Listeners">
@@ -91,8 +91,12 @@
 <node CREATED="1510002259211" ID="ID_101748763" MODIFIED="1510002297573" TEXT="&lt;&lt; interface &gt;&gt; javax.servlet.ServletRequestAttributeListener">
 <node CREATED="1510002301981" ID="ID_1331166275" MODIFIED="1510002312656" TEXT="ServletRequestAttributeEvent"/>
 <node CREATED="1510002315405" ID="ID_1716547467" MODIFIED="1510002331383" TEXT="attributeAdded"/>
-<node CREATED="1510002335832" ID="ID_321241215" MODIFIED="1510002345926" TEXT="attributeRemoved"/>
-<node CREATED="1510002350133" ID="ID_1824248630" MODIFIED="1510002356093" TEXT="attributeReplaced"/>
+<node CREATED="1510002335832" ID="ID_321241215" MODIFIED="1510002345926" TEXT="attributeRemoved">
+<node CREATED="1510239113775" ID="ID_1464512087" MODIFIED="1510239144157" TEXT="O objeto ServletRequestAttributeEvent no momento do removed cont&#xe9;m o valor atualizado do atributo. Ex.: event.getValue();"/>
+</node>
+<node CREATED="1510002350133" ID="ID_1824248630" MODIFIED="1510002356093" TEXT="attributeReplaced">
+<node CREATED="1510239038215" ID="ID_652053316" MODIFIED="1510239100643" TEXT="O objeto ServletRequestAttributeEvent no momento do replaced ainda cont&#xe9;m o valor antigo. Ex.: event.getValue();"/>
+</node>
 </node>
 </node>
 <node CREATED="1510002394220" ID="ID_1150164019" MODIFIED="1510003123711" TEXT="Voc&#xea; tem uma classe de atributo (uma classe para um objeto que ser&#xe1; colocado em um atributo) e voc&#xea; quer que os objetos desse tipo sejam notificados quando eles forem associados ou removidos de uma sess&#xe3;o.">
@@ -133,6 +137,18 @@
 <node CREATED="1510153687257" ID="ID_85284212" MODIFIED="1510153714428" TEXT="request.getRequestDispatcher(&quot;teste.jsp&quot;); - caminho relativo"/>
 <node CREATED="1510153716071" ID="ID_601688953" MODIFIED="1510153749865" TEXT="getServletContext().getRequestDispatcher(&quot;/teste.jsp&quot;); - raiz da aplica&#xe7;&#xe3;o"/>
 </node>
+</node>
+<node CREATED="1510241283088" ID="ID_894154611" MODIFIED="1510241595176" POSITION="right" TEXT="Sess&#xf5;es">
+<node CREATED="1510241297695" ID="ID_936405436" MODIFIED="1510241332609" TEXT="Existe duas maneiras de objter a sess&#xe3;o.">
+<node CREATED="1510241333724" ID="ID_577421403" MODIFIED="1510241347296" TEXT="request.getSession(); - Requisi&#xe7;&#xe3;o"/>
+<node CREATED="1510241350083" ID="ID_467945123" MODIFIED="1510241461529" TEXT="HttpSessionEvent e sua subClasse HttpSessionBindingEvent - Listeners de sess&#xe3;o.">
+<node CREATED="1510241392273" ID="ID_457417423" MODIFIED="1510241476776" TEXT="HttpSessionEvent possui um m&#xe9;todo getSession();"/>
+</node>
+</node>
+<node CREATED="1510241493722" ID="ID_1566791088" MODIFIED="1510241504750" TEXT="Recuperando uma sess&#xe3;o pr&#xe9;-existente">
+<node CREATED="1510241506617" ID="ID_1300389524" MODIFIED="1510241563098" TEXT="getSession(boolean)  - request.getSession(fasle); devolve a sess&#xe3;o pr&#xe9;-existente, se n&#xe3;o existir retorna null."/>
+</node>
+<node CREATED="1510241596539" ID="ID_589697227" MODIFIED="1510241645861" TEXT="O m&#xe9;todo isNew() - Booleano que informa se a sess&#xe3;o acabou de ser criada no m&#xe9;todo: getSession()."/>
 </node>
 </node>
 </map>
