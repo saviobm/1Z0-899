@@ -39,31 +39,45 @@ public class Servlet3 extends HttpServlet {
 		
 		session.setAttribute("listaCarros", listaCarros);
 		
-		/*session.setAttribute("idade", "31");
+		List<Usuario> listaUsuarios = getListaUsuarios();
 		
-		session.setAttribute("idade", "32");
+		session.setAttribute("usuario", listaUsuarios.get(0));
+		session.setAttribute("usuario", listaUsuarios.get(1));
+		session.removeAttribute("usuario");
 		
-		session.removeAttribute("idade");*/
+		session.setAttribute("idade", 20);
+		session.setAttribute("idade", 30);
+		session.removeAttribute("idade");
+		
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		requestDispatcher.forward(request, response);
+		
+	}
+
+	/**
+	 * Retorna a lista de usuários.
+	 * 
+	 * @return List<Usuario>
+	 */
+	private List<Usuario> getListaUsuarios() {
+		
+		List<Usuario> listaRetorno = new ArrayList<Usuario>();
 		
 		Usuario usuario = new Usuario();
 		
 		usuario.setNome("Savera ********");
 		usuario.setIdade("50");
-
-		session.setAttribute("usuario", usuario);
 		
+		listaRetorno.add(usuario);
+
 		usuario = new Usuario();
 		usuario.setNome("Gatinha");
 		usuario.setIdade("18");
 		
-		session.setAttribute("usuario", usuario);
-		session.removeAttribute("usuario");
-		
-		session.setAttribute("idade", 20);
-		session.removeAttribute("idade");
-		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-		requestDispatcher.forward(request, response);
+		listaRetorno.add(usuario);
+
+		return listaRetorno;
+	
 	}
 
 }
