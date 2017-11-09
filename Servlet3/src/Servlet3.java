@@ -6,7 +6,6 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,10 +39,31 @@ public class Servlet3 extends HttpServlet {
 		
 		session.setAttribute("listaCarros", listaCarros);
 		
+		/*session.setAttribute("idade", "31");
+		
+		session.setAttribute("idade", "32");
+		
+		session.removeAttribute("idade");*/
+		
+		Usuario usuario = new Usuario();
+		
+		usuario.setNome("Savera ********");
+		usuario.setIdade("50");
+
+		session.setAttribute("usuario", usuario);
+		
+		usuario = new Usuario();
+		usuario.setNome("Gatinha");
+		usuario.setIdade("18");
+		
+		session.setAttribute("usuario", usuario);
+		session.removeAttribute("usuario");
+		
+		session.setAttribute("idade", 20);
+		session.removeAttribute("idade");
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
 		requestDispatcher.forward(request, response);
-		
-		
 	}
 
 }
