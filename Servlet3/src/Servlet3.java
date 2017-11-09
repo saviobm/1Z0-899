@@ -1,18 +1,25 @@
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "Servlet3", 
-	urlPatterns = "/Servlet3",
+	urlPatterns = "/SessaoProduto",
 	initParams = { 
 			@WebInitParam(name = "nome", value = "Savera bacheiro"),
-			@WebInitParam(name = "idade", value = "38") 
-	})
+			@WebInitParam(name = "idade", value = "38")
+	},
+	loadOnStartup = 1
+)
 public class Servlet3 extends HttpServlet {
 
 	/**
@@ -20,12 +27,22 @@ public class Servlet3 extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	@SuppressWarnings("unchecked")
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
-		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
 		
-		out.println("Nome: " + getInitParameter("nome"));
-		out.println("Idade: " + getInitParameter("idade"));
+		List<String> listaCarros = (List<String>)session.getAttribute("listaCarros");
+		
+		if (listaCarros == null) listaCarros = new ArrayList<String>();
+		
+		listaCarros.add(request.getParameter("carro"));
+		
+		session.setAttribute("listaCarros", listaCarros);
+		
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		requestDispatcher.forward(request, response);
+		
 		
 	}
 
