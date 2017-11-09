@@ -43,13 +43,13 @@ public class Servlet3 extends HttpServlet {
 		
 		session.setAttribute("usuario", listaUsuarios.get(0));
 		session.setAttribute("usuario", listaUsuarios.get(1));
-		session.removeAttribute("usuario");
+		//session.removeAttribute("usuario");
 		
 		session.setAttribute("idade", 20);
 		session.setAttribute("idade", 30);
 		session.removeAttribute("idade");
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("pages/usuario.jsp");
 		requestDispatcher.forward(request, response);
 		
 	}

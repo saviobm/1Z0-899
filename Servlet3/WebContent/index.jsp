@@ -8,6 +8,7 @@
 		
 		Carros: 
 		<select name="carro">
+		  <option selected="selected"></option>
 		  <option value="volvo">Volvo</option>
 		  <option value="saab">Saab</option>
 		  <option value="opel">Opel</option>
