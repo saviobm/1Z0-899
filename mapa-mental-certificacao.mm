@@ -149,6 +149,33 @@
 <node CREATED="1510241506617" ID="ID_1300389524" MODIFIED="1510241563098" TEXT="getSession(boolean)  - request.getSession(fasle); devolve a sess&#xe3;o pr&#xe9;-existente, se n&#xe3;o existir retorna null."/>
 </node>
 <node CREATED="1510241596539" ID="ID_589697227" MODIFIED="1510241645861" TEXT="O m&#xe9;todo isNew() - Booleano que informa se a sess&#xe3;o acabou de ser criada no m&#xe9;todo: getSession()."/>
+<node CREATED="1510323935963" ID="ID_606496143" MODIFIED="1510323944066" TEXT="Reescrita de URL">
+<node CREATED="1510323945704" ID="ID_771127927" MODIFIED="1510324055030" TEXT="S&#xf3; &#xe9; feita na inst&#xe2;ncia da classe HttpServletResponse">
+<node CREATED="1510323965543" ID="ID_372109994" MODIFIED="1510324022104" TEXT="encodeURL(&quot;&quot;);"/>
+<node CREATED="1510323977454" ID="ID_343570070" MODIFIED="1510324027528" TEXT="encodeRedirectURL(&quot;&quot;);"/>
+</node>
+</node>
+<node CREATED="1510325636600" ID="ID_707245372" MODIFIED="1510325642926" TEXT="Principais m&#xe9;todos">
+<node CREATED="1510325644489" ID="ID_213369862" MODIFIED="1510325660688" TEXT="getCreationTime()"/>
+<node CREATED="1510325662276" ID="ID_1291457873" MODIFIED="1510325691548" TEXT="getLastAccessedTime() - milisegundos"/>
+<node CREATED="1510325693976" ID="ID_647204272" MODIFIED="1510325740362" TEXT="setMaxInactiveInterval() - segundos"/>
+<node CREATED="1510325753632" ID="ID_362642874" MODIFIED="1510325763965" TEXT="getMaxInactiveInterval() - segundos"/>
+<node CREATED="1510325773065" ID="ID_1429801812" MODIFIED="1510325775877" TEXT="invaliade()"/>
+</node>
+<node CREATED="1510325811234" ID="ID_731422391" MODIFIED="1510325979772" TEXT="Timeouts">
+<node CREATED="1510325843219" ID="ID_51132536" MODIFIED="1510326040548" TEXT="No DD &lt;servlet-config&gt;&lt;servlet-timeout&gt;15&lt;/servlet-timeout&gt;&lt;/session-config&gt;">
+<node CREATED="1510325884660" ID="ID_840527033" MODIFIED="1510326120489" TEXT="&#xc9; configurado em minutos e &#xe9; utilizado por todas as sess&#xf5;es."/>
+</node>
+<node CREATED="1510325994761" ID="ID_760286540" MODIFIED="1510326081977" TEXT="Na aplica&#xe7;&#xe3;o - session.setMaxInactiveInterval()">
+<node CREATED="1510326023514" ID="ID_1516489586" MODIFIED="1510326104449" TEXT="&#xc9; configurado em segundos e fica espec&#xed;fico da sess&#xe3;o configurada."/>
+</node>
+</node>
+<node CREATED="1510326481917" ID="ID_174082729" MODIFIED="1510326627512" TEXT="Depois de chamado o session.invalidade() ou se a sess&#xe3;o foi configurada com o session.setMaxInactiveInterval(0);, Ocorrer&#xe1; uma exce&#xe7;&#xe3;o IllegalStateException."/>
+<node CREATED="1510326851566" ID="ID_111144567" MODIFIED="1510326933629" TEXT="O servidor envia um header na resposta sob o nome: Set-Cookie e depois o cliente devolve com um header na solicita&#xe7;&#xe3;o sob o nome Cookie com os mesmos dados que vieram no Set-Cookie."/>
+<node CREATED="1510327083895" ID="ID_1384452350" MODIFIED="1510327089011" TEXT="Cookies">
+<node CREATED="1510327089838" ID="ID_1524540961" MODIFIED="1510327180229" TEXT="setMaxAge() - &#xc9; definido em segundos. Se configurar com &quot;-1&quot; ele s&#xf3; ser&#xe1; removido quando o browser fechar. Mesmo exemplo do cookie: JSESSIONID"/>
+<node CREATED="1510327729421" ID="ID_727019585" MODIFIED="1510327790110" TEXT="N&#xe3;o existe um getCookie(&quot;&quot;), a &#xfa;nica forma &#xe9; um array de cookies: request.getCookies();"/>
+</node>
 </node>
 </node>
 </map>
