@@ -8,7 +8,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter(urlPatterns = "/usuario")
+@WebFilter(
+		urlPatterns = { "/pages/usuario.jsp" },
+		servletNames = { "Servlet3" }
+)
 public class UsuarioFilter implements Filter {
 
 	public void destroy() {
@@ -19,11 +22,15 @@ public class UsuarioFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
 		
-		System.out.println("Chamou a jsp de usuário.");
+		System.out.println("Chamou a jsp de usuário. Código antes do doFilter");
+		
+		filterChain.doFilter(request, response);
+		
+		System.out.println("Voltou da servlet.");
 
 	}
 
-	public void init(FilterConfig arg0) throws ServletException {
+	public void init(FilterConfig config) throws ServletException {
 		
 		System.out.println("Iniciou o filter.");
 
