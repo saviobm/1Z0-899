@@ -104,6 +104,7 @@
 <node CREATED="1510002514407" ID="ID_288799797" MODIFIED="1510002524450" TEXT="HttpSessionBindingEvent"/>
 <node CREATED="1510002534442" ID="ID_275163042" MODIFIED="1510002597840" TEXT="valueBound"/>
 <node CREATED="1510002563053" ID="ID_1380288617" MODIFIED="1510002604834" TEXT="valueUnbound"/>
+<node CREATED="1510585780067" ID="ID_406938208" MODIFIED="1510585795454" TEXT="N&#xe3;o precisa ser declarado no DD."/>
 </node>
 </node>
 <node CREATED="1510003131542" ID="ID_895616453" MODIFIED="1510003173880" TEXT="Voc&#xea; quer saber quando um atributo de sess&#xe3;o foi acrescentado, removido ou substitu&#xed;do.">
@@ -129,6 +130,7 @@
 </node>
 </node>
 </node>
+<node CREATED="1510585729830" ID="ID_1120390428" MODIFIED="1510585768728" TEXT="O listener HttpSessionBindingListener &#xe9; o &#xfa;nico listener que n&#xe3;o precisa ser declarado no DD."/>
 </node>
 <node CREATED="1510153609632" ID="ID_1195321547" MODIFIED="1510153636498" POSITION="left" TEXT="&lt;&lt; interface &gt;&gt; javax.servlet.RequestDispatcher">
 <node CREATED="1510153638380" ID="ID_597379388" MODIFIED="1510153654144" TEXT="forward(HttpServletRequest, HttpServletResponse)"/>
@@ -176,6 +178,7 @@
 <node CREATED="1510327089838" ID="ID_1524540961" MODIFIED="1510327180229" TEXT="setMaxAge() - &#xc9; definido em segundos. Se configurar com &quot;-1&quot; ele s&#xf3; ser&#xe1; removido quando o browser fechar. Mesmo exemplo do cookie: JSESSIONID"/>
 <node CREATED="1510327729421" ID="ID_727019585" MODIFIED="1510327790110" TEXT="N&#xe3;o existe um getCookie(&quot;&quot;), a &#xfa;nica forma &#xe9; um array de cookies: request.getCookies();"/>
 </node>
+<node CREATED="1510584224198" ID="ID_1214562147" MODIFIED="1510584270623" TEXT="As sess&#xf5;es s&#xe3;o os &#xfa;nicos objetos que n&#xe3;o s&#xe3;o duplicados em JVM&#xb4;s diferentes."/>
 </node>
 </node>
 </map>
