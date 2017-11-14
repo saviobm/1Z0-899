@@ -1,0 +1,37 @@
+Pearson VUE
+	
+OCEJWCD 6 (1Z0-899): Java EE 6 Web Component Developer Certified Expert
+
+
+
+Simulados
+
+http://www.pass4sure.com/1z0-899.html
+https://www.myexamcloud.com/onlineexam/search.html --> pago
+http://piotrnowicki.com/2011/03/jee-6-scwcd-mock-questions/
+
+Enthuware --> http://enthuware.com/index.php/ets/60-geninfo/66-etsviewer
+Whislabs - https://www.whizlabs.com/oracle-certified-expert-java-ee-6-web-component-developer/
+piotrnowicki --> http://exam.piotrnowicki.com/viewQuestion.xhtml?q=Q01
+
+
+
+Materiais adicionais
+
+
+Estudar segurança declarativa paper da dzone. --> https://dzone.com/articles/new-declarative-security
+
+
+Diferença Servlets 2.5 e 3.0. --> https://stackoverflow.com/questions/1638865/what-are-the-differences-between-servlet-2-5-and-3
+								  http://www.oracle.com/technetwork/server-storage/ts-5415-159162.pdf
+								  
+								  
+								  
+CURSOS 
+
+https://loiane.training/course/angular-2/
+https://loiane.training/course/angular-4
+
+https://www.udemy.com/o-curso-completo-de-ingles/?couponCode=NW2017&gclid=Cj0KCQjw09zOBRCqARIsAH8XF1bnBqX5E4y0TjpPzXcvZu5-0nwriH8LgqcuE0BDs7vIEf9rDkKQZ4YaAtDqEALw_wcB
+https://www.pluralsight.com/
+https://br.udacity.com/?gclid=Cj0KCQjw09zOBRCqARIsAH8XF1b5WrERI9JxTPhQDjw2vvxDQXHWZq_3U8Uum777EKofzKWTNhDjr6QaAhfmEALw_wcB --> MELHOR
