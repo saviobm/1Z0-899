@@ -180,5 +180,37 @@
 </node>
 <node CREATED="1510584224198" ID="ID_1214562147" MODIFIED="1510584270623" TEXT="As sess&#xf5;es s&#xe3;o os &#xfa;nicos objetos que n&#xe3;o s&#xe3;o duplicados em JVM&#xb4;s diferentes."/>
 </node>
+<node CREATED="1510843978085" ID="ID_188006675" MODIFIED="1510843981137" POSITION="left" TEXT="JSP">
+<node CREATED="1510842030047" ID="ID_1246914587" MODIFIED="1510844184112" TEXT="Diretivas JSP: Sempre come&#xe7;am com @, e existem tr&#xea;s diretivas.">
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1510842043826" ID="ID_1990682660" MODIFIED="1510842118674" TEXT="&lt;%@ page import=&quot;com.test.*,java.util.*&quot; %&gt;"/>
+<node CREATED="1510842367813" ID="ID_1932018203" MODIFIED="1510842699772" TEXT="&lt;%@ taglib %&gt;"/>
+<node CREATED="1510842701960" ID="ID_1682860638" MODIFIED="1510842720379" TEXT="&lt;%@ include %&gt;"/>
+</node>
+<node CREATED="1510842321080" ID="ID_1505208230" MODIFIED="1510842356666" TEXT="Express&#xe3;o: &lt;%= Counter.getCounter() %&gt;">
+<node CREATED="1510842494277" ID="ID_1685340257" MODIFIED="1510842527775" TEXT="Equivalente a: out.print(&quot;&quot;) - Por isso depois da express&#xe3;o n&#xe3;o &#xe9; colocado um &quot;;&quot;"/>
+</node>
+<node CREATED="1510843994668" ID="ID_1120122037" MODIFIED="1510844172904" TEXT="Declara&#xe7;&#xe3;o: &lt;%!  int count = 0; %&gt;">
+<node CREATED="1510844033134" ID="ID_1311901559" MODIFIED="1510844161247" TEXT="Aqui precisa de um &quot;;&quot;, todas as vari&#xe1;veis e m&#xe9;todos declarados com &lt;%!%&gt; ser&#xe1; colocado fora do m&#xe9;todo _jspService(HttpServletRequest, HttpServletResponse) sendo vari&#xe1;veis e m&#xe9;todos da classe."/>
+</node>
+<node CREATED="1510844683458" ID="ID_782014591" MODIFIED="1510844687982" TEXT="Ciclo de Vida">
+<node CREATED="1510844688954" ID="ID_195229597" MODIFIED="1510844701254" TEXT="M&#xe9;todos">
+<node CREATED="1510844702281" ID="ID_522559736" MODIFIED="1510844703525" TEXT=" _jspInit()"/>
+<node CREATED="1510844705041" ID="ID_1728152280" MODIFIED="1510844737723" TEXT="_jspDestroy()"/>
+<node CREATED="1510844739591" ID="ID_1495139343" MODIFIED="1510844776409" TEXT="_jspService(HttpServletRequest, HttpServletResponse)"/>
+</node>
+</node>
+<node CREATED="1510845066330" ID="ID_1402170215" MODIFIED="1510845071726" TEXT="Objetos Impl&#xed;citos">
+<node CREATED="1510845072649" ID="ID_1773025466" MODIFIED="1510845086829" TEXT="out --&gt; JspWriter"/>
+<node CREATED="1510845088352" ID="ID_1345773855" MODIFIED="1510845098380" TEXT="request --&gt; HttpServletRequest"/>
+<node CREATED="1510845099783" ID="ID_1378896638" MODIFIED="1510845184591" TEXT="response --&gt; HttpServletResponse"/>
+<node CREATED="1510845110215" ID="ID_1420122222" MODIFIED="1510845180143" TEXT="session --&gt; HttpSession"/>
+<node CREATED="1510845118694" ID="ID_377538357" MODIFIED="1510845130226" TEXT="application --&gt; ServletContext"/>
+<node CREATED="1510845131397" ID="ID_1820502218" MODIFIED="1510845142041" TEXT="config --&gt; ServletConfig"/>
+<node CREATED="1510845143845" ID="ID_184816486" MODIFIED="1510845158232" TEXT="exception --&gt; JspException"/>
+<node CREATED="1510845159492" ID="ID_796834118" MODIFIED="1510845174319" TEXT="pageContext --&gt; PageContext"/>
+<node CREATED="1510845189338" ID="ID_1173711214" MODIFIED="1510845198326" TEXT="page --&gt; Object"/>
+</node>
+</node>
 </node>
 </map>
