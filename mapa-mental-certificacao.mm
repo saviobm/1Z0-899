@@ -302,6 +302,7 @@
 <node CREATED="1511278394271" ID="ID_1563711233" MODIFIED="1511278400651" TEXT="in application scope"/>
 </node>
 <node CREATED="1511278901094" ID="ID_816381048" MODIFIED="1511279348510" TEXT="Vari&#xe1;vel sequida do operador [ ] pode ser precedido por um java.util.List ou um Array e tamb&#xe9;m serve para solucionar o problema de ter uma chave no map contendo pontos. Ex.: ${map[&quot;com.example&quot;]} o que n&#xe3;o poderia ser feito dessa forma:  ${map.com.example}"/>
+<node CREATED="1511280307843" ID="ID_225823711" MODIFIED="1511280423363" TEXT="Com beans e maps pode ser usado o operaror &quot;.&quot; ou o operador &quot;[ ]&quot; s&#xf3; se  o que vier depois do ponto seja um identificador java. Ex: ${musicList.1} n&#xe3;o funciona."/>
 </node>
 </node>
 </node>
