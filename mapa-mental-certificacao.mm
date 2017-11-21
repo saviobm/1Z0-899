@@ -261,8 +261,47 @@
 </node>
 </node>
 <node CREATED="1510931286741" ID="ID_769460424" MODIFIED="1510931315008" TEXT="A&#xe7;&#xf5;es">
-<node CREATED="1510931315627" ID="ID_1473142435" MODIFIED="1510931316927" TEXT="A&#xe7;&#xf5;es padr&#xe3;o &lt;jsp:include /&gt;"/>
+<node CREATED="1510931315627" ID="ID_1473142435" MODIFIED="1511275862686" TEXT="A&#xe7;&#xf5;es padr&#xe3;o">
+<node CREATED="1511273790052" ID="ID_682382608" MODIFIED="1511273798412" TEXT="A&#xe7;&#xf5;es padr&#xe3;o Bean">
+<node CREATED="1511273799190" ID="ID_277480177" MODIFIED="1511274961968" TEXT="&lt;jsp:useBean id=&quot;&quot; class=&quot;sub-classe concreta ou implementa&#xe7;&#xe3;o da classe referenciada no type&quot; scope=&quot;&quot; type=&quot;classe abstrata ou interface&quot; /&gt;">
+<node CREATED="1511274018832" ID="ID_857522395" MODIFIED="1511274039371" TEXT="Se n&#xe3;o existir o bean no escopo informado ele cria um novo."/>
+<node CREATED="1511275044846" ID="ID_1937961177" MODIFIED="1511275086992" TEXT="Se o type for usado sem um class o bean j&#xe1; dever&#xe1; existir sen&#xe3;o java.lang.InstantiationException"/>
+</node>
+<node CREATED="1511273832596" ID="ID_1946073304" MODIFIED="1511273850031" TEXT="&lt;jsp:getProperty name=&quot;&quot; property=&quot;&quot; /&gt;">
+<node CREATED="1511277843002" ID="ID_1231209758" MODIFIED="1511277918074" TEXT="S&#xf3; acessa as propriedades do bean mencionado em name=&quot;&quot;. N&#xe3;o acessa objetos aninhados. Ex: person.dog.name com isso tem que usar EL: ${person.dog.name}"/>
+</node>
+<node CREATED="1511273862410" ID="ID_1737725692" MODIFIED="1511276662364" TEXT="&lt;jsp:setProperty name=&quot;nome do bean&quot; property=&quot;propriedade do bean&quot; value=&quot;valor&quot; param=&quot;nome do par&#xe2;metro do formul&#xe1;rio (recupera o valor)&quot; /&gt;">
+<node CREATED="1511273969803" ID="ID_1473880188" MODIFIED="1511274016221" TEXT="Se for usada dentro de um &lt;jsp:UseBean /&gt; significa que s&#xf3; ser&#xe1; usado o setProperty se o bean for criado. "/>
+<node CREATED="1511276901769" ID="ID_738314146" MODIFIED="1511276930526" TEXT="property=&quot;*&quot; coincide todas as propriedades do formul&#xe1;rio com o bean."/>
+</node>
+</node>
+<node CREATED="1511275864169" ID="ID_179633022" MODIFIED="1511275865678" TEXT="&lt;jsp:include /&gt;"/>
+</node>
 <node CREATED="1510931317795" ID="ID_548191267" MODIFIED="1510931352237" TEXT="A&#xe7;&#xf5;es customizadas &lt;c:set /&gt;"/>
+</node>
+<node CREATED="1511278148286" ID="ID_1585161127" MODIFIED="1511278156146" TEXT="EL - Expression Language">
+<node CREATED="1511278229937" ID="ID_1882234354" MODIFIED="1511279209079" TEXT="Objetos impl&#xed;citos - S&#xf3; map&#xb4;s e bean">
+<node CREATED="1511278237281" ID="ID_13814437" MODIFIED="1511278241037" TEXT="pageScope"/>
+<node CREATED="1511278242160" ID="ID_1997698672" MODIFIED="1511278246501" TEXT="requestScope"/>
+<node CREATED="1511278247904" ID="ID_1516110483" MODIFIED="1511278252668" TEXT="sessionScope"/>
+<node CREATED="1511278254224" ID="ID_1151108310" MODIFIED="1511278263891" TEXT="applicationScope"/>
+<node CREATED="1511278270023" ID="ID_11980326" MODIFIED="1511278311544" TEXT="param"/>
+<node CREATED="1511278312940" ID="ID_592847559" MODIFIED="1511278315640" TEXT="paramValues"/>
+<node CREATED="1511278317132" ID="ID_886251189" MODIFIED="1511278322072" TEXT="header"/>
+<node CREATED="1511278323675" ID="ID_395112953" MODIFIED="1511278327040" TEXT="headerValues"/>
+<node CREATED="1511278329091" ID="ID_1830322558" MODIFIED="1511278332703" TEXT="cookie"/>
+<node CREATED="1511278334770" ID="ID_993763844" MODIFIED="1511278342247" TEXT="initParam"/>
+<node CREATED="1511278344082" ID="ID_1367612085" MODIFIED="1511278349054" TEXT="pageContext">
+<node CREATED="1511278506903" ID="ID_753872231" MODIFIED="1511278538834" TEXT="&#xc9; o &#xfa;nico objeto impl&#xed;cito que n&#xe3;o &#xe9; um HashMap ou HashTable e sim um JavaBean"/>
+</node>
+</node>
+<node CREATED="1511278370000" ID="ID_578359679" MODIFIED="1511278374749" TEXT="Atributos">
+<node CREATED="1511278375824" ID="ID_1423273623" MODIFIED="1511278379492" TEXT="in page scope"/>
+<node CREATED="1511278380632" ID="ID_1024864716" MODIFIED="1511278385828" TEXT="in request scope"/>
+<node CREATED="1511278387343" ID="ID_802910005" MODIFIED="1511278393251" TEXT="in session scope"/>
+<node CREATED="1511278394271" ID="ID_1563711233" MODIFIED="1511278400651" TEXT="in application scope"/>
+</node>
+<node CREATED="1511278901094" ID="ID_816381048" MODIFIED="1511279348510" TEXT="Vari&#xe1;vel sequida do operador [ ] pode ser precedido por um java.util.List ou um Array e tamb&#xe9;m serve para solucionar o problema de ter uma chave no map contendo pontos. Ex.: ${map[&quot;com.example&quot;]} o que n&#xe3;o poderia ser feito dessa forma:  ${map.com.example}"/>
 </node>
 </node>
 </node>
