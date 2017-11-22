@@ -281,18 +281,28 @@
 </node>
 <node CREATED="1511278148286" ID="ID_1585161127" MODIFIED="1511278156146" TEXT="EL - Expression Language">
 <node CREATED="1511278229937" ID="ID_1882234354" MODIFIED="1511279209079" TEXT="Objetos impl&#xed;citos - S&#xf3; map&#xb4;s e bean">
+<node CREATED="1511278344082" ID="ID_1367612085" MODIFIED="1511278349054" TEXT="pageContext">
+<node CREATED="1511278506903" ID="ID_753872231" MODIFIED="1511278538834" TEXT="&#xc9; o &#xfa;nico objeto impl&#xed;cito que n&#xe3;o &#xe9; um HashMap ou HashTable e sim um JavaBean"/>
+</node>
+<node CREATED="1511345648213" ID="ID_1146067190" MODIFIED="1511345911283" TEXT="Map para atributos de Escopo">
 <node CREATED="1511278237281" ID="ID_13814437" MODIFIED="1511278241037" TEXT="pageScope"/>
 <node CREATED="1511278242160" ID="ID_1997698672" MODIFIED="1511278246501" TEXT="requestScope"/>
 <node CREATED="1511278247904" ID="ID_1516110483" MODIFIED="1511278252668" TEXT="sessionScope"/>
 <node CREATED="1511278254224" ID="ID_1151108310" MODIFIED="1511278263891" TEXT="applicationScope"/>
+</node>
+<node CREATED="1511345718595" ID="ID_1773448577" MODIFIED="1511345907435" TEXT="Map para par&#xe2;metros da solicita&#xe7;&#xe3;o">
 <node CREATED="1511278270023" ID="ID_11980326" MODIFIED="1511278311544" TEXT="param"/>
 <node CREATED="1511278312940" ID="ID_592847559" MODIFIED="1511278315640" TEXT="paramValues"/>
+</node>
+<node CREATED="1511345937261" ID="ID_828917735" MODIFIED="1511345944385" TEXT="Map para headers de solicita&#xe7;&#xe3;o">
 <node CREATED="1511278317132" ID="ID_886251189" MODIFIED="1511278322072" TEXT="header"/>
 <node CREATED="1511278323675" ID="ID_395112953" MODIFIED="1511278327040" TEXT="headerValues"/>
+</node>
+<node CREATED="1511345964931" ID="ID_587234939" MODIFIED="1511345968647" TEXT="Map para cookies">
 <node CREATED="1511278329091" ID="ID_1830322558" MODIFIED="1511278332703" TEXT="cookie"/>
+</node>
+<node CREATED="1511345981954" ID="ID_1057505352" MODIFIED="1511345992582" TEXT="Map para par&#xe2;metros init do contexto">
 <node CREATED="1511278334770" ID="ID_993763844" MODIFIED="1511278342247" TEXT="initParam"/>
-<node CREATED="1511278344082" ID="ID_1367612085" MODIFIED="1511278349054" TEXT="pageContext">
-<node CREATED="1511278506903" ID="ID_753872231" MODIFIED="1511278538834" TEXT="&#xc9; o &#xfa;nico objeto impl&#xed;cito que n&#xe3;o &#xe9; um HashMap ou HashTable e sim um JavaBean"/>
 </node>
 </node>
 <node CREATED="1511278370000" ID="ID_578359679" MODIFIED="1511278374749" TEXT="Atributos">
@@ -303,6 +313,32 @@
 </node>
 <node CREATED="1511278901094" ID="ID_816381048" MODIFIED="1511279348510" TEXT="Vari&#xe1;vel sequida do operador [ ] pode ser precedido por um java.util.List ou um Array e tamb&#xe9;m serve para solucionar o problema de ter uma chave no map contendo pontos. Ex.: ${map[&quot;com.example&quot;]} o que n&#xe3;o poderia ser feito dessa forma:  ${map.com.example}"/>
 <node CREATED="1511280307843" ID="ID_225823711" MODIFIED="1511280423363" TEXT="Com beans e maps pode ser usado o operaror &quot;.&quot; ou o operador &quot;[ ]&quot; s&#xf3; se  o que vier depois do ponto seja um identificador java. Ex: ${musicList.1} n&#xe3;o funciona."/>
+<node CREATED="1511348213321" ID="ID_448019298" MODIFIED="1511348721650" TEXT="Outros operadores EL">
+<node CREATED="1511348223498" ID="ID_1304497912" MODIFIED="1511348229959" TEXT="Aritm&#xe9;ticos">
+<node CREATED="1511348231867" ID="ID_278949843" MODIFIED="1511348237625" TEXT="+"/>
+<node CREATED="1511348239044" ID="ID_135022689" MODIFIED="1511348240576" TEXT="-"/>
+<node CREATED="1511348242013" ID="ID_1563067930" MODIFIED="1511348243169" TEXT="*"/>
+<node CREATED="1511348244613" ID="ID_1554542281" MODIFIED="1511348277422" TEXT="/ e div (pode dividir por zero que d&#xe1; infinito e n&#xe3;o um erro)"/>
+<node CREATED="1511348290219" ID="ID_1751565171" MODIFIED="1511348297089" TEXT="% e mod">
+<node CREATED="1511348881600" ID="ID_391669379" MODIFIED="1511348914853" TEXT="N&#xe3;o pode usar resto com o isso gera uma excess&#xe3;o"/>
+</node>
+</node>
+<node CREATED="1511348722714" ID="ID_1330210302" MODIFIED="1511348725438" TEXT="L&#xf3;gicos">
+<node CREATED="1511348726410" ID="ID_1423770869" MODIFIED="1511348734431" TEXT="&amp;&amp; e and"/>
+<node CREATED="1511348735738" ID="ID_1112887146" MODIFIED="1511348751647" TEXT="|| e or"/>
+<node CREATED="1511348756571" ID="ID_596511005" MODIFIED="1511348759744" TEXT="! e not"/>
+</node>
+<node CREATED="1511348775507" ID="ID_41480097" MODIFIED="1511348781641" TEXT="Relacionais">
+<node CREATED="1511348782348" ID="ID_1082169716" MODIFIED="1511348788273" TEXT="== e eq"/>
+<node CREATED="1511348794612" ID="ID_1930622895" MODIFIED="1511348798858" TEXT="!= e ne"/>
+<node CREATED="1511348813461" ID="ID_1269085251" MODIFIED="1511348818690" TEXT="&lt; e lt"/>
+<node CREATED="1511348819774" ID="ID_281642641" MODIFIED="1511348822962" TEXT="&gt; e gt"/>
+<node CREATED="1511348836646" ID="ID_945262483" MODIFIED="1511348847571" TEXT="&lt;= e le"/>
+<node CREATED="1511348848783" ID="ID_1481198978" MODIFIED="1511348855019" TEXT="&gt;= e ge"/>
+</node>
+<node CREATED="1511349015799" ID="ID_1918312533" MODIFIED="1511349031947" TEXT="true, false, null, instanceof e empty"/>
+<node CREATED="1511350023942" ID="ID_611763044" MODIFIED="1511350143251" TEXT="Nas express&#xf5;es aritm&#xe9;ticas, a EL trata uma vari&#xe1;vel desconhecida como 0. Ex.: ${7 / foo} quando o foo n&#xe3;o existe o resultado &#xe9; infinito. E nas express&#xf5;es l&#xf3;gicas a EL trata a vari&#xe1;vel desconhecida como false."/>
+</node>
 </node>
 </node>
 </node>
