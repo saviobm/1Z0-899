@@ -276,6 +276,7 @@
 </node>
 </node>
 <node CREATED="1511275864169" ID="ID_179633022" MODIFIED="1511275865678" TEXT="&lt;jsp:include /&gt;"/>
+<node CREATED="1511431311659" ID="ID_1530270957" MODIFIED="1511432627794" TEXT="&lt;jsp:forward page=&quot;&quot;&gt;&lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;&lt;/jsp:foward&gt;"/>
 </node>
 <node CREATED="1510931317795" ID="ID_548191267" MODIFIED="1510931352237" TEXT="A&#xe7;&#xf5;es customizadas &lt;c:set /&gt;"/>
 </node>
@@ -320,7 +321,7 @@
 <node CREATED="1511348242013" ID="ID_1563067930" MODIFIED="1511348243169" TEXT="*"/>
 <node CREATED="1511348244613" ID="ID_1554542281" MODIFIED="1511348277422" TEXT="/ e div (pode dividir por zero que d&#xe1; infinito e n&#xe3;o um erro)"/>
 <node CREATED="1511348290219" ID="ID_1751565171" MODIFIED="1511348297089" TEXT="% e mod">
-<node CREATED="1511348881600" ID="ID_391669379" MODIFIED="1511348914853" TEXT="N&#xe3;o pode usar resto com o isso gera uma excess&#xe3;o"/>
+<node CREATED="1511348881600" ID="ID_391669379" MODIFIED="1511438480928" TEXT="N&#xe3;o pode usar resto com &quot;0&quot; isso gera uma exce&#xe7;&#xe3;o"/>
 </node>
 </node>
 <node CREATED="1511348722714" ID="ID_1330210302" MODIFIED="1511348725438" TEXT="L&#xf3;gicos">
@@ -339,6 +340,17 @@
 <node CREATED="1511349015799" ID="ID_1918312533" MODIFIED="1511349031947" TEXT="true, false, null, instanceof e empty"/>
 <node CREATED="1511350023942" ID="ID_611763044" MODIFIED="1511350143251" TEXT="Nas express&#xf5;es aritm&#xe9;ticas, a EL trata uma vari&#xe1;vel desconhecida como 0. Ex.: ${7 / foo} quando o foo n&#xe3;o existe o resultado &#xe9; infinito. E nas express&#xf5;es l&#xf3;gicas a EL trata a vari&#xe1;vel desconhecida como false."/>
 </node>
+</node>
+<node CREATED="1511351501359" ID="ID_724996395" MODIFIED="1511351515908" TEXT="Diretiva e a&#xe7;&#xe3;o padr&#xe3;o include">
+<node CREATED="1511351516894" ID="ID_1581840466" MODIFIED="1511352452368" TEXT="Diretiva include: &lt;%@ include file=&quot;&quot; /&gt;">
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1511351546836" ID="ID_264074799" MODIFIED="1511351833609" TEXT="Coloca o c&#xf3;digo da p&#xe1;gina mencionada no file=&quot;&quot; e coloca junto com a JSP antes da tradu&#xe7;&#xe3;o."/>
+</node>
+<node CREATED="1511351606929" ID="ID_1005462561" MODIFIED="1511431006087" TEXT="A&#xe7;&#xe3;o padr&#xe3;o: &lt;jsp:include page=&quot;&quot; /&gt;">
+<node CREATED="1511351644174" ID="ID_1937867639" MODIFIED="1511351839025" TEXT="Insere a resposta da p&#xe1;gina mencionada em page=&quot;&quot; no momento da tradu&#xe7;&#xe3;o. Runtime"/>
+<node CREATED="1511431011070" ID="ID_1677827138" MODIFIED="1511431067517" TEXT="&lt;jsp:include&gt;&lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;&lt;/jsp:include&gt; - Pode ser passado par&#xe2;metros para a p&#xe1;gina a ser inclu&#xed;da."/>
+</node>
+<node CREATED="1511432771660" ID="ID_64334603" MODIFIED="1511432824117" TEXT="O conte&#xfa;do inclu&#xed;do n&#xe3;o pode alterar o c&#xed;digo de status da resposta e nem configurar headers."/>
 </node>
 </node>
 </node>
