@@ -352,6 +352,30 @@
 </node>
 <node CREATED="1511432771660" ID="ID_64334603" MODIFIED="1511432824117" TEXT="O conte&#xfa;do inclu&#xed;do n&#xe3;o pode alterar o c&#xed;digo de status da resposta e nem configurar headers."/>
 </node>
+<node CREATED="1512139269949" ID="ID_1288668131" MODIFIED="1512139272804" TEXT="JSTL">
+<node CREATED="1512139275598" ID="ID_559959710" MODIFIED="1512140341547" TEXT="&lt;c:set var=&quot;&quot; value=&quot;&quot; scope=&quot;&quot; /&gt;">
+<node CREATED="1512139566659" ID="ID_714294266" MODIFIED="1512139576807" TEXT="serve para setar vari&#xe1;veis de atributos">
+<node CREATED="1512139708186" ID="ID_1727441429" MODIFIED="1512139724200" TEXT="pode conter corpo, se o corpo for nulo a vari&#xe1;vel &#xe9; removida"/>
+</node>
+</node>
+<node CREATED="1512139514862" ID="ID_484304580" MODIFIED="1512139859835" TEXT="&lt;c:set target=&quot;&quot; property=&quot;&quot;  value=&quot;&quot; scope=&quot;&quot; /&gt;">
+<node CREATED="1512139528206" ID="ID_253106945" MODIFIED="1512139547121" TEXT="target serve para setar propriedades dos beans">
+<node CREATED="1512139728909" ID="ID_1246614807" MODIFIED="1512139730257" TEXT="pode conter corpo, se o corpo for nulo a vari&#xe1;vel &#xe9; removida"/>
+</node>
+</node>
+<node CREATED="1512139896996" ID="ID_253382365" MODIFIED="1512140439374" TEXT="escopo padr&#xe3;o &#xe9; o pageScope, requestScope, sessionScope e por fim applicationScope"/>
+<node CREATED="1512140044820" ID="ID_1025421636" MODIFIED="1512140102443" TEXT="o target serve para o objeto em si, target=&quot;${}&quot; n&#xe3;o serve para o id do objeto igual &#xe9; no caso do var=&quot;idBean&quot;"/>
+<node CREATED="1512140305318" ID="ID_285417978" MODIFIED="1512140313459" TEXT="Causas de exce&#xe7;&#xe3;o">
+<node CREATED="1512139963420" ID="ID_936904553" MODIFIED="1512139979155" TEXT="se a express&#xe3;o target for nula o container gera uma exce&#xe7;&#xe3;o"/>
+<node CREATED="1512140129615" ID="ID_1772244413" MODIFIED="1512140155037" TEXT="se a express&#xe3;o target n&#xe3;o for um map nem um bean o container gera uma exce&#xe7;&#xe3;o"/>
+<node CREATED="1512140267836" ID="ID_1981259759" MODIFIED="1512140293106" TEXT="se o property=&quot;&quot; n&#xe3;o coincidir com uma propriedade do bean o container gera uma exce&#xe7;&#xe3;o"/>
+</node>
+<node CREATED="1512140960009" ID="ID_108281701" MODIFIED="1512141458006" TEXT="&lt;c:import  url=&quot;&quot; /&gt; direfente da diretiva &quot;@page include&quot; e tamb&#xe9;m da a&#xe7;&#xe3;o padr&#xe3;o &quot;jsp:include&quot; o conte&#xfa;do pode estar fora do container web. Pode ser combinada com a &lt;c:param name=&quot;&quot; value=&quot;&quot; /&gt; que &#xe9; equivalente a &lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;"/>
+<node CREATED="1512141771245" ID="ID_1758161248" MODIFIED="1512141819423" TEXT="&lt;c:url value=&quot;/teste.jsp?first${first}&quot; var=&quot;inputUrl&quot; /&gt;">
+<node CREATED="1512141870487" ID="ID_165043603" MODIFIED="1512141890770" TEXT="pode conter corpo com o &lt;c:param name=&quot;&quot; value=&quot;&quot; /&gt;"/>
+<node CREATED="1512141924763" ID="ID_324391694" MODIFIED="1512141952798" TEXT="Nas urls n&#xe3;o podem conter espa&#xe7;os, S&#xe3;o substitu&#xed;dos por &quot;+&quot;"/>
+</node>
+</node>
 </node>
 </node>
 </map>
