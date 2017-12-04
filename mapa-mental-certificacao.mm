@@ -352,7 +352,7 @@
 </node>
 <node CREATED="1511432771660" ID="ID_64334603" MODIFIED="1511432824117" TEXT="O conte&#xfa;do inclu&#xed;do n&#xe3;o pode alterar o c&#xed;digo de status da resposta e nem configurar headers."/>
 </node>
-<node CREATED="1512139269949" ID="ID_1288668131" MODIFIED="1512139272804" TEXT="JSTL">
+<node CREATED="1512139269949" ID="ID_1288668131" MODIFIED="1512400341849" TEXT="JSTL">
 <node CREATED="1512139275598" ID="ID_559959710" MODIFIED="1512140341547" TEXT="&lt;c:set var=&quot;&quot; value=&quot;&quot; scope=&quot;&quot; /&gt;">
 <node CREATED="1512139566659" ID="ID_714294266" MODIFIED="1512139576807" TEXT="serve para setar vari&#xe1;veis de atributos">
 <node CREATED="1512139708186" ID="ID_1727441429" MODIFIED="1512139724200" TEXT="pode conter corpo, se o corpo for nulo a vari&#xe1;vel &#xe9; removida"/>
@@ -374,6 +374,27 @@
 <node CREATED="1512141771245" ID="ID_1758161248" MODIFIED="1512141819423" TEXT="&lt;c:url value=&quot;/teste.jsp?first${first}&quot; var=&quot;inputUrl&quot; /&gt;">
 <node CREATED="1512141870487" ID="ID_165043603" MODIFIED="1512141890770" TEXT="pode conter corpo com o &lt;c:param name=&quot;&quot; value=&quot;&quot; /&gt;"/>
 <node CREATED="1512141924763" ID="ID_324391694" MODIFIED="1512141952798" TEXT="Nas urls n&#xe3;o podem conter espa&#xe7;os, S&#xe3;o substitu&#xed;dos por &quot;+&quot;"/>
+</node>
+<node CREATED="1512400343073" ID="ID_1197640765" MODIFIED="1512400389442" TEXT="Taglib customizadas">
+<node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1512400455454" TEXT="&lt;tag&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;">
+<node CREATED="1512400467617" ID="ID_451643882" MODIFIED="1512400482204" TEXT="Se n&#xe3;o informar o rtexprvalue o valor padr&#xe3;o &#xe9; sempre false"/>
+</node>
+<node CREATED="1512400727696" ID="ID_716574812" MODIFIED="1512400855532" TEXT="Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;false&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#xe1; existir a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:attribute name=&quot;user&quot;&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag."/>
+</node>
+</node>
+<node CREATED="1512397810774" ID="ID_1780565899" MODIFIED="1512397818574" TEXT="P&#xe1;ginas de erro">
+<node CREATED="1512397821713" ID="ID_1480014139" MODIFIED="1512397844868" TEXT="&lt;%page isErrorPage=&quot;true&quot; %&gt;">
+<node CREATED="1512397854590" ID="ID_1778160228" MODIFIED="1512398423318" TEXT="Indica que a p&#xe1;gina &#xe9; uma p&#xe1;gina de erro. &#xc9; necess&#xe1;rio que a p&#xe1;gina contenha essa declara&#xe7;&#xe3;o para obter acesso ao objeto impl&#xed;cito exception"/>
+</node>
+<node CREATED="1512397883789" ID="ID_665287361" MODIFIED="1512397904832" TEXT="&lt;%@page errorPage=&quot;errorPage.jsp&quot; %&gt;">
+<node CREATED="1512397911659" ID="ID_679554859" MODIFIED="1512398405176" TEXT="Indica ao container que caso ocorra alguma exce&#xe7;&#xe3;o encaminhar a solicita&#xe7;&#xe3;o para a p&#xe1;gina informada"/>
+</node>
+<node CREATED="1512398113662" ID="ID_647090139" MODIFIED="1512398127818" TEXT="DD - web.xml">
+<node CREATED="1512398045634" ID="ID_1818381753" MODIFIED="1512398106227" TEXT="&lt;error-page&gt;&lt;exception-type&gt;&lt;/exception-type&gt;&lt;location&gt;/errorPage.jsp&lt;/location&gt;&lt;/eror-page&gt;"/>
+</node>
+<node CREATED="1512398195297" ID="ID_1821954907" MODIFIED="1512398207132" TEXT="&lt;error-code&gt;404&lt;/error-code&gt;"/>
+<node CREATED="1512398698504" ID="ID_645030809" MODIFIED="1512398726531" TEXT="&lt;c:catch var=&quot;myException&quot;&gt;&lt;/c:catch&gt;">
+<node CREATED="1512398744237" ID="ID_554744295" MODIFIED="1512398772424" TEXT="O atributo myException fica dispon&#xed;vel no escopo de p&#xe1;gina"/>
 </node>
 </node>
 </node>
