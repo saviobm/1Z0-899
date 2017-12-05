@@ -380,6 +380,72 @@
 <node CREATED="1512400467617" ID="ID_451643882" MODIFIED="1512400482204" TEXT="Se n&#xe3;o informar o rtexprvalue o valor padr&#xe3;o &#xe9; sempre false"/>
 </node>
 <node CREATED="1512400727696" ID="ID_716574812" MODIFIED="1512400855532" TEXT="Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;false&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#xe1; existir a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:attribute name=&quot;user&quot;&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag."/>
+<node CREATED="1512495930947" ID="ID_60125619" MODIFIED="1512495943759" TEXT="Corpo da tag">
+<node CREATED="1512495944306" ID="ID_841294401" MODIFIED="1512495956778" TEXT="&lt;body-content&gt;">
+<node CREATED="1512495957817" ID="ID_810221802" MODIFIED="1512495962293" TEXT="empty">
+<node CREATED="1512495967432" ID="ID_545112592" MODIFIED="1512495971629" TEXT="n&#xe3;o pode ter corpo"/>
+<node CREATED="1512496259906" ID="ID_102678688" MODIFIED="1512496338784" TEXT="A &#xfa;nica coisa que pode ser inserida com o body-content empty &#xe9; &lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
+</node>
+<node CREATED="1512495973048" ID="ID_1543863339" MODIFIED="1512495980076" TEXT="scriptless">
+<node CREATED="1512495987367" ID="ID_84211830" MODIFIED="1512496069638" TEXT="A tag n&#xe3;o pode ter elementos de scripts (scripts, experess&#xf5;es de scripts ou declara&#xe7;&#xf5;es), mas pode ter texto e templates EL, a&#xe7;&#xf5;es padro&#xf5;es e customizadas."/>
+<node CREATED="1512499933580" ID="ID_241219753" MODIFIED="1512499962859" TEXT="&#xc9; o body-content padr&#xe3;o para todas as tags">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+</node>
+</node>
+<node CREATED="1512496074034" ID="ID_222904138" MODIFIED="1512496081238" TEXT="tagdependent">
+<node CREATED="1512496087577" ID="ID_493236099" MODIFIED="1512496138985" TEXT="O corpo da tag &#xe9; tratado como texto puro. Ignore EL, a&#xe7;&#xf5;es padr&#xe3;o/customizadas."/>
+</node>
+<node CREATED="1512496143919" ID="ID_1265781621" MODIFIED="1512496145500" TEXT="JSP">
+<node CREATED="1512496152632" ID="ID_1014681811" MODIFIED="1512496167734" TEXT="Pode conter qualquer coisa que contenha um um JSP."/>
+</node>
+</node>
+</node>
+<node CREATED="1512499328346" ID="ID_1621901865" MODIFIED="1512499550046" TEXT="Atributos da tag">
+<node CREATED="1512499346505" ID="ID_110028977" MODIFIED="1512499403706" TEXT="&lt;%@attributte name=&quot;&quot; required=&quot;true&quot; rtexprvalue=&quot;true&quot; %&gt;"/>
+<node CREATED="1512499423204" ID="ID_1002470761" MODIFIED="1512499486405" TEXT="&lt;attribute&gt;&lt;name&gt;&lt;/name&gt;&lt;required&gt;&lt;/required&gt;&lt;rtexprvalue&gt;&lt;rtexprvalue&gt;&lt;/attribute&gt;"/>
+<node CREATED="1512499551252" ID="ID_1449087262" MODIFIED="1512499580423" TEXT="Se n&#xe3;o informar os atributos que est&#xe3;o como required. JasperException"/>
+<node CREATED="1512500368696" ID="ID_1166707947" MODIFIED="1512500401890" TEXT="&lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
+</node>
+<node CREATED="1512499677468" ID="ID_715291519" MODIFIED="1512499684504" TEXT="&lt;jsp:doBody&gt;">
+<node CREATED="1512499685292" ID="ID_775145341" MODIFIED="1512499701135" TEXT="Recupera o corpo da tag."/>
+</node>
+<node CREATED="1512502029677" ID="ID_416861707" MODIFIED="1512502111020" TEXT="Dentro do m&#xe9;todo doTag() da classe que extends SimpleTagSupport">
+<node CREATED="1512502158325" ID="ID_40020938" MODIFIED="1512505179590" TEXT="getJspBody()">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512502177299" ID="ID_1779759643" MODIFIED="1512505196055" TEXT="getJspBody(). getJspContext();"/>
+<node CREATED="1512505147385" ID="ID_1828481008" MODIFIED="1512505162918" TEXT="getJspBody().invoke(null);">
+<node CREATED="1512505168209" ID="ID_273963151" MODIFIED="1512505169222" TEXT="Chama o corpo da tag."/>
+</node>
+</node>
+<node CREATED="1512502893509" ID="ID_1474938990" MODIFIED="1512502912657" TEXT="SkipPageException(&quot;&quot;)">
+<node CREATED="1512502913516" ID="ID_1457548908" MODIFIED="1512503957738" TEXT="Interrompe o restante da p&#xe1;gina que invovou a tag. Se existir p&#xe1;ginas que incluem a p&#xe1;gina que a invovou, continua seu processamento."/>
+</node>
+<node CREATED="1512503043204" ID="ID_1073037194" MODIFIED="1512503122464" TEXT="getJspContext()">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512503058035" ID="ID_1770670112" MODIFIED="1512503151609" TEXT="getJspContext().getOut().print(&quot;valor&quot;);">
+<node CREATED="1512503103216" ID="ID_1138610442" MODIFIED="1512503114148" TEXT="Sa&#xed;da para o corpo da tag"/>
+</node>
+<node CREATED="1512502048316" ID="ID_1483469947" MODIFIED="1512505097328" TEXT="getJspContext().setAttribute(&quot;&quot;, &quot;&quot;);">
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512502194578" ID="ID_1999209693" MODIFIED="1512502221461" TEXT="Seta os atributos que est&#xe3;o dentro do corpo da tag."/>
+</node>
+</node>
+</node>
+<node CREATED="1512504559923" ID="ID_1039321678" MODIFIED="1512504578097" TEXT="Ciclo de vida tag">
+<node CREATED="1512504580221" ID="ID_1851432737" MODIFIED="1512504593082" TEXT="Ordem execu&#xe7;&#xe3;o dos m&#xe9;todos">
+<node CREATED="1512504593541" ID="ID_750318754" MODIFIED="1512504609810" TEXT="setJspContext()"/>
+<node CREATED="1512504610926" ID="ID_1787949632" MODIFIED="1512504619802" TEXT="setParent()">
+<node CREATED="1512504620622" ID="ID_29218042" MODIFIED="1512504855419" TEXT="S&#xf3; &#xe9; executado se a tag estiver aninhada."/>
+</node>
+<node CREATED="1512504807413" ID="ID_1140201023" MODIFIED="1512504823898" TEXT="M&#xe9;todos set java bean">
+<node CREATED="1512504824693" ID="ID_530833171" MODIFIED="1512504851267" TEXT="Se a tag existir atributos nesse momento &#xe9; chamado os sets para cada atributo java bean."/>
+</node>
+<node CREATED="1512504644015" ID="ID_564210290" MODIFIED="1512504647803" TEXT="setJspBody()">
+<node CREATED="1512504648487" ID="ID_751111939" MODIFIED="1512504729470" TEXT="S&#xf3; &#xe9; executado se o &lt;body-content&gt; estiver como empty e tamb&#xe9;m se a tag contiver um corpo."/>
+</node>
+<node CREATED="1512504692201" ID="ID_2914772" MODIFIED="1512504697341" TEXT="doTag()"/>
+</node>
+</node>
 </node>
 </node>
 <node CREATED="1512397810774" ID="ID_1780565899" MODIFIED="1512397818574" TEXT="P&#xe1;ginas de erro">
