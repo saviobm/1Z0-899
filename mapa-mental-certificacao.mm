@@ -26,7 +26,7 @@
 </node>
 <node CREATED="1508966509835" ID="ID_1319556276" MODIFIED="1509400670897" POSITION="right" TEXT="Headers">
 <node CREATED="1508966522383" ID="ID_901625906" MODIFIED="1509400670898" TEXT="setHeader(&quot;&quot;, &quot;&quot;) --&gt; Substitui o valor existente para o header."/>
-<node CREATED="1508966549915" ID="ID_1062308988" MODIFIED="1509400670898" TEXT="addHeader(&quot;&quot;, &quot;&quot;) --&gt; Se o Header existir adiciona mais um valor ao header sen&#xe3;o cria um novo header."/>
+<node CREATED="1508966549915" ID="ID_1062308988" MODIFIED="1512576230336" STYLE="fork" TEXT="addHeader(&quot;&quot;, &quot;&quot;) --&gt; Se o Header existir adiciona mais um valor ao header sen&#xe3;o cria um novo header."/>
 </node>
 <node CREATED="1508967171537" ID="ID_427853416" MODIFIED="1509400670898" POSITION="left" TEXT="Response">
 <node CREATED="1508966642904" ID="ID_1885508790" MODIFIED="1509400670898" TEXT="Op&#xe7;&#xf5;es de sa&#xed;da no HttpServletResponse">
@@ -376,7 +376,7 @@
 <node CREATED="1512141924763" ID="ID_324391694" MODIFIED="1512141952798" TEXT="Nas urls n&#xe3;o podem conter espa&#xe7;os, S&#xe3;o substitu&#xed;dos por &quot;+&quot;"/>
 </node>
 <node CREATED="1512400343073" ID="ID_1197640765" MODIFIED="1512400389442" TEXT="Taglib customizadas">
-<node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1512400455454" TEXT="&lt;tag&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;">
+<node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1512558127273" TEXT="&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;">
 <node CREATED="1512400467617" ID="ID_451643882" MODIFIED="1512400482204" TEXT="Se n&#xe3;o informar o rtexprvalue o valor padr&#xe3;o &#xe9; sempre false"/>
 </node>
 <node CREATED="1512400727696" ID="ID_716574812" MODIFIED="1512400855532" TEXT="Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;false&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#xe1; existir a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:attribute name=&quot;user&quot;&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag."/>
@@ -402,7 +402,7 @@
 </node>
 <node CREATED="1512499328346" ID="ID_1621901865" MODIFIED="1512499550046" TEXT="Atributos da tag">
 <node CREATED="1512499346505" ID="ID_110028977" MODIFIED="1512499403706" TEXT="&lt;%@attributte name=&quot;&quot; required=&quot;true&quot; rtexprvalue=&quot;true&quot; %&gt;"/>
-<node CREATED="1512499423204" ID="ID_1002470761" MODIFIED="1512499486405" TEXT="&lt;attribute&gt;&lt;name&gt;&lt;/name&gt;&lt;required&gt;&lt;/required&gt;&lt;rtexprvalue&gt;&lt;rtexprvalue&gt;&lt;/attribute&gt;"/>
+<node CREATED="1512499423204" ID="ID_1002470761" MODIFIED="1512558026446" TEXT="&lt;attribute&gt;&lt;name&gt;&lt;/name&gt;&lt;required&gt;&lt;/required&gt;&lt;rtexprvalue&gt;&lt;rtexprvalue&gt;&lt;type&gt;java.util.List&lt;/type&gt;&lt;/attribute&gt;"/>
 <node CREATED="1512499551252" ID="ID_1449087262" MODIFIED="1512499580423" TEXT="Se n&#xe3;o informar os atributos que est&#xe3;o como required. JasperException"/>
 <node CREATED="1512500368696" ID="ID_1166707947" MODIFIED="1512500401890" TEXT="&lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
 </node>
@@ -413,8 +413,9 @@
 <node CREATED="1512502158325" ID="ID_40020938" MODIFIED="1512505179590" TEXT="getJspBody()">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1512502177299" ID="ID_1779759643" MODIFIED="1512505196055" TEXT="getJspBody(). getJspContext();"/>
-<node CREATED="1512505147385" ID="ID_1828481008" MODIFIED="1512505162918" TEXT="getJspBody().invoke(null);">
-<node CREATED="1512505168209" ID="ID_273963151" MODIFIED="1512505169222" TEXT="Chama o corpo da tag."/>
+<node CREATED="1512505147385" ID="ID_1828481008" MODIFIED="1512554846928" TEXT="getJspBody().invoke(null);">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512505168209" ID="ID_273963151" MODIFIED="1512554842140" TEXT="Avalia o corpo da tag."/>
 </node>
 </node>
 <node CREATED="1512502893509" ID="ID_1474938990" MODIFIED="1512502912657" TEXT="SkipPageException(&quot;&quot;)">
@@ -431,7 +432,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1512504559923" ID="ID_1039321678" MODIFIED="1512504578097" TEXT="Ciclo de vida tag">
+<node CREATED="1512504559923" ID="ID_1039321678" MODIFIED="1512555142665" TEXT="Ciclo de vida tag simples">
 <node CREATED="1512504580221" ID="ID_1851432737" MODIFIED="1512504593082" TEXT="Ordem execu&#xe7;&#xe3;o dos m&#xe9;todos">
 <node CREATED="1512504593541" ID="ID_750318754" MODIFIED="1512504609810" TEXT="setJspContext()"/>
 <node CREATED="1512504610926" ID="ID_1787949632" MODIFIED="1512504619802" TEXT="setParent()">
@@ -445,6 +446,100 @@
 </node>
 <node CREATED="1512504692201" ID="ID_2914772" MODIFIED="1512504697341" TEXT="doTag()"/>
 </node>
+</node>
+<node CREATED="1512554551213" ID="ID_1024187441" MODIFIED="1512555092827" TEXT="Tag Cl&#xe1;ssica">
+<node CREATED="1512554556942" ID="ID_311662940" MODIFIED="1512554568539" TEXT="extends TagSupport"/>
+<node CREATED="1512554571846" ID="ID_715584296" MODIFIED="1512554592907" TEXT="doStartTag() throws JspException">
+<node CREATED="1512554597967" ID="ID_644756719" MODIFIED="1512554631373" TEXT="N&#xe3;o declara um IOException"/>
+<node CREATED="1512554637689" ID="ID_1290149189" MODIFIED="1512555508686" TEXT="return SKIP_BODY;">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512554645665" ID="ID_841109743" MODIFIED="1512554656142" TEXT="Serve para pular o corpo da tag"/>
+</node>
+<node CREATED="1512554913707" ID="ID_1838458590" MODIFIED="1512554947425" TEXT="return EVAL_BODY_INCLUDE;">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512554932954" ID="ID_1012196964" MODIFIED="1512554943805" TEXT="Faz a tag avaliar o corpo."/>
+</node>
+</node>
+<node CREATED="1512555099320" ID="ID_651489457" MODIFIED="1512555108435" TEXT="doAfterBody() throws JspException">
+<node CREATED="1512555523268" ID="ID_232922551" MODIFIED="1512555554602" TEXT="return SKIP_BODY;">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+</node>
+<node CREATED="1512555532515" ID="ID_313883390" MODIFIED="1512555554603" TEXT="return EVAL_BODY_AGAIN;">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512555592271" ID="ID_451171101" MODIFIED="1512555619906" TEXT="&#xda;nica constante de IterationTag o restante s&#xe3;o da Tag"/>
+</node>
+</node>
+<node CREATED="1512554661249" ID="ID_589635390" MODIFIED="1512554677487" TEXT="doEndTag() throws JspException">
+<node CREATED="1512554685242" ID="ID_246068265" MODIFIED="1512555634350" TEXT="return EVAL_PAGE;">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512554698977" ID="ID_353602388" MODIFIED="1512554714220" TEXT="Continue processando o restante da p&#xe1;gina."/>
+</node>
+<node CREATED="1512554690713" ID="ID_1205253736" MODIFIED="1512555634349" TEXT="return SKIP_PAGE;">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512554715968" ID="ID_1681691468" MODIFIED="1512554755946" TEXT="Equivalente ao SkipPageException da SimpleTagSuport"/>
+</node>
+</node>
+<node CREATED="1512555147284" ID="ID_1529257504" MODIFIED="1512555155848" TEXT="Ciclo de vida">
+<node CREATED="1512555161163" ID="ID_184606042" MODIFIED="1512555168519" TEXT="setPageContext(PageContext)"/>
+<node CREATED="1512555177170" ID="ID_466170408" MODIFIED="1512555182486" TEXT="setParent(Tag)">
+<node CREATED="1512555183186" ID="ID_174139028" MODIFIED="1512555189702" TEXT="Se existir tags aninhadas."/>
+</node>
+<node CREATED="1512555198257" ID="ID_1619809992" MODIFIED="1512555214572" TEXT="M&#xe9;todos set java bean"/>
+<node CREATED="1512555221463" ID="ID_1769570927" MODIFIED="1512555226475" TEXT="doStartTag()"/>
+<node CREATED="1512555240382" ID="ID_1664400333" MODIFIED="1512555273544" TEXT="doAfterBody()">
+<node CREATED="1512555274836" ID="ID_299175675" MODIFIED="1512555291159" TEXT="Se o m&#xe9;todo doStartTag() retornar EVAL_BODY_INCLUDE chama o doAfterBody()."/>
+<node CREATED="1512555438289" ID="ID_750629252" MODIFIED="1512555449685" TEXT="return EVAL_BODY_AGAIN;">
+<node CREATED="1512555450456" ID="ID_1526287426" MODIFIED="1512555660896" TEXT="Avalia o body novamente no doAfterBody()."/>
+</node>
+<node CREATED="1512557099615" ID="ID_415832048" MODIFIED="1512557130729" TEXT="Roda depois do corpo ter sido processo"/>
+</node>
+<node CREATED="1512555298074" ID="ID_240690212" MODIFIED="1512555302030" TEXT="doEndTag()"/>
+</node>
+<node CREATED="1512556085960" ID="ID_12921842" MODIFIED="1512556230083" TEXT="Valores padr&#xf5;es dos m&#xe9;todos quando n&#xe3;o faz o override na tag">
+<node CREATED="1512556105038" ID="ID_697277672" MODIFIED="1512556109978" TEXT="doStartTag()">
+<node CREATED="1512556110502" ID="ID_123760632" MODIFIED="1512556115330" TEXT="SKIP_BODY">
+<node CREATED="1512556116358" ID="ID_1376440419" MODIFIED="1512556124562" TEXT="Sempre assume que sua tag n&#xe3;o tem corpo."/>
+</node>
+</node>
+<node CREATED="1512556162091" ID="ID_799825382" MODIFIED="1512556166775" TEXT="doAfterBody()">
+<node CREATED="1512556187185" ID="ID_262275903" MODIFIED="1512556191397" TEXT="SKIP_BODY"/>
+</node>
+<node CREATED="1512556194033" ID="ID_1865872446" MODIFIED="1512556200045" TEXT="doEndTag()">
+<node CREATED="1512556200984" ID="ID_1273873479" MODIFIED="1512556204220" TEXT="EVAL_PAGE"/>
+</node>
+</node>
+<node CREATED="1512557281179" ID="ID_1396641679" MODIFIED="1512557346098" TEXT="Funciona diferenta da tag simples, as vari&#xe1;veis de inst&#xe2;ncia tem que ser reiniciadas na execu&#xe7;&#xe3;o do m&#xe9;todo doStartTag() j&#xe1; na SimpleTagSupport as tags n&#xe3;o s&#xe3;o reutiliz&#xe1;veis."/>
+<node CREATED="1512559494829" ID="ID_589689528" MODIFIED="1512559513480" TEXT="&lt;dynamic-attributes&gt;true&lt;/dynamic-attributes&gt;"/>
+<node CREATED="1512560280642" ID="ID_1317786225" MODIFIED="1512560843618" TEXT="extends BodyTagSupport ou implementar BodyTag">
+<node CREATED="1512560288834" ID="ID_664740806" MODIFIED="1512560299141" TEXT="setBodyContent()">
+<node CREATED="1512560418553" ID="ID_221025055" MODIFIED="1512560541062" TEXT="&#xc9; chamado quando o m&#xe9;todo doStartTag() quando retorna EVAL_BODY_BUFFERED. Novo padr&#xe3;o para o doStartTag()"/>
+</node>
+<node CREATED="1512560300025" ID="ID_217936108" MODIFIED="1512560303701" TEXT="doInitBody()"/>
+</node>
+</node>
+<node CREATED="1512561130376" ID="ID_1728054959" MODIFIED="1512561135581" TEXT="getParent()">
+<node CREATED="1512561136576" ID="ID_1156112720" MODIFIED="1512561231599" TEXT="Tags cl&#xe1;ssicas retornam um objeto de &quot;Tag&quot;"/>
+<node CREATED="1512561189625" ID="ID_160669659" MODIFIED="1512561236208" TEXT="Simple Tags retorna o objeto &quot;JspTag&quot;"/>
+<node CREATED="1512561561479" ID="ID_1929925318" MODIFIED="1512561580620" TEXT="Tags cl&#xe1;ssicas s&#xf3; podem ter parents cl&#xe1;ssico &quot;Tag&quot;"/>
+<node CREATED="1512561581775" ID="ID_877266329" MODIFIED="1512561605012" TEXT="Tags simples podem ter parents cl&#xe1;ssico e simples. &quot;Tag&quot; ou &quot;JspTag&quot;"/>
+</node>
+<node CREATED="1512562340030" ID="ID_1083113017" MODIFIED="1512562413077" TEXT="findAncestorWithClass(tagInicial this, classe da Tag que vc deseja)"/>
+<node CREATED="1512563006323" ID="ID_1371781208" MODIFIED="1512563015623" TEXT="JspContext">
+<node CREATED="1512563019626" ID="ID_864997639" MODIFIED="1512563160246" TEXT="getAttribute(String name) - pageScope"/>
+<node CREATED="1512563034697" ID="ID_1363484598" MODIFIED="1512563054556" TEXT="getAttribute(String name, int scope)"/>
+<node CREATED="1512563055752" ID="ID_119782233" MODIFIED="1512563077491" TEXT="getAttributeNamesInScope(int scope)"/>
+<node CREATED="1512563086526" ID="ID_34642578" MODIFIED="1512563099049" TEXT="findAttribute(String name)"/>
+<node CREATED="1512563104517" ID="ID_1460286641" MODIFIED="1512563120384" TEXT="getOut(): JspWriter"/>
+</node>
+<node CREATED="1512571401374" ID="ID_1793031192" MODIFIED="1512571405458" TEXT="Tag Files">
+<node CREATED="1512571406189" ID="ID_1025580540" MODIFIED="1512571929092" TEXT="S&#xf3; poder&#xe1; existir dentro da pasta /WEB-INF/tags e subdiret&#xf3;rios, tamb&#xe9;m no /META-INF/tags dentro do /WEB-INF/lib e subdiret&#xf3;rios."/>
+<node CREATED="1512571453898" ID="ID_754643775" MODIFIED="1512571464174" TEXT="As extens&#xf5;es .tag ou .tagx"/>
+<node CREATED="1512571465745" ID="ID_1675371109" MODIFIED="1512571623628" TEXT="&lt;%@taglib prefix=&quot;xxx&quot; tagdir=&quot;/WEB-INF/tags&quot; %&gt; - Atributo tagdir na diretiva taglib"/>
+<node CREATED="1512571572235" ID="ID_18299777" MODIFIED="1512571643538" TEXT="&lt;%@attribute name=&quot;xxx&quot; required=&quot;true&quot; rtexprvalue=&quot;true&quot; %&gt; - Atributos para a tag ${xxx}"/>
+<node CREATED="1512571700370" ID="ID_1435885904" MODIFIED="1512571709070" TEXT="&lt;jsp:doBody /&gt;">
+<node CREATED="1512571709682" ID="ID_1344559650" MODIFIED="1512571732986" TEXT="Recupera o corpo da tag"/>
+</node>
+<node CREATED="1512571780275" ID="ID_836589539" MODIFIED="1512571801562" TEXT="&lt;%@tag body-content=&quot;tagdependent&quot; %&gt;"/>
 </node>
 </node>
 </node>
@@ -463,6 +558,26 @@
 <node CREATED="1512398744237" ID="ID_554744295" MODIFIED="1512398772424" TEXT="O atributo myException fica dispon&#xed;vel no escopo de p&#xe1;gina"/>
 </node>
 </node>
+<node CREATED="1512575325700" ID="ID_856617395" MODIFIED="1512575787378" TEXT="Sintaxe documentos JSP">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512575446981" ID="ID_1718330116" MODIFIED="1512575469965" TEXT="Diretivas">
+<node CREATED="1512575341294" ID="ID_1426571554" MODIFIED="1512575554064" TEXT="&lt;%@page import=&quot;java.util.*&quot; %&gt; equivalente a &lt;jsp:directive.page import=&quot;java.util.*&quot; /&gt;">
+<node CREATED="1512575412216" ID="ID_700598360" MODIFIED="1512575423855" TEXT="Exceto diretiva taglib"/>
+</node>
+</node>
+<node CREATED="1512575476249" ID="ID_1387398590" MODIFIED="1512575478438" TEXT="Declara&#xe7;&#xe3;o">
+<node CREATED="1512575486058" ID="ID_1896407925" MODIFIED="1512575535181" TEXT="&lt;%! int y = 3; %&gt; equivalente a  &lt;jsp:declaration&gt;int y = 3;&lt;/jsp:declaration&gt;"/>
+</node>
+<node CREATED="1512575556548" ID="ID_879486574" MODIFIED="1512575565249" TEXT="Scriplet">
+<node CREATED="1512575573439" ID="ID_894900775" MODIFIED="1512575621776" TEXT="&lt;% list.add(&quot;feed&quot;); %&gt; equivalente a &lt;jsp:scriplet&gt;list.add(&quot;feed&quot;);&lt;/jsp:scriplet&gt;"/>
+</node>
+<node CREATED="1512575673533" ID="ID_575905394" MODIFIED="1512575676602" TEXT="Texto">
+<node CREATED="1512575677670" ID="ID_1612543020" MODIFIED="1512575701531" TEXT="Texto equivalente a &lt;jsp:text&gt;Texto&lt;/jsp:text&gt;"/>
+</node>
+<node CREATED="1512575711263" ID="ID_1999492802" MODIFIED="1512575715731" TEXT="Express&#xe3;o de script">
+<node CREATED="1512575716967" ID="ID_390710582" MODIFIED="1512575772629" TEXT="&lt;%= it.next() %&gt; equivalente a &lt;jsp:expression&gt;it.next()&lt;/jsp:expression&gt;"/>
+</node>
+</node>
 </node>
 <node CREATED="1512485955323" ID="ID_102371873" MODIFIED="1512485963679" POSITION="right" TEXT="File upload">
 <node CREATED="1512485964681" ID="ID_1720405984" MODIFIED="1512486087574" TEXT="@MultipartConfig">
@@ -473,6 +588,31 @@
 <node CREATED="1512486006003" ID="ID_831292054" MODIFIED="1512486006471" TEXT="maxRequestSize"/>
 </node>
 </node>
+</node>
+<node CREATED="1512576256654" ID="ID_656178226" MODIFIED="1512576274505" POSITION="left" TEXT="Deployment Descriptor - DD web.xml">
+<node CREATED="1512576275924" ID="ID_1198289159" MODIFIED="1512576283384" TEXT="EJB">
+<node CREATED="1512576360431" ID="ID_824791475" MODIFIED="1512576362523" TEXT="local">
+<node CREATED="1512576284356" ID="ID_1382917373" MODIFIED="1512576648801" TEXT="&lt;ejb-local-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;local-home&gt;&lt;/local-home&gt;&lt;local&gt;&lt;/local&gt;&lt;/ejb-local-ref&gt;"/>
+</node>
+<node CREATED="1512576369182" ID="ID_1558004243" MODIFIED="1512576370531" TEXT="remoto">
+<node CREATED="1512576372310" ID="ID_1197127717" MODIFIED="1512576464940" TEXT="&lt;ejb-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;home&gt;&lt;/home&gt;&lt;remote&gt;&lt;/remote&gt;&lt;/ejb-ref&gt;"/>
+</node>
+</node>
+<node CREATED="1512577879933" ID="ID_1150401971" MODIFIED="1512577892881" TEXT="&lt;env-entry&gt;">
+<node CREATED="1512577893932" ID="ID_909626084" MODIFIED="1512577967820" TEXT="&lt;env-entry&gt;&lt;env-entry-name&gt;&lt;/env-entry-name&gt;&lt;env-entry-type&gt;&lt;/env-entry-type&gt;&lt;env-entry-value&gt;&lt;/env-entry-value&gt;&lt;/env-entry&gt;">
+<node CREATED="1512577976623" ID="ID_37295369" MODIFIED="1512577997186" TEXT="Par&#xe2;metros para os EJB&#xb4;s que ser&#xe3;o recuperados pelo &lt;env-entry-name&gt;"/>
+<node CREATED="1512578053754" ID="ID_1257984209" MODIFIED="1512578066390" TEXT="&lt;env-entry-type&gt; N&#xe3;o pode ser um primitivo."/>
+</node>
+</node>
+<node CREATED="1512578155364" ID="ID_938906536" MODIFIED="1512578162976" TEXT="Servlets Preced&#xea;ncia">
+<node CREATED="1512578163539" ID="ID_1314777091" MODIFIED="1512578283920" TEXT="caminho exato &lt;url-pattern&gt;/Diretorio/TesteServlet&lt;/url-pattern&gt;"/>
+<node CREATED="1512578185626" ID="ID_1164273099" MODIFIED="1512578311622" TEXT="diret&#xf3;rios &lt;url-pattern&gt;/Diretorio/*&lt;/url-pattern&gt;"/>
+<node CREATED="1512578314537" ID="ID_1294586123" MODIFIED="1512578353795" TEXT="extens&#xe3;o &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;"/>
+</node>
+<node CREATED="1512578541163" ID="ID_698955475" MODIFIED="1512578548143" TEXT="&lt;mime-mapping&gt;">
+<node CREATED="1512578548970" ID="ID_534708967" MODIFIED="1512578626394" TEXT="&lt;mime-mapping&gt;&lt;extension&gt;mpg&lt;/extension&gt;&lt;mime-type&gt;video/mpeg&lt;/mime-type&gt;&lt;mime-mapping&gt;"/>
+</node>
+<node CREATED="1512579034444" ID="ID_1961972872" MODIFIED="1512579066212" TEXT="&lt;welcome-file-list&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;/welcome-file-list&gt;"/>
 </node>
 </node>
 </map>
