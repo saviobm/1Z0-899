@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1510153608911" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o">
+<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1512590425713" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
 <node CREATED="1508186603022" ID="ID_490295773" MODIFIED="1509400670885" POSITION="right" STYLE="fork" TEXT="Protocolo HTTP">
 <node CREATED="1508186641763" ID="ID_549836734" MODIFIED="1509400670885" TEXT="GET - Solicita&#xe7;&#xe3;o simples"/>
 <node CREATED="1508186659228" ID="ID_1537363229" MODIFIED="1509400670885" TEXT="POST - Solicita&#xe7;&#xe3;o de um recurso com informa&#xe7;&#xf5;es do usu&#xe1;rio. Ex: Formul&#xe1;rio"/>
@@ -140,7 +140,8 @@
 <node CREATED="1510153716071" ID="ID_601688953" MODIFIED="1510153749865" TEXT="getServletContext().getRequestDispatcher(&quot;/teste.jsp&quot;); - raiz da aplica&#xe7;&#xe3;o"/>
 </node>
 </node>
-<node CREATED="1510241283088" ID="ID_894154611" MODIFIED="1510241595176" POSITION="right" TEXT="Sess&#xf5;es">
+<node CREATED="1510241283088" ID="ID_894154611" MODIFIED="1512590459760" POSITION="right" TEXT="Sess&#xf5;es">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1510241297695" ID="ID_936405436" MODIFIED="1510241332609" TEXT="Existe duas maneiras de objter a sess&#xe3;o.">
 <node CREATED="1510241333724" ID="ID_577421403" MODIFIED="1510241347296" TEXT="request.getSession(); - Requisi&#xe7;&#xe3;o"/>
 <node CREATED="1510241350083" ID="ID_467945123" MODIFIED="1510241461529" TEXT="HttpSessionEvent e sua subClasse HttpSessionBindingEvent - Listeners de sess&#xe3;o.">
@@ -180,7 +181,8 @@
 </node>
 <node CREATED="1510584224198" ID="ID_1214562147" MODIFIED="1510584270623" TEXT="As sess&#xf5;es s&#xe3;o os &#xfa;nicos objetos que n&#xe3;o s&#xe3;o duplicados em JVM&#xb4;s diferentes."/>
 </node>
-<node CREATED="1510843978085" ID="ID_188006675" MODIFIED="1510843981137" POSITION="left" TEXT="JSP">
+<node CREATED="1510843978085" ID="ID_188006675" MODIFIED="1512590449654" POSITION="left" TEXT="JSP">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1510842030047" ID="ID_1246914587" MODIFIED="1510844184112" TEXT="Diretivas JSP: Sempre come&#xe7;am com @, e existem tr&#xea;s diretivas.">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1510842043826" ID="ID_1990682660" MODIFIED="1510842118674" TEXT="&lt;%@ page import=&quot;com.test.*,java.util.*&quot; %&gt;">
@@ -352,7 +354,8 @@
 </node>
 <node CREATED="1511432771660" ID="ID_64334603" MODIFIED="1511432824117" TEXT="O conte&#xfa;do inclu&#xed;do n&#xe3;o pode alterar o c&#xed;digo de status da resposta e nem configurar headers."/>
 </node>
-<node CREATED="1512139269949" ID="ID_1288668131" MODIFIED="1512400341849" TEXT="JSTL">
+<node CREATED="1512139269949" ID="ID_1288668131" MODIFIED="1512590444734" TEXT="JSTL">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1512139275598" ID="ID_559959710" MODIFIED="1512140341547" TEXT="&lt;c:set var=&quot;&quot; value=&quot;&quot; scope=&quot;&quot; /&gt;">
 <node CREATED="1512139566659" ID="ID_714294266" MODIFIED="1512139576807" TEXT="serve para setar vari&#xe1;veis de atributos">
 <node CREATED="1512139708186" ID="ID_1727441429" MODIFIED="1512139724200" TEXT="pode conter corpo, se o corpo for nulo a vari&#xe1;vel &#xe9; removida"/>
@@ -579,7 +582,8 @@
 </node>
 </node>
 </node>
-<node CREATED="1512485955323" ID="ID_102371873" MODIFIED="1512485963679" POSITION="right" TEXT="File upload">
+<node CREATED="1512485955323" ID="ID_102371873" MODIFIED="1512590459759" POSITION="right" TEXT="File upload">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1512485964681" ID="ID_1720405984" MODIFIED="1512486087574" TEXT="@MultipartConfig">
 <node CREATED="1512485970234" ID="ID_1885982071" MODIFIED="1512485986550" TEXT="Atributos v&#xe1;lidos">
 <node CREATED="1512485978865" ID="ID_1084386671" MODIFIED="1512485989658" TEXT="fileSizeThreshold "/>
@@ -598,13 +602,13 @@
 <node CREATED="1512576372310" ID="ID_1197127717" MODIFIED="1512576464940" TEXT="&lt;ejb-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;home&gt;&lt;/home&gt;&lt;remote&gt;&lt;/remote&gt;&lt;/ejb-ref&gt;"/>
 </node>
 </node>
-<node CREATED="1512577879933" ID="ID_1150401971" MODIFIED="1512577892881" TEXT="&lt;env-entry&gt;">
+<node CREATED="1512577879933" ID="ID_1150401971" MODIFIED="1512585324833" TEXT="&lt;env-entry&gt;">
 <node CREATED="1512577893932" ID="ID_909626084" MODIFIED="1512577967820" TEXT="&lt;env-entry&gt;&lt;env-entry-name&gt;&lt;/env-entry-name&gt;&lt;env-entry-type&gt;&lt;/env-entry-type&gt;&lt;env-entry-value&gt;&lt;/env-entry-value&gt;&lt;/env-entry&gt;">
 <node CREATED="1512577976623" ID="ID_37295369" MODIFIED="1512577997186" TEXT="Par&#xe2;metros para os EJB&#xb4;s que ser&#xe3;o recuperados pelo &lt;env-entry-name&gt;"/>
 <node CREATED="1512578053754" ID="ID_1257984209" MODIFIED="1512578066390" TEXT="&lt;env-entry-type&gt; N&#xe3;o pode ser um primitivo."/>
 </node>
 </node>
-<node CREATED="1512578155364" ID="ID_938906536" MODIFIED="1512578162976" TEXT="Servlets Preced&#xea;ncia">
+<node CREATED="1512578155364" ID="ID_938906536" MODIFIED="1512585324833" TEXT="Servlets Preced&#xea;ncia">
 <node CREATED="1512578163539" ID="ID_1314777091" MODIFIED="1512578283920" TEXT="caminho exato &lt;url-pattern&gt;/Diretorio/TesteServlet&lt;/url-pattern&gt;"/>
 <node CREATED="1512578185626" ID="ID_1164273099" MODIFIED="1512578311622" TEXT="diret&#xf3;rios &lt;url-pattern&gt;/Diretorio/*&lt;/url-pattern&gt;"/>
 <node CREATED="1512578314537" ID="ID_1294586123" MODIFIED="1512578353795" TEXT="extens&#xe3;o &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;"/>
@@ -612,7 +616,62 @@
 <node CREATED="1512578541163" ID="ID_698955475" MODIFIED="1512578548143" TEXT="&lt;mime-mapping&gt;">
 <node CREATED="1512578548970" ID="ID_534708967" MODIFIED="1512578626394" TEXT="&lt;mime-mapping&gt;&lt;extension&gt;mpg&lt;/extension&gt;&lt;mime-type&gt;video/mpeg&lt;/mime-type&gt;&lt;mime-mapping&gt;"/>
 </node>
-<node CREATED="1512579034444" ID="ID_1961972872" MODIFIED="1512579066212" TEXT="&lt;welcome-file-list&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;/welcome-file-list&gt;"/>
+<node CREATED="1512579034444" ID="ID_1961972872" MODIFIED="1512585290698" TEXT="&lt;welcome-file-list&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;/welcome-file-list&gt;"/>
+</node>
+<node CREATED="1512585495996" ID="ID_1982038145" MODIFIED="1512590440686" POSITION="right" TEXT="Seguran&#xe7;a">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1512590022486" ID="ID_485977434" MODIFIED="1512590030331" TEXT="web.xml - DD">
+<node CREATED="1512585504435" ID="ID_1026293239" MODIFIED="1512585506488" TEXT="&lt;security-constraint&gt;">
+<node CREATED="1512585531250" ID="ID_1705325244" MODIFIED="1512586060396" TEXT="&lt;web-resource-collection&gt; obrigat&#xf3;rio e pode ter mais de um.">
+<node CREATED="1512585555768" ID="ID_1992020898" MODIFIED="1512585609001" TEXT="&lt;web-resource-name&gt;UpdateRecipes&lt;/web-resource-name&gt;"/>
+<node CREATED="1512585640859" ID="ID_930584694" MODIFIED="1512585846610" TEXT="&lt;url-pattern&gt;/TesteServlet3&lt;/url-pattern&gt; Um  ou mais. Obrigat&#xf3;rio"/>
+<node CREATED="1512585662457" ID="ID_1339665863" MODIFIED="1512585984969" TEXT="&lt;http-method&gt;&lt;/http-method&gt; Opcional, zero ou mais. Se n&#xe3;o for informado o container assume todos os m&#xe9;todos HTTP.">
+<node CREATED="1512585874028" ID="ID_675618939" MODIFIED="1512585875728" TEXT="GET"/>
+<node CREATED="1512585876579" ID="ID_1835562299" MODIFIED="1512585878032" TEXT="POST"/>
+<node CREATED="1512585879875" ID="ID_1991173869" MODIFIED="1512585881352" TEXT="PUT"/>
+<node CREATED="1512585882547" ID="ID_545798145" MODIFIED="1512585884063" TEXT="TRACE"/>
+<node CREATED="1512585924201" ID="ID_535412145" MODIFIED="1512585927484" TEXT="DELETE"/>
+<node CREATED="1512585885139" ID="ID_568474084" MODIFIED="1512585886623" TEXT="HEAD"/>
+<node CREATED="1512585887859" ID="ID_383315854" MODIFIED="1512585893167" TEXT="OPTIONS"/>
+</node>
+<node CREATED="1512585780570" ID="ID_1157597312" MODIFIED="1512585797149" TEXT="&lt;description&gt;&lt;/description&gt; Opcional."/>
+</node>
+<node CREATED="1512586180830" ID="ID_1803448057" MODIFIED="1512587777294" TEXT="&lt;auth-constraint&gt;&lt;/auth-constraint&gt;">
+<node CREATED="1512588057872" ID="ID_142873537" MODIFIED="1512588071211" TEXT="&lt;description&gt;&lt;/description&gt;">
+<node CREATED="1512588071774" ID="ID_1999204895" MODIFIED="1512588074619" TEXT="Opcional"/>
+</node>
+<node CREATED="1512587592781" ID="ID_1980333028" MODIFIED="1512587624087" TEXT="&lt;role-name&gt;&lt;/role-name&gt;">
+<node CREATED="1512587561159" ID="ID_136906821" MODIFIED="1512587573603" TEXT="S&#xe3;o case sensitive"/>
+<node CREATED="1512586213531" ID="ID_589591608" MODIFIED="1512587620760" TEXT="Opcional - se n&#xe3;o existir nenhum usu&#xe1;rio tem acesso ao recurso"/>
+<node CREATED="1512587497755" ID="ID_1471424439" MODIFIED="1512587506879" TEXT="&lt;role-name&gt;*&lt;/role-name&gt;">
+<node CREATED="1512587507851" ID="ID_1502076908" MODIFIED="1512587524294" TEXT="Todos os usu&#xe1;rios s&#xe3;o permitidos."/>
+</node>
+<node CREATED="1512587678672" ID="ID_1802858328" MODIFIED="1512587706874" TEXT="Pode existir mais de um no &lt;auth-constraint&gt;"/>
+</node>
+<node CREATED="1512587769658" ID="ID_501866147" MODIFIED="1512587807260" TEXT="Aplica a todos os elementos &lt;web-resource-collection&gt;"/>
+<node CREATED="1512587796600" ID="ID_1226878364" MODIFIED="1512587800004" TEXT="Opcional."/>
+<node CREATED="1512587859236" ID="ID_94938585" MODIFIED="1512588005031" TEXT="Se existir o elemento &lt;auth-constraint&gt; o container deve realizar a autentica&#xe7;&#xe3;o nas urls associadas."/>
+<node CREATED="1512587925584" ID="ID_1985164422" MODIFIED="1512587970473" TEXT="Se n&#xe3;o existir o elemento &lt;auth-constraint&gt; o container deve permitir acesso n&#xe3;o autenticado nas urls mencionadas."/>
+<node CREATED="1512589376931" ID="ID_1553727479" MODIFIED="1512589403629" TEXT="&lt;role-name&gt;Admin&lt;/role-name&gt; + &lt;role-name&gt;Guest&lt;/role-name&gt;">
+<node CREATED="1512589404553" ID="ID_371764062" MODIFIED="1512589408869" TEXT="Admin e Guest"/>
+</node>
+<node CREATED="1512589420888" ID="ID_230918527" MODIFIED="1512589449194" TEXT="&lt;role-name&gt;*&lt;/role-name&gt; + &lt;role-name&gt;Admin&lt;/role-name&gt;">
+<node CREATED="1512589450046" ID="ID_12543367" MODIFIED="1512589451994" TEXT="Todos"/>
+</node>
+<node CREATED="1512589458005" ID="ID_791600727" MODIFIED="1512589591313" TEXT="&lt;auth-constraint /&gt; tag vazia + &lt;auth-constraint&gt;&lt;role-name&gt;Admin&lt;/role-name&gt;&lt;/auth-constraint&gt;">
+<node CREATED="1512589508346" ID="ID_276607852" MODIFIED="1512589520070" TEXT="Nenhum a tag vazia tem preced&#xea;ncia"/>
+</node>
+<node CREATED="1512589542152" ID="ID_811150577" MODIFIED="1512589582138" STYLE="fork" TEXT="&lt;auth-constraint /&gt; tag vazia + &lt;auth-constraint&gt;&lt;role-name&gt;*&lt;/role-name&gt;&lt;/auth-constraint&gt;">
+<node CREATED="1512589557231" ID="ID_1933731198" MODIFIED="1512589558451" TEXT="?"/>
+</node>
+<node CREATED="1512589632082" ID="ID_1498413173" MODIFIED="1512589658349" TEXT="Nenhum elemento &lt;auth-constraint /&gt; + &lt;auth-constraint&gt;&lt;role-name&gt;Admin&lt;/role-name&gt;&lt;/auth-constraint&gt;">
+<node CREATED="1512589659176" ID="ID_569992856" MODIFIED="1512589660813" TEXT="Todos"/>
+</node>
+</node>
+</node>
+<node CREATED="1512589941068" ID="ID_1216458225" MODIFIED="1512589961339" TEXT="&lt;login-config&gt;&lt;auth-method&gt;BASIC&lt;/auth-method&gt;&lt;/login-config&gt;"/>
+<node CREATED="1512589992107" ID="ID_1601620124" MODIFIED="1512590007321" TEXT="&lt;security-role&gt;&lt;role-name&gt;Admin&lt;/role-name&gt;&#x9;&lt;/security-role&gt;&lt;security-role&gt;"/>
+</node>
 </node>
 </node>
 </map>

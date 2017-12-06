@@ -4,7 +4,7 @@
 <head></head>
 <body>
 
-	<form action="SessaoProduto" method="get">
+	<form action="TesteServlet3" method="get">
 		
 		Carros: 
 		<select name="carro">
