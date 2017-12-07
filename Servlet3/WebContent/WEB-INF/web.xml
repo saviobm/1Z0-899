@@ -7,7 +7,11 @@
 	
 	<servlet>
 		<servlet-name>Servlet3</servlet-name>
-		<servlet-class>Servlet3</servlet-class>	
+		<servlet-class>Servlet3</servlet-class>
+		<security-role-ref>
+			<role-name>Manager</role-name>
+			<role-link>Admin</role-link>
+		</security-role-ref>	
 	</servlet>
 	
 	<servlet-mapping>
@@ -21,7 +25,11 @@
 	</servlet-mapping>
 	
 	<login-config>
-		<auth-method>BASIC</auth-method>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/pages/login.jsp</form-login-page>
+			<form-error-page>/pages/login-error.jsp</form-error-page>		
+		</form-login-config>
 	</login-config>
 	
 	<security-role>
@@ -46,6 +54,9 @@
 			<role-name>Member</role-name>
 			<role-name>Guest</role-name>
 		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
 	</security-constraint>
 	
 	<welcome-file-list>

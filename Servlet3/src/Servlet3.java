@@ -29,6 +29,10 @@ public class Servlet3 extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
+		if (request.isUserInRole("Manager")) {
+			throw new ServletException("DEU CERTO VÉI........");
+		}
+		
 		HttpSession session = request.getSession();
 		
 		List<String> listaCarros = (List<String>)session.getAttribute("listaCarros");

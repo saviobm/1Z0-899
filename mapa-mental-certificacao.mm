@@ -668,9 +668,32 @@
 <node CREATED="1512589659176" ID="ID_569992856" MODIFIED="1512589660813" TEXT="Todos"/>
 </node>
 </node>
+<node CREATED="1512669786136" ID="ID_1678275159" MODIFIED="1512670055866" TEXT="&lt;user-data-constraint&gt;&lt;transport-guarantee&gt;CONFIDENTIAL&lt;/transport-guarantee&gt;&lt;/user-data-constraint&gt; - S&#xf3; pode haver um para cada &lt;security-constraint&gt;">
+<node CREATED="1512669885948" ID="ID_191718188" MODIFIED="1512669897306" TEXT="NONE"/>
+<node CREATED="1512669891699" ID="ID_1172595502" MODIFIED="1512669894591" TEXT="INTEGRAL"/>
+<node CREATED="1512669899603" ID="ID_651471300" MODIFIED="1512669903063" TEXT="CONFIDENTIAL"/>
+</node>
 </node>
 <node CREATED="1512589941068" ID="ID_1216458225" MODIFIED="1512589961339" TEXT="&lt;login-config&gt;&lt;auth-method&gt;BASIC&lt;/auth-method&gt;&lt;/login-config&gt;"/>
 <node CREATED="1512589992107" ID="ID_1601620124" MODIFIED="1512590007321" TEXT="&lt;security-role&gt;&lt;role-name&gt;Admin&lt;/role-name&gt;&#x9;&lt;/security-role&gt;&lt;security-role&gt;"/>
+</node>
+<node CREATED="1512662311918" ID="ID_771866760" MODIFIED="1512662328755" TEXT="Seguran&#xe7;a program&#xe1;tica">
+<node CREATED="1512662329806" ID="ID_849177803" MODIFIED="1512663419336" TEXT="request.isUserInRole(&quot;Manager&quot;);"/>
+<node CREATED="1512663408940" ID="ID_1308040129" MODIFIED="1512663498650" TEXT="&lt;servlet&gt;&lt;security-role-ref&gt;&lt;role-name&gt;Manager&lt;/role-name&gt;&lt;role-link&gt;Admin&lt;/role-link&gt;&lt;/security-role-ref&gt;&lt;/servlet&gt;">
+<node CREATED="1512663420411" ID="ID_1863052904" MODIFIED="1512663452005" TEXT="Vincula a role-name program&#xe1;tica com a role-name declarativa do web.xml"/>
+<node CREATED="1512663508901" ID="ID_229332984" MODIFIED="1512663553263" TEXT="Tem preced&#xea;ncia sobre outras role-name declaradas no web.xml"/>
+</node>
+</node>
+<node CREATED="1512664133989" ID="ID_1046505646" MODIFIED="1512664138593" TEXT="Tipos de autentica&#xe7;&#xe3;o">
+<node CREATED="1512664277308" ID="ID_900024448" MODIFIED="1512664279264" TEXT="BASIC"/>
+<node CREATED="1512664280276" ID="ID_1951954101" MODIFIED="1512664282384" TEXT="DIGEST"/>
+<node CREATED="1512664287883" ID="ID_1220226936" MODIFIED="1512664290887" TEXT="CLIENT-CERT">
+<node CREATED="1512664468392" ID="ID_695868499" MODIFIED="1512664475644" TEXT="O client precisa de certificado."/>
+</node>
+<node CREATED="1512664293987" ID="ID_1532586137" MODIFIED="1512664294991" TEXT="FORM">
+<node CREATED="1512664476719" ID="ID_1279945060" MODIFIED="1512664506962" TEXT="Pode utilizar um formul&#xe1;rio pr&#xf3;prio para autentica&#xe7;&#xe3;o."/>
+<node CREATED="1512664567241" ID="ID_519785578" MODIFIED="1512664660432" TEXT="&lt;login-config&gt;auth-method&gt;FORM&lt;/auth-method&gt;&lt;form-login-config&gt;&lt;form-login-page&gt;&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;&lt;/login-config&gt;"/>
+</node>
 </node>
 </node>
 </node>
