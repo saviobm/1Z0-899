@@ -696,5 +696,36 @@
 </node>
 </node>
 </node>
+<node CREATED="1512725787019" ID="ID_1337150465" MODIFIED="1512725790247" POSITION="left" TEXT="Filtros">
+<node CREATED="1512726051578" ID="ID_1930909883" MODIFIED="1512726569569" TEXT="&#xc9; toda classe que implementa a interface &lt;&lt;javax.servlet.Filter&gt;&gt;"/>
+<node CREATED="1512726208360" ID="ID_1626500768" MODIFIED="1512726230755" TEXT="Deve implementar os tr&#xea;s m&#xe9;todos">
+<node CREATED="1512726232526" ID="ID_1317955832" MODIFIED="1512726247506" TEXT="void doInit(Filterconfig) throws ServletException"/>
+<node CREATED="1512726250813" ID="ID_21455708" MODIFIED="1512726280624" TEXT="void doFilter(ServletRequest, ServletResponse, FilterChain) throws ServletException, IOException"/>
+<node CREATED="1512726289875" ID="ID_665515233" MODIFIED="1512726294447" TEXT="void destroy()"/>
+</node>
+<node CREATED="1512727431745" ID="ID_1339884111" MODIFIED="1512727546430" TEXT="&lt;filter&gt;filter-name&gt;&lt;/filter-name&gt;&lt;filter-class&gt;&lt;/filter-class&gt;&lt;init-param&gt;&lt;/init-param&gt;&lt;/filter&gt;"/>
+<node CREATED="1512727461671" ID="ID_614250306" MODIFIED="1512728072140" TEXT="&lt;filter-mapping&gt;&lt;filter-name&gt;&lt;/filter-name&lt;url-pattern&gt;&lt;/url-pattern&gt;&lt;/filter-mapping&gt; ou &lt;servlet-name&gt; lugar do url-pattern"/>
+<node CREATED="1512727700816" ID="ID_1627839238" MODIFIED="1512727707212" TEXT="preced&#xea;ncia">
+<node CREATED="1512727708399" ID="ID_367117353" MODIFIED="1512727708399" TEXT="">
+<node CREATED="1512727729374" ID="ID_984382865" MODIFIED="1512727784903" TEXT="1&#xaa; - Os que estiverem com as URL&#xb4;s correspondentes levando em considera&#xe7;&#xe3;o a ordem em que foram definidos no DD web.xml"/>
+</node>
+<node CREATED="1512727846919" ID="ID_922089913" MODIFIED="1512727871689" TEXT="2&#xaa; - Depois &#xe9; feita a mesma coisa com os filtros com servlet-name correspondentes"/>
+</node>
+<node CREATED="1512728021611" ID="ID_1545577753" MODIFIED="1512728023320" TEXT="&lt;dispatcher&gt;">
+<node CREATED="1512728024235" ID="ID_573182439" MODIFIED="1512728035335" TEXT="REQUEST">
+<node CREATED="1512728158939" ID="ID_1687575119" MODIFIED="1512728169198" TEXT="dispatcher padr&#xe3;o quando n&#xe3;o informado"/>
+</node>
+<node CREATED="1512728035954" ID="ID_300541199" MODIFIED="1512728037999" TEXT="INCLUDE"/>
+<node CREATED="1512728038938" ID="ID_1305410506" MODIFIED="1512728040726" TEXT="FORWARD"/>
+<node CREATED="1512728041674" ID="ID_1088005157" MODIFIED="1512728042942" TEXT="ERROR"/>
+<node CREATED="1512728108806" ID="ID_1787059871" MODIFIED="1512728130625" TEXT="Pode haver nenhum ou at&#xe9; quatro dispatcher&#xb4;s dentro do filter-mapping"/>
+</node>
+<node CREATED="1512730664239" ID="ID_315605324" MODIFIED="1512730673243" TEXT="Classes wrapper">
+<node CREATED="1512730674111" ID="ID_1685049485" MODIFIED="1512730680508" TEXT="ServletRequestWrapper"/>
+<node CREATED="1512730681543" ID="ID_1854183286" MODIFIED="1512730687332" TEXT="ServletResponseWrapper"/>
+<node CREATED="1512730688128" ID="ID_1164138770" MODIFIED="1512730695300" TEXT="HttpServletRequestWrapper"/>
+<node CREATED="1512730696223" ID="ID_1979892343" MODIFIED="1512730705388" TEXT="HttpServletResponseWrapper"/>
+</node>
+</node>
 </node>
 </map>
