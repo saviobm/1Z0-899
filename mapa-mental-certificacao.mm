@@ -196,18 +196,20 @@
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1510842030047" ID="ID_1246914587" MODIFIED="1510844184112" TEXT="Diretivas JSP: Sempre come&#xe7;am com @, e existem tr&#xea;s diretivas.">
 <font NAME="SansSerif" SIZE="12"/>
-<node CREATED="1510842043826" ID="ID_1990682660" MODIFIED="1510842118674" TEXT="&lt;%@ page import=&quot;com.test.*,java.util.*&quot; %&gt;">
+<node CREATED="1510842043826" ID="ID_1990682660" MODIFIED="1513180515299" TEXT="&lt;%@page">
 <node CREATED="1510931059595" ID="ID_140014766" MODIFIED="1510931099037" TEXT="atributos mais usados na diretira page">
 <node CREATED="1510931102729" ID="ID_1289087689" MODIFIED="1510931104709" TEXT="import"/>
 <node CREATED="1510931106384" ID="ID_1340023218" MODIFIED="1510931113524" TEXT="isThreadSafe"/>
 <node CREATED="1510931114904" ID="ID_574415255" MODIFIED="1510931120252" TEXT="contentType"/>
-<node CREATED="1510931121783" ID="ID_1531056486" MODIFIED="1510933422992" TEXT="isLEIgnored - S&#xf3; funciona se no DD estiver configurado um padr&#xe3;o de Url que atenda a p&#xe1;gina informada."/>
+<node CREATED="1510931121783" ID="ID_1531056486" MODIFIED="1513180576133" TEXT="isELIgnored - S&#xf3; funciona se no DD estiver configurado um padr&#xe3;o de Url que atenda a p&#xe1;gina informada."/>
 <node CREATED="1510931135742" ID="ID_645438871" MODIFIED="1510931138771" TEXT="isErrorPage"/>
 <node CREATED="1510931139830" ID="ID_694947990" MODIFIED="1510931145810" TEXT="errorPage"/>
 </node>
+<node CREATED="1513180463437" ID="ID_1772248570" MODIFIED="1513180485882" TEXT="&lt;%@page import=&quot;x.*&quot; import=&quot;y.*&quot; %&gt;"/>
+<node CREATED="1513180517710" ID="ID_310684779" MODIFIED="1513180660800" TEXT="&lt;%@page import=&quot;com.test.*,java.util.*&quot; %&gt;"/>
 </node>
-<node CREATED="1510842367813" ID="ID_1932018203" MODIFIED="1510842699772" TEXT="&lt;%@ taglib %&gt;"/>
-<node CREATED="1510842701960" ID="ID_1682860638" MODIFIED="1510842720379" TEXT="&lt;%@ include %&gt;"/>
+<node CREATED="1510842367813" ID="ID_1932018203" MODIFIED="1513180671056" TEXT="&lt;%@taglib %&gt;"/>
+<node CREATED="1510842701960" ID="ID_1682860638" MODIFIED="1513180674393" TEXT="&lt;%@include %&gt;"/>
 </node>
 <node CREATED="1510842321080" ID="ID_1505208230" MODIFIED="1510842356666" TEXT="Express&#xe3;o: &lt;%= Counter.getCounter() %&gt;">
 <node CREATED="1510842494277" ID="ID_1685340257" MODIFIED="1510842527775" TEXT="Equivalente a: out.print(&quot;&quot;) - Por isso depois da express&#xe3;o n&#xe3;o &#xe9; colocado um &quot;;&quot;"/>
