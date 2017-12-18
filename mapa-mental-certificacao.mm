@@ -17,10 +17,10 @@
 <node CREATED="1508797595765" ID="ID_1799908126" MODIFIED="1509400670888" POSITION="left" TEXT="Ciclo de vida Servlet">
 <node CREATED="1508797615662" ID="ID_194615133" MODIFIED="1509400670888" TEXT="O Container Web chama o m&#xe9;todo init() depois de instanciado, possibilita que inicialize o Servlet antes de tratar a solicita&#xe7;&#xe3;o do cliente. Roda apenas uma vez no ciclo de vida do servlet."/>
 <node CREATED="1508797789691" ID="ID_971615184" MODIFIED="1513177261670" TEXT="Quando chega a primeira solicita&#xe7;&#xe3;o do cliente o container Web o container cria ou aloca uma nova thread do pool de threads fazendo com que o m&#xe9;todo service do servlet seja ativado, analisa a solicita&#xe7;&#xe3;o e verifica qual m&#xe9;todo ser&#xe1; chamado doGet e/ou doPost. O m&#xe9;todo service nunca pode ser sobrescrito."/>
-<node CREATED="1508798011667" ID="ID_615238334" MODIFIED="1509400670893" TEXT="Agora &#xe9; o clico dos m&#xe9;todos doGet e/ou doPost onde tudo come&#xe7;a. Respons&#xe1;vel por tudo que esperamos da aplica&#xe7;&#xe3;o."/>
+<node CREATED="1508798011667" ID="ID_615238334" MODIFIED="1513593483027" TEXT="Agora &#xe9; o ciclo dos m&#xe9;todos doGet e/ou doPost onde tudo come&#xe7;a. Respons&#xe1;vel por tudo que esperamos da aplica&#xe7;&#xe3;o."/>
 </node>
 <node CREATED="1508962211455" ID="ID_1807574844" MODIFIED="1513177296470" POSITION="left" TEXT="M&#xe9;todos HTTP">
-<node CREATED="1508962226279" ID="ID_979220854" MODIFIED="1509400670895" TEXT="GET (Indempotente -&gt; Capaz de rodar v&#xe1;rias vezes sem afetar os dados.), POST (N&#xe3;o idempotente - Tem que garantir os dados ao receber v&#xe1;rias solicita&#xe7;&#xf5;es do mesmo cliente.), HEAD, TRACE, OPTIONS, OUT, DELETE e CONNECT.">
+<node CREATED="1508962226279" ID="ID_979220854" MODIFIED="1513593564670" TEXT="GET (Indempotente -&gt; Capaz de rodar v&#xe1;rias vezes sem afetar os dados.), POST (N&#xe3;o idempotente - Tem que garantir os dados ao receber v&#xe1;rias solicita&#xe7;&#xf5;es do mesmo cliente.), HEAD, TRACE, OPTIONS, PUT, DELETE e CONNECT.">
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
@@ -53,7 +53,7 @@
 <node CREATED="1509051440923" ID="ID_726788840" MODIFIED="1509400670905" TEXT="getContextPath(), getCookies(), getHeader(String), getIntHeader(String), getMethod(), getQueryString(), getSession()"/>
 </node>
 <node CREATED="1509054191224" ID="ID_1856006342" MODIFIED="1509400670907" POSITION="right" TEXT="Classe abstrata GenericServlet">
-<node CREATED="1509054210865" ID="ID_377899945" MODIFIED="1509400670907" TEXT="service(ServletRequest, ServletResponse), init(ServletConfig), init(), destroy(), getServletConfig(), getServletInfo(), getInitParameter(String), getInitParameternames(), getServletContext(), log(String), log(String, Throwable)"/>
+<node CREATED="1509054210865" ID="ID_377899945" MODIFIED="1513592356779" TEXT="service(ServletRequest, ServletResponse), init(ServletConfig), init(), destroy(), getServletConfig(), getServletInfo(), getInitParameter(String), getInitParameterNames(), getServletContext(), log(String), log(String, Throwable)"/>
 </node>
 <node CREATED="1509054333224" HGAP="-111" ID="ID_708576079" MODIFIED="1510232414801" POSITION="left" TEXT="Interface - ServletConfig" VSHIFT="42">
 <node CREATED="1509054357489" ID="ID_866106118" MODIFIED="1509400670910" TEXT="getInitParameter(String), Enumeration - getInitParameterNames(), getServletContext(), getServletNames()"/>
@@ -66,7 +66,7 @@
 <node CREATED="1510001683507" ID="ID_1511530302" MODIFIED="1510002763333" TEXT="Cen&#xe1;rios">
 <node CREATED="1510001689611" ID="ID_1620391137" MODIFIED="1510001871838" TEXT="Voc&#xea; quer saber se um atributo em um contexto da aplica&#xe7;&#xe3;o foi adicionado, removido ou substitu&#xed;do.">
 <node CREATED="1510001742633" ID="ID_294724851" MODIFIED="1510001832115" TEXT="&lt;&lt;interface&gt;&gt; javax.servlet.ServletContextAttributeListener">
-<node CREATED="1510001806002" ID="ID_697360504" MODIFIED="1510001827802" TEXT="ServletContextAttributoEvent"/>
+<node CREATED="1510001806002" ID="ID_697360504" MODIFIED="1513592704053" TEXT="ServletContextAttributeEvent"/>
 <node CREATED="1510001835343" ID="ID_1787053413" MODIFIED="1510001844513" TEXT="attributeAdded"/>
 <node CREATED="1510001847629" ID="ID_1142634085" MODIFIED="1510001855905" TEXT="attributeRemoved"/>
 <node CREATED="1510001858709" ID="ID_793088861" MODIFIED="1510001866880" TEXT="attributeReplaced"/>
@@ -290,8 +290,8 @@
 <node CREATED="1511276901769" ID="ID_738314146" MODIFIED="1511276930526" TEXT="property=&quot;*&quot; coincide todas as propriedades do formul&#xe1;rio com o bean."/>
 </node>
 </node>
-<node CREATED="1511275864169" ID="ID_179633022" MODIFIED="1511275865678" TEXT="&lt;jsp:include /&gt;"/>
-<node CREATED="1511431311659" ID="ID_1530270957" MODIFIED="1511432627794" TEXT="&lt;jsp:forward page=&quot;&quot;&gt;&lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;&lt;/jsp:foward&gt;"/>
+<node CREATED="1511275864169" ID="ID_179633022" MODIFIED="1513191243426" TEXT="&lt;jsp:include page=&quot;&quot; /&gt;"/>
+<node CREATED="1511431311659" ID="ID_1530270957" MODIFIED="1513191270418" TEXT="&lt;jsp:forward page=&quot;&quot;&gt;&lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;&lt;/jsp:forward&gt;"/>
 </node>
 <node CREATED="1510931317795" ID="ID_548191267" MODIFIED="1510931352237" TEXT="A&#xe7;&#xf5;es customizadas &lt;c:set /&gt;"/>
 </node>
@@ -365,7 +365,7 @@
 <node CREATED="1511351644174" ID="ID_1937867639" MODIFIED="1511351839025" TEXT="Insere a resposta da p&#xe1;gina mencionada em page=&quot;&quot; no momento da tradu&#xe7;&#xe3;o. Runtime"/>
 <node CREATED="1511431011070" ID="ID_1677827138" MODIFIED="1511431067517" TEXT="&lt;jsp:include&gt;&lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;&lt;/jsp:include&gt; - Pode ser passado par&#xe2;metros para a p&#xe1;gina a ser inclu&#xed;da."/>
 </node>
-<node CREATED="1511432771660" ID="ID_64334603" MODIFIED="1511432824117" TEXT="O conte&#xfa;do inclu&#xed;do n&#xe3;o pode alterar o c&#xed;digo de status da resposta e nem configurar headers."/>
+<node CREATED="1511432771660" ID="ID_64334603" MODIFIED="1513246762769" TEXT="O conte&#xfa;do inclu&#xed;do n&#xe3;o pode alterar o c&#xf3;digo de status da resposta e nem configurar headers."/>
 </node>
 <node CREATED="1512139269949" ID="ID_1288668131" MODIFIED="1512590444734" TEXT="JSTL">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
@@ -375,7 +375,7 @@
 </node>
 </node>
 <node CREATED="1512139514862" ID="ID_484304580" MODIFIED="1512139859835" TEXT="&lt;c:set target=&quot;&quot; property=&quot;&quot;  value=&quot;&quot; scope=&quot;&quot; /&gt;">
-<node CREATED="1512139528206" ID="ID_253106945" MODIFIED="1512139547121" TEXT="target serve para setar propriedades dos beans">
+<node CREATED="1512139528206" ID="ID_253106945" MODIFIED="1513599202219" TEXT="target serve para setar propriedades dos beans">
 <node CREATED="1512139728909" ID="ID_1246614807" MODIFIED="1512139730257" TEXT="pode conter corpo, se o corpo for nulo a vari&#xe1;vel &#xe9; removida"/>
 </node>
 </node>
@@ -386,33 +386,33 @@
 <node CREATED="1512140129615" ID="ID_1772244413" MODIFIED="1512140155037" TEXT="se a express&#xe3;o target n&#xe3;o for um map nem um bean o container gera uma exce&#xe7;&#xe3;o"/>
 <node CREATED="1512140267836" ID="ID_1981259759" MODIFIED="1512140293106" TEXT="se o property=&quot;&quot; n&#xe3;o coincidir com uma propriedade do bean o container gera uma exce&#xe7;&#xe3;o"/>
 </node>
-<node CREATED="1512140960009" ID="ID_108281701" MODIFIED="1512141458006" TEXT="&lt;c:import  url=&quot;&quot; /&gt; direfente da diretiva &quot;@page include&quot; e tamb&#xe9;m da a&#xe7;&#xe3;o padr&#xe3;o &quot;jsp:include&quot; o conte&#xfa;do pode estar fora do container web. Pode ser combinada com a &lt;c:param name=&quot;&quot; value=&quot;&quot; /&gt; que &#xe9; equivalente a &lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;"/>
-<node CREATED="1512141771245" ID="ID_1758161248" MODIFIED="1512141819423" TEXT="&lt;c:url value=&quot;/teste.jsp?first${first}&quot; var=&quot;inputUrl&quot; /&gt;">
+<node CREATED="1512140960009" ID="ID_108281701" MODIFIED="1513250522671" TEXT="&lt;c:import  url=&quot;&quot; /&gt; direfente da diretiva &quot;@include&quot; e tamb&#xe9;m da a&#xe7;&#xe3;o padr&#xe3;o &quot;jsp:include&quot; o conte&#xfa;do pode estar fora do container web. Pode ser combinada com a &lt;c:param name=&quot;&quot; value=&quot;&quot; /&gt; que &#xe9; equivalente a &lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;"/>
+<node CREATED="1512141771245" ID="ID_1758161248" MODIFIED="1513250772631" TEXT="&lt;c:url value=&quot;/teste.jsp?first=${first}&quot; var=&quot;inputUrl&quot; /&gt;">
 <node CREATED="1512141870487" ID="ID_165043603" MODIFIED="1512141890770" TEXT="pode conter corpo com o &lt;c:param name=&quot;&quot; value=&quot;&quot; /&gt;"/>
 <node CREATED="1512141924763" ID="ID_324391694" MODIFIED="1512141952798" TEXT="Nas urls n&#xe3;o podem conter espa&#xe7;os, S&#xe3;o substitu&#xed;dos por &quot;+&quot;"/>
 </node>
-<node CREATED="1512400343073" ID="ID_1197640765" MODIFIED="1512400389442" TEXT="Taglib customizadas">
+<node CREATED="1512400343073" ID="ID_1197640765" MODIFIED="1513255009909" TEXT="Taglib customizadas">
 <node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1512558127273" TEXT="&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;">
 <node CREATED="1512400467617" ID="ID_451643882" MODIFIED="1512400482204" TEXT="Se n&#xe3;o informar o rtexprvalue o valor padr&#xe3;o &#xe9; sempre false"/>
 </node>
-<node CREATED="1512400727696" ID="ID_716574812" MODIFIED="1512400855532" TEXT="Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;false&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#xe1; existir a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:attribute name=&quot;user&quot;&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag."/>
-<node CREATED="1512495930947" ID="ID_60125619" MODIFIED="1512495943759" TEXT="Corpo da tag">
-<node CREATED="1512495944306" ID="ID_841294401" MODIFIED="1512495956778" TEXT="&lt;body-content&gt;">
+<node CREATED="1512400727696" ID="ID_716574812" MODIFIED="1513600001655" TEXT="Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;empty&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#xe1; existir a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:attribute name=&quot;user&quot;&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag."/>
+<node CREATED="1512495930947" ID="ID_60125619" MODIFIED="1513600057467" TEXT="Corpo da tag">
+<node CREATED="1512495944306" ID="ID_841294401" MODIFIED="1513251242466" TEXT="&lt;body-content&gt;">
 <node CREATED="1512495957817" ID="ID_810221802" MODIFIED="1512495962293" TEXT="empty">
 <node CREATED="1512495967432" ID="ID_545112592" MODIFIED="1512495971629" TEXT="n&#xe3;o pode ter corpo"/>
 <node CREATED="1512496259906" ID="ID_102678688" MODIFIED="1512496338784" TEXT="A &#xfa;nica coisa que pode ser inserida com o body-content empty &#xe9; &lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
 </node>
 <node CREATED="1512495973048" ID="ID_1543863339" MODIFIED="1512495980076" TEXT="scriptless">
-<node CREATED="1512495987367" ID="ID_84211830" MODIFIED="1512496069638" TEXT="A tag n&#xe3;o pode ter elementos de scripts (scripts, experess&#xf5;es de scripts ou declara&#xe7;&#xf5;es), mas pode ter texto e templates EL, a&#xe7;&#xf5;es padro&#xf5;es e customizadas."/>
+<node CREATED="1512495987367" ID="ID_84211830" MODIFIED="1513600134646" TEXT="A tag n&#xe3;o pode ter elementos de scripts (scripts, experess&#xf5;es de scripts ou declara&#xe7;&#xf5;es), mas pode ter texto e templates EL, a&#xe7;&#xf5;es padr&#xe3;o e customizadas."/>
 <node CREATED="1512499933580" ID="ID_241219753" MODIFIED="1512499962859" TEXT="&#xc9; o body-content padr&#xe3;o para todas as tags">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
 <node CREATED="1512496074034" ID="ID_222904138" MODIFIED="1512496081238" TEXT="tagdependent">
-<node CREATED="1512496087577" ID="ID_493236099" MODIFIED="1512496138985" TEXT="O corpo da tag &#xe9; tratado como texto puro. Ignore EL, a&#xe7;&#xf5;es padr&#xe3;o/customizadas."/>
+<node CREATED="1512496087577" ID="ID_493236099" MODIFIED="1513600685507" TEXT="O corpo da tag &#xe9; tratado como texto puro. Ignora EL, a&#xe7;&#xf5;es padr&#xe3;o/customizadas."/>
 </node>
 <node CREATED="1512496143919" ID="ID_1265781621" MODIFIED="1512496145500" TEXT="JSP">
-<node CREATED="1512496152632" ID="ID_1014681811" MODIFIED="1512496167734" TEXT="Pode conter qualquer coisa que contenha um um JSP."/>
+<node CREATED="1512496152632" ID="ID_1014681811" MODIFIED="1513255365376" TEXT="Pode conter qualquer coisa que contenha em um JSP."/>
 </node>
 </node>
 </node>
@@ -422,7 +422,7 @@
 <node CREATED="1512499551252" ID="ID_1449087262" MODIFIED="1512499580423" TEXT="Se n&#xe3;o informar os atributos que est&#xe3;o como required. JasperException"/>
 <node CREATED="1512500368696" ID="ID_1166707947" MODIFIED="1512500401890" TEXT="&lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
 </node>
-<node CREATED="1512499677468" ID="ID_715291519" MODIFIED="1512499684504" TEXT="&lt;jsp:doBody&gt;">
+<node CREATED="1512499677468" ID="ID_715291519" MODIFIED="1513255416141" TEXT="&lt;jsp:doBody /&gt;">
 <node CREATED="1512499685292" ID="ID_775145341" MODIFIED="1512499701135" TEXT="Recupera o corpo da tag."/>
 </node>
 <node CREATED="1512502029677" ID="ID_416861707" MODIFIED="1512502111020" TEXT="Dentro do m&#xe9;todo doTag() da classe que extends SimpleTagSupport">
@@ -435,7 +435,7 @@
 </node>
 </node>
 <node CREATED="1512502893509" ID="ID_1474938990" MODIFIED="1512502912657" TEXT="SkipPageException(&quot;&quot;)">
-<node CREATED="1512502913516" ID="ID_1457548908" MODIFIED="1512503957738" TEXT="Interrompe o restante da p&#xe1;gina que invovou a tag. Se existir p&#xe1;ginas que incluem a p&#xe1;gina que a invovou, continua seu processamento."/>
+<node CREATED="1512502913516" ID="ID_1457548908" MODIFIED="1513255679932" TEXT="Interrompe o restante da p&#xe1;gina que invocou a tag. Se existir p&#xe1;ginas que incluem a p&#xe1;gina que a invovou, continua seu processamento."/>
 </node>
 <node CREATED="1512503043204" ID="ID_1073037194" MODIFIED="1512503122464" TEXT="getJspContext()">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
@@ -458,7 +458,7 @@
 <node CREATED="1512504824693" ID="ID_530833171" MODIFIED="1512504851267" TEXT="Se a tag existir atributos nesse momento &#xe9; chamado os sets para cada atributo java bean."/>
 </node>
 <node CREATED="1512504644015" ID="ID_564210290" MODIFIED="1512504647803" TEXT="setJspBody()">
-<node CREATED="1512504648487" ID="ID_751111939" MODIFIED="1512504729470" TEXT="S&#xf3; &#xe9; executado se o &lt;body-content&gt; estiver como empty e tamb&#xe9;m se a tag contiver um corpo."/>
+<node CREATED="1512504648487" ID="ID_751111939" MODIFIED="1513601089121" TEXT="S&#xf3; &#xe9; executado se o &lt;body-content&gt; n&#xe3;o estiver como empty e tamb&#xe9;m se a tag contiver um corpo."/>
 </node>
 <node CREATED="1512504692201" ID="ID_2914772" MODIFIED="1512504697341" TEXT="doTag()"/>
 </node>
@@ -507,7 +507,7 @@
 <node CREATED="1512555438289" ID="ID_750629252" MODIFIED="1512555449685" TEXT="return EVAL_BODY_AGAIN;">
 <node CREATED="1512555450456" ID="ID_1526287426" MODIFIED="1512555660896" TEXT="Avalia o body novamente no doAfterBody()."/>
 </node>
-<node CREATED="1512557099615" ID="ID_415832048" MODIFIED="1512557130729" TEXT="Roda depois do corpo ter sido processo"/>
+<node CREATED="1512557099615" ID="ID_415832048" MODIFIED="1513257625055" TEXT="Roda depois do corpo ter sido processado"/>
 </node>
 <node CREATED="1512555298074" ID="ID_240690212" MODIFIED="1512555302030" TEXT="doEndTag()"/>
 </node>
@@ -524,7 +524,7 @@
 <node CREATED="1512556200984" ID="ID_1273873479" MODIFIED="1512556204220" TEXT="EVAL_PAGE"/>
 </node>
 </node>
-<node CREATED="1512557281179" ID="ID_1396641679" MODIFIED="1512557346098" TEXT="Funciona diferenta da tag simples, as vari&#xe1;veis de inst&#xe2;ncia tem que ser reiniciadas na execu&#xe7;&#xe3;o do m&#xe9;todo doStartTag() j&#xe1; na SimpleTagSupport as tags n&#xe3;o s&#xe3;o reutiliz&#xe1;veis."/>
+<node CREATED="1512557281179" ID="ID_1396641679" MODIFIED="1513262010685" TEXT="Funciona diferente da tag simples, as vari&#xe1;veis de inst&#xe2;ncia tem que ser reiniciadas na execu&#xe7;&#xe3;o do m&#xe9;todo doStartTag() j&#xe1; na SimpleTagSupport as tags n&#xe3;o s&#xe3;o reutiliz&#xe1;veis."/>
 <node CREATED="1512559494829" ID="ID_589689528" MODIFIED="1512559513480" TEXT="&lt;dynamic-attributes&gt;true&lt;/dynamic-attributes&gt;"/>
 <node CREATED="1512560280642" ID="ID_1317786225" MODIFIED="1512560843618" TEXT="extends BodyTagSupport ou implementar BodyTag">
 <node CREATED="1512560288834" ID="ID_664740806" MODIFIED="1512560299141" TEXT="setBodyContent()">
@@ -557,10 +557,16 @@
 </node>
 <node CREATED="1512571780275" ID="ID_836589539" MODIFIED="1512571801562" TEXT="&lt;%@tag body-content=&quot;tagdependent&quot; %&gt;"/>
 </node>
+<node CREATED="1513255011163" ID="ID_428004241" MODIFIED="1513255070152" TEXT="Tags obrigat&#xf3;rias">
+<node CREATED="1513255029385" ID="ID_341487120" MODIFIED="1513255052412" TEXT="&lt;tlib-version&gt;&lt;/tlib-version&gt;"/>
+<node CREATED="1513255072838" ID="ID_456275836" MODIFIED="1513255105545" TEXT="&lt;short-name&gt;&lt;/short-name&gt;">
+<node CREATED="1513255052967" ID="ID_1733750611" MODIFIED="1513255066563" TEXT="s&#xf3; a tag &#xe9; obrigat&#xf3;ria n&#xe3;o seu conte&#xfa;do"/>
+</node>
+</node>
 </node>
 </node>
 <node CREATED="1512397810774" ID="ID_1780565899" MODIFIED="1512397818574" TEXT="P&#xe1;ginas de erro">
-<node CREATED="1512397821713" ID="ID_1480014139" MODIFIED="1512397844868" TEXT="&lt;%page isErrorPage=&quot;true&quot; %&gt;">
+<node CREATED="1512397821713" ID="ID_1480014139" MODIFIED="1513263165222" TEXT="&lt;%@page isErrorPage=&quot;true&quot; %&gt;">
 <node CREATED="1512397854590" ID="ID_1778160228" MODIFIED="1512398423318" TEXT="Indica que a p&#xe1;gina &#xe9; uma p&#xe1;gina de erro. &#xc9; necess&#xe1;rio que a p&#xe1;gina contenha essa declara&#xe7;&#xe3;o para obter acesso ao objeto impl&#xed;cito exception"/>
 </node>
 <node CREATED="1512397883789" ID="ID_665287361" MODIFIED="1512397904832" TEXT="&lt;%@page errorPage=&quot;errorPage.jsp&quot; %&gt;">
@@ -609,7 +615,7 @@
 <node CREATED="1512576256654" ID="ID_656178226" MODIFIED="1512576274505" POSITION="left" TEXT="Deployment Descriptor - DD web.xml">
 <node CREATED="1512576275924" ID="ID_1198289159" MODIFIED="1512576283384" TEXT="EJB">
 <node CREATED="1512576360431" ID="ID_824791475" MODIFIED="1512576362523" TEXT="local">
-<node CREATED="1512576284356" ID="ID_1382917373" MODIFIED="1512576648801" TEXT="&lt;ejb-local-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;local-home&gt;&lt;/local-home&gt;&lt;local&gt;&lt;/local&gt;&lt;/ejb-local-ref&gt;"/>
+<node CREATED="1512576284356" ID="ID_1382917373" MODIFIED="1513342050557" TEXT="&lt;ejb-local-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;local-home&gt;&lt;/local-home&gt;&lt;local&gt;&lt;/local&gt;&lt;ejb-link&gt;&lt;/ejb-link&gt;&lt;/ejb-local-ref&gt;"/>
 </node>
 <node CREATED="1512576369182" ID="ID_1558004243" MODIFIED="1512576370531" TEXT="remoto">
 <node CREATED="1512576372310" ID="ID_1197127717" MODIFIED="1512576464940" TEXT="&lt;ejb-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;home&gt;&lt;/home&gt;&lt;remote&gt;&lt;/remote&gt;&lt;/ejb-ref&gt;"/>
@@ -705,7 +711,7 @@
 </node>
 <node CREATED="1512664293987" ID="ID_1532586137" MODIFIED="1512664294991" TEXT="FORM">
 <node CREATED="1512664476719" ID="ID_1279945060" MODIFIED="1512664506962" TEXT="Pode utilizar um formul&#xe1;rio pr&#xf3;prio para autentica&#xe7;&#xe3;o."/>
-<node CREATED="1512664567241" ID="ID_519785578" MODIFIED="1512664660432" TEXT="&lt;login-config&gt;auth-method&gt;FORM&lt;/auth-method&gt;&lt;form-login-config&gt;&lt;form-login-page&gt;&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;&lt;/login-config&gt;"/>
+<node CREATED="1512664567241" ID="ID_519785578" MODIFIED="1513340483514" TEXT="&lt;login-config&gt;&lt;auth-method&gt;FORM&lt;/auth-method&gt;&lt;form-login-config&gt;&lt;form-login-page&gt;&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;&lt;/login-config&gt;"/>
 </node>
 </node>
 </node>
@@ -716,7 +722,7 @@
 <node CREATED="1512726250813" ID="ID_21455708" MODIFIED="1512726280624" TEXT="void doFilter(ServletRequest, ServletResponse, FilterChain) throws ServletException, IOException"/>
 <node CREATED="1512726289875" ID="ID_665515233" MODIFIED="1512726294447" TEXT="void destroy()"/>
 </node>
-<node CREATED="1512727431745" ID="ID_1339884111" MODIFIED="1512727546430" TEXT="&lt;filter&gt;filter-name&gt;&lt;/filter-name&gt;&lt;filter-class&gt;&lt;/filter-class&gt;&lt;init-param&gt;&lt;/init-param&gt;&lt;/filter&gt;"/>
+<node CREATED="1512727431745" ID="ID_1339884111" MODIFIED="1513266766858" TEXT="&lt;filter&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;filter-class&gt;&lt;/filter-class&gt;&lt;init-param&gt;&lt;/init-param&gt;&lt;/filter&gt;"/>
 <node CREATED="1512727461671" ID="ID_614250306" MODIFIED="1512728072140" TEXT="&lt;filter-mapping&gt;&lt;filter-name&gt;&lt;/filter-name&lt;url-pattern&gt;&lt;/url-pattern&gt;&lt;/filter-mapping&gt; ou &lt;servlet-name&gt; lugar do url-pattern"/>
 <node CREATED="1512727700816" ID="ID_1627839238" MODIFIED="1512727707212" TEXT="preced&#xea;ncia">
 <node CREATED="1512727708399" ID="ID_367117353" MODIFIED="1512727708399" TEXT="">
