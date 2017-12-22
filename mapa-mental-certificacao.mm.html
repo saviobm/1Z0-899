@@ -1,0 +1,1497 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Cerifica&#231;&#227;o 1Z0-899</title>
+<style type="text/css">
+    li { list-style: none;  margin: 0; }
+    p { margin: 0; }
+
+    span.l { color: red; font-weight: bold; }
+
+    a.mapnode:link {text-decoration: none; color: black; }
+    a.mapnode:visited {text-decoration: none; color: black; }
+    a.mapnode:active {text-decoration: none; color: black; }
+    a.mapnode:hover {text-decoration: none; color: black; background: #eeeee0; }
+
+</style>
+<!-- ^ Position is not set to relative / absolute here because of Mozilla -->
+</head>
+<body>
+<p>Cerifica&#231;&#227;o 1Z0-899
+<ul><li>Ciclo de vida Servlet
+<ul><li><p>O Container Web chama o m&#233;todo init() depois de instanciado, possibilita que inicialize o Servlet antes de tratar a solicita&#231;&#227;o do cliente. Roda apenas uma vez no ciclo de vida do servlet.
+<p>Quando chega a primeira solicita&#231;&#227;o do cliente o container Web cria ou aloca uma nova thread do pool de threads fazendo com que o m&#233;todo service do servlet seja ativado, analisa a solicita&#231;&#227;o e verifica qual m&#233;todo ser&#225; chamado doGet e/ou doPost. O m&#233;todo service nunca pode ser sobrescrito.
+<p>Agora &#233;&nbsp;o ciclo dos m&#233;todos doGet e/ou doPost onde tudo come&#231;a. Respons&#225;vel por tudo que esperamos da aplica&#231;&#227;o.
+</li>
+</ul>
+</li>
+<li>M&#233;todos HTTP
+<ul><li><p><span style="font-family: SansSerif, sans-serif; ">GET (Indempotente -&gt; Capaz de rodar v&#225;rias vezes sem afetar os dados.), POST (N&#227;o idempotente - Tem que garantir os dados ao receber v&#225;rias solicita&#231;&#245;es do mesmo cliente.), HEAD, TRACE, OPTIONS, PUT, DELETE e CONNECT.</span>
+</li>
+</ul>
+</li>
+<li>Response
+<ul><li>Op&#231;&#245;es de sa&#237;da no HttpServletResponse
+<ul><li>PrintWriter writer = response.getWriter(); writer.println("");
+
+</li>
+<li>ServletOutputStream out = response.getOutputStream(); out.write("");
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Redirecionamento
+<ul><li><p>URLs relativas no response.sendRedirect("foo/stuff.html"); --&gt; retira o nome do servlet da url e adiciona o que est&#225; sendo informado. response.sendRedirect("/foo/stuff.html"); --&gt; raiz do servidor ex: http://localhost:8080/foo/stuff.html - O trabalho &#233;&nbsp;feito pelo cliente (browser) e a URL muda e o cliente sabe que foi redirecionado.
+<p>RequestDiaspatcher view = request.getRequestDispatcher("teste.jsp"); view.forward(request, response); O trabalho &#233;&nbsp;feito pelo servidor. A URL n&#227;o muda e o cliente n&#227;o sabe que foi redirecionado.
+</li>
+</ul>
+</li>
+<li>Interface - HttpServletResponse
+<ul><li>addCookie(), addHeader(), encodeURL(), sendError(), setStatus(), sendRedirect()
+
+</li>
+
+</ul>
+</li>
+<li>Interface - HttpServletRequest
+<ul><li><p>getContextPath(), getCookies(), getHeader(String), getIntHeader(String), getMethod(), getQueryString(), getSession()
+</li>
+</ul>
+</li>
+<li>Interface - ServletConfig
+<ul><li><p>getInitParameter(String), Enumeration - getInitParameterNames(), getServletContext(), getServletNames()
+</li>
+</ul>
+</li>
+<li>&lt;&lt; interface &gt;&gt; javax.servlet.RequestDispatcher
+<ul><li>forward(HttpServletRequest, HttpServletResponse)
+
+</li>
+<li>include(HttpServletRequest, HttpServletResponse)
+
+</li>
+<li>Como obt&#234;-lo
+<ul><li>request.getRequestDispatcher("teste.jsp"); - caminho relativo
+
+</li>
+<li>getServletContext().getRequestDispatcher("/teste.jsp"); - raiz da aplica&#231;&#227;o
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">JSP</span>
+<ul><li><span style="font-family: SansSerif, sans-serif; ">Diretivas JSP: Sempre come&#231;am com @, e existem tr&#234;s diretivas.</span>
+<ul><li>&lt;%@page
+<ul><li>atributos mais usados na diretira page
+<ul><li><p>import
+<p>isThreadSafe
+<p>contentType
+<p>isELIgnored - S&#243; funciona se no DD estiver configurado um padr&#227;o de Url que atenda a p&#225;gina informada.
+<p>isErrorPage
+<p>errorPage
+</li>
+</ul>
+</li>
+<li>&lt;%@page import="x.*" import="y.*" %&gt;
+
+</li>
+<li>&lt;%@page import="com.test.*,java.util.*" %&gt;
+
+</li>
+
+</ul>
+</li>
+<li>&lt;%@taglib %&gt;
+
+</li>
+<li>&lt;%@include %&gt;
+
+</li>
+
+</ul>
+</li>
+<li>Express&#227;o: &lt;%= Counter.getCounter() %&gt;
+<ul><li>Equivalente a: out.print("") - Por isso depois da express&#227;o n&#227;o &#233;&nbsp;colocado um ";"
+
+</li>
+
+</ul>
+</li>
+<li>Declara&#231;&#227;o: &lt;%! &nbsp;int count = 0; %&gt;
+<ul><li><p>Aqui precisa de um ";", todas as vari&#225;veis e m&#233;todos declarados com &lt;%!%&gt; ser&#225; colocado fora do m&#233;todo _jspService(HttpServletRequest, HttpServletResponse) sendo vari&#225;veis e m&#233;todos da classe.
+</li>
+</ul>
+</li>
+<li>Ciclo de Vida
+<ul><li>M&#233;todos
+<ul><li> _jspInit()
+
+</li>
+<li>_jspDestroy()
+
+</li>
+<li>_jspService(HttpServletRequest, HttpServletResponse)
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Objetos Impl&#237;citos
+<ul><li>out --&gt; JspWriter
+
+</li>
+<li>request --&gt; HttpServletRequest
+
+</li>
+<li>response --&gt; HttpServletResponse
+
+</li>
+<li>session --&gt; HttpSession
+
+</li>
+<li>application --&gt; ServletContext
+
+</li>
+<li>config --&gt; ServletConfig
+
+</li>
+<li>exception --&gt; JspException
+
+</li>
+<li>pageContext --&gt; PageContext
+
+</li>
+<li>page --&gt; Object
+
+</li>
+
+</ul>
+</li>
+<li>Escopos
+<ul><li>application
+
+</li>
+<li>request
+
+</li>
+<li>session
+
+</li>
+<li>pageContext
+
+</li>
+
+</ul>
+</li>
+<li>PageContext
+<ul><li>JspContext
+<ul><li>getAttribute(String)
+
+</li>
+<li>getAttribute(String, int) - Aqui voc&#234; pode passar o escopo.
+
+</li>
+<li>getAttributeNamesInScope(int)
+
+</li>
+<li>findAttribute(String)
+<ul><li>Ordem da pesquisa quando n&#227;o sabe o escopo.
+<ul><li>PAGE_SCOPE
+
+</li>
+<li>REQUEST_SCOPE
+
+</li>
+<li>SESSION_SCOPE
+
+</li>
+<li>APPLICATION_SCOPE
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>PageContext extends JspContext
+<ul><li>APPLICATION_SCOPE
+
+</li>
+<li>PAGE_SCOPE
+
+</li>
+<li>REQUEST_SCOPE
+
+</li>
+<li>SESSION_SCOPE
+
+</li>
+<li>getRequest()
+
+</li>
+<li>getServletConfig()
+
+</li>
+<li>getServletContext()
+
+</li>
+<li>getSession()
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>&lt;jsp-file&gt; dentro do &lt;servlet&gt;
+
+</li>
+<li>Invalidando elementos JSP
+<ul><li>Invalidando Scripts
+<ul><li><p>&lt;jsp-config&gt;&lt;jsp-property-group&gt;&lt;url-pattern&gt;*.jsp&lt;/url-pattern&gt;&lt;scripting-invalid&gt;true&gt;&lt;/scripting-invalid&gt;&lt;/jsp-property-group&gt;&lt;/jsp-config&gt;
+</li>
+</ul>
+</li>
+<li>Invalidando EL
+<ul><li><p>&lt;jsp-config&gt;&lt;jsp-property-group&gt;&lt;url-pattern&gt;*.jsp&lt;/url-pattern&gt;&lt;el-ignored&gt;true&lt;/el-ignored&gt;&lt;/jsp-property-group&gt;&lt;/jsp-config&gt;
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li>A&#231;&#245;es
+<ul><li>A&#231;&#245;es padr&#227;o
+<ul><li>A&#231;&#245;es padr&#227;o Bean
+<ul><li><p>&lt;jsp:useBean id="" class="sub-classe concreta ou implementa&#231;&#227;o da classe referenciada no type" scope="" type="classe abstrata ou interface" /&gt;
+<ul><li>Se n&#227;o existir o bean no escopo informado ele cria um novo.
+
+</li>
+<li>Se o type for usado sem um class o bean j&#225; dever&#225; existir sen&#227;o java.lang.InstantiationException
+
+</li>
+
+</ul><p>&lt;jsp:getProperty name="" property="" /&gt;
+<ul><li><p>S&#243; acessa as propriedades do bean mencionado em name="". N&#227;o acessa objetos aninhados. Ex: person.dog.name com isso tem que usar EL: ${person.dog.name}
+</li>
+</ul><p>&lt;jsp:setProperty name="nome do bean" property="propriedade do bean" value="valor" param="nome do par&#226;metro do formul&#225;rio (recupera o valor)" /&gt;
+<ul><li><p>Se for usada dentro de um &lt;jsp:UseBean /&gt; significa que s&#243; ser&#225; usado o setProperty se o bean for criado. 
+<p>property="*" coincide todas as propriedades do formul&#225;rio com o bean.
+</li>
+</ul></li>
+</ul>
+</li>
+<li>&lt;jsp:include page="" /&gt;
+
+</li>
+<li>&lt;jsp:forward page=""&gt;&lt;jsp:param name="" value="" /&gt;&lt;/jsp:forward&gt;
+
+</li>
+
+</ul>
+</li>
+<li>A&#231;&#245;es customizadas &lt;c:set /&gt;
+
+</li>
+
+</ul>
+</li>
+<li>EL - Expression Language
+<ul><li><p>Objetos impl&#237;citos - S&#243; map&#180;s e bean
+<ul><li>pageContext
+<ul><li>&#201; o &#250;nico objeto impl&#237;cito que n&#227;o &#233;&nbsp;um HashMap ou HashTable e sim um JavaBean
+
+</li>
+
+</ul>
+</li>
+<li>Map para atributos de Escopo
+<ul><li>pageScope
+
+</li>
+<li>requestScope
+
+</li>
+<li>sessionScope
+
+</li>
+<li>applicationScope
+
+</li>
+
+</ul>
+</li>
+<li>Map para par&#226;metros da solicita&#231;&#227;o
+<ul><li>param
+
+</li>
+<li>paramValues
+
+</li>
+
+</ul>
+</li>
+<li>Map para headers de solicita&#231;&#227;o
+<ul><li>header
+
+</li>
+<li>headerValues
+
+</li>
+
+</ul>
+</li>
+<li>Map para cookies
+<ul><li>cookie
+
+</li>
+
+</ul>
+</li>
+<li>Map para par&#226;metros init do contexto
+<ul><li>initParam
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Atributos
+<ul><li>in page scope
+
+</li>
+<li>in request scope
+
+</li>
+<li>in session scope
+
+</li>
+<li>in application scope
+
+</li>
+
+</ul><p>Vari&#225;vel sequida do operador [ ] pode ser precedido por um java.util.List ou um Array e tamb&#233;m serve para solucionar o problema de ter uma chave no map contendo pontos. Ex.: ${map["com.example"]} o que n&#227;o poderia ser feito dessa forma: &nbsp;${map.com.example}
+<p>Com beans e maps pode ser usado o operaror "." ou o operador "[ ]" s&#243; se &nbsp;o que vier depois do ponto seja um identificador java. Ex: ${musicList.1} n&#227;o funciona.
+<p>Outros operadores EL
+<ul><li><p>Aritm&#233;ticos
+<ul><li>+
+
+</li>
+<li>-
+
+</li>
+<li>*
+
+</li>
+<li>/ e div (pode dividir por zero que d&#225; infinito e n&#227;o um erro)
+
+</li>
+<li>% e mod
+<ul><li>N&#227;o pode usar resto com "0" isso gera uma exce&#231;&#227;o
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>L&#243;gicos
+<ul><li>&amp;&amp; e and
+
+</li>
+<li>|| e or
+
+</li>
+<li>! e not
+
+</li>
+
+</ul><p>Relacionais
+<ul><li>== e eq
+
+</li>
+<li>!= e ne
+
+</li>
+<li>&lt; e lt
+
+</li>
+<li>&gt; e gt
+
+</li>
+<li>&lt;= e le
+
+</li>
+<li>&gt;= e ge
+
+</li>
+
+</ul><p>true, false, null, instanceof e empty
+<p>Nas express&#245;es aritm&#233;ticas, a EL trata uma vari&#225;vel desconhecida como 0. Ex.: ${7 / foo} quando o foo n&#227;o existe o resultado &#233;&nbsp;infinito. E nas express&#245;es l&#243;gicas a EL trata a vari&#225;vel desconhecida como false.
+</li>
+</ul></li>
+</ul>
+</li>
+<li>Diretiva e a&#231;&#227;o padr&#227;o include
+<ul><li><span style="font-family: SansSerif, sans-serif; ">Diretiva include: &lt;%@ include file="" /&gt;</span>
+<ul><li>Coloca o c&#243;digo da p&#225;gina mencionada no file="" e coloca junto com a JSP antes da tradu&#231;&#227;o.
+
+</li>
+
+</ul>
+</li>
+<li>A&#231;&#227;o padr&#227;o: &lt;jsp:include page="" /&gt;
+<ul><li><p>Insere a resposta da p&#225;gina mencionada em page="" no momento da tradu&#231;&#227;o. Runtime
+<p>&lt;jsp:include&gt;&lt;jsp:param name="" value="" /&gt;&lt;/jsp:include&gt; - Pode ser passado par&#226;metros para a p&#225;gina a ser inclu&#237;da.
+</li>
+</ul>
+</li>
+<li>O conte&#250;do inclu&#237;do n&#227;o pode alterar o c&#243;digo de status da resposta e nem configurar headers.
+
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">JSTL</span>
+<ul><li><p>&lt;c:set var="" value="" scope="" /&gt;
+<ul><li>serve para setar vari&#225;veis de atributos
+<ul><li>pode conter corpo, se o corpo for nulo a vari&#225;vel &#233;&nbsp;removida
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>&lt;c:set target="" property="" &nbsp;value="" scope="" /&gt;
+<ul><li>target serve para setar propriedades dos beans
+<ul><li>pode conter corpo, se o corpo for nulo a vari&#225;vel &#233;&nbsp;removida
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>escopo padr&#227;o &#233;&nbsp;o pageScope, requestScope, sessionScope e por fim applicationScope
+<p>o target serve para o objeto em si, target="${}" n&#227;o serve para o id do objeto igual &#233;&nbsp;no caso do var="idBean"
+<p>Causas de exce&#231;&#227;o
+<ul><li>se a express&#227;o target for nula o container gera uma exce&#231;&#227;o
+
+</li>
+<li>se a express&#227;o target n&#227;o for um map nem um bean o container gera uma exce&#231;&#227;o
+
+</li>
+<li>se o property="" n&#227;o coincidir com uma propriedade do bean o container gera uma exce&#231;&#227;o
+
+</li>
+
+</ul><p>&lt;c:import &nbsp;url="" /&gt; direfente da diretiva "@include" e tamb&#233;m da a&#231;&#227;o padr&#227;o "jsp:include" o conte&#250;do pode estar fora do container web. Pode ser combinada com a &lt;c:param name="" value="" /&gt; que &#233;&nbsp;equivalente a &lt;jsp:param name="" value="" /&gt;
+<p>&lt;c:url value="/teste.jsp?first=${first}" var="inputUrl" /&gt;
+<ul><li>pode conter corpo com o &lt;c:param name="" value="" /&gt;
+
+</li>
+<li>Nas urls n&#227;o podem conter espa&#231;os, S&#227;o substitu&#237;dos por "+"
+
+</li>
+
+</ul><p>Taglib customizadas
+<ul><li><p>&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;
+<ul><li>Se n&#227;o informar o rtexprvalue o valor padr&#227;o &#233;&nbsp;sempre false
+
+</li>
+
+</ul><p>Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;empty&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#225; existir a a&#231;&#227;o padr&#227;o &lt;jsp:attribute name="user"&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag.
+<p>Corpo da tag
+<ul><li>&lt;body-content&gt;
+<ul><li>empty
+<ul><li><p>n&#227;o pode ter corpo
+<p>A &#250;nica coisa que pode ser inserida com o body-content empty &#233;&nbsp;&lt;jsp:attribute name=""&gt;valor&lt;/jsp:attribute&gt;
+</li>
+</ul>
+</li>
+<li>scriptless
+<ul><li><p>A tag n&#227;o pode ter elementos de scripts (scripts, experess&#245;es de scripts ou declara&#231;&#245;es), mas pode ter texto e templates EL, a&#231;&#245;es padr&#227;o e customizadas.
+<p><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">&#201; o body-content padr&#227;o para todas as tags</span>
+</li>
+</ul>
+</li>
+<li>tagdependent
+<ul><li>O corpo da tag &#233;&nbsp;tratado como texto puro. Ignora EL, a&#231;&#245;es padr&#227;o/customizadas.
+
+</li>
+
+</ul>
+</li>
+<li>JSP
+<ul><li>Pode conter qualquer coisa que contenha em um JSP.
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><p>Atributos da tag
+<ul><li><p>&lt;%@attributte name="" required="true" rtexprvalue="true" %&gt;
+<p>&lt;attribute&gt;&lt;name&gt;&lt;/name&gt;&lt;required&gt;&lt;/required&gt;&lt;rtexprvalue&gt;&lt;rtexprvalue&gt;&lt;type&gt;java.util.List&lt;/type&gt;&lt;/attribute&gt;
+<p>Se n&#227;o informar os atributos que est&#227;o como required. JasperException
+<p>&lt;jsp:attribute name=""&gt;valor&lt;/jsp:attribute&gt;
+</li>
+</ul><p>&lt;jsp:doBody /&gt;
+<ul><li>Recupera o corpo da tag.
+
+</li>
+
+</ul><p>Dentro do m&#233;todo doTag() da classe que extends SimpleTagSupport
+<ul><li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">getJspBody()</span>
+<ul><li>getJspBody().getJspContext();
+
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">getJspBody().invoke(null);</span>
+<ul><li>Avalia o corpo da tag.
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>SkipPageException("")
+<ul><li><p>Interrompe o restante da p&#225;gina que invocou a tag. Se existir p&#225;ginas que incluem a p&#225;gina que a invovou, continua seu processamento.
+</li>
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">getJspContext()</span>
+<ul><li>getJspContext().getOut().print("valor");
+<ul><li>Sa&#237;da para o corpo da tag
+
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; ">getJspContext().setAttribute("", "");</span>
+<ul><li>Seta os atributos que est&#227;o dentro do corpo da tag.
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><p>Ciclo de vida tag simples
+<ul><li>Ordem execu&#231;&#227;o dos m&#233;todos
+<ul><li>setJspContext()
+
+</li>
+<li>setParent()
+<ul><li>S&#243; &#233;&nbsp;executado se a tag estiver aninhada.
+
+</li>
+
+</ul>
+</li>
+<li>M&#233;todos set java bean
+<ul><li>Se a tag existir atributos nesse momento &#233;&nbsp;chamado os sets para cada atributo java bean.
+
+</li>
+
+</ul>
+</li>
+<li>setJspBody()
+<ul><li>S&#243; &#233;&nbsp;executado se o &lt;body-content&gt; n&#227;o estiver como empty e tamb&#233;m se a tag contiver um corpo.
+
+</li>
+
+</ul>
+</li>
+<li>doTag()
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Tag Cl&#225;ssica
+<ul><li><p>extends TagSupport
+<p>doStartTag() throws JspException
+<ul><li>N&#227;o declara um IOException
+
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">return SKIP_BODY;</span>
+<ul><li>Serve para pular o corpo da tag
+
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">return EVAL_BODY_INCLUDE;</span>
+<ul><li>Faz a tag avaliar o corpo.
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>doAfterBody() throws JspException
+<ul><li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">return SKIP_BODY;</span>
+
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">return EVAL_BODY_AGAIN;</span>
+<ul><li>&#218;nica constante de IterationTag o restante s&#227;o da Tag
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>doEndTag() throws JspException
+<ul><li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">return EVAL_PAGE;</span>
+<ul><li>Continue processando o restante da p&#225;gina.
+
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">return SKIP_PAGE;</span>
+<ul><li>Equivalente ao SkipPageException da SimpleTagSuport
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Ciclo de vida
+<ul><li>setPageContext(PageContext)
+
+</li>
+<li>setParent(Tag)
+<ul><li>Se existir tags aninhadas.
+
+</li>
+
+</ul>
+</li>
+<li>M&#233;todos set java bean
+
+</li>
+<li>doStartTag()
+
+</li>
+<li>doAfterBody()
+<ul><li>Se o m&#233;todo doStartTag() retornar EVAL_BODY_INCLUDE chama o doAfterBody().
+
+</li>
+<li>return EVAL_BODY_AGAIN;
+<ul><li>Avalia o body novamente no doAfterBody().
+
+</li>
+
+</ul>
+</li>
+<li>Roda depois do corpo ter sido processado
+
+</li>
+
+</ul>
+</li>
+<li>doEndTag()
+
+</li>
+
+</ul><p>Valores padr&#245;es dos m&#233;todos quando n&#227;o faz o override na tag
+<ul><li>doStartTag()
+<ul><li>SKIP_BODY
+<ul><li>Sempre assume que sua tag n&#227;o tem corpo.
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>doAfterBody()
+<ul><li>SKIP_BODY
+
+</li>
+
+</ul>
+</li>
+<li>doEndTag()
+<ul><li>EVAL_PAGE
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Funciona diferente da tag simples, as vari&#225;veis de inst&#226;ncia tem que ser reiniciadas na execu&#231;&#227;o do m&#233;todo doStartTag() j&#225; na SimpleTagSupport as tags n&#227;o s&#227;o reutiliz&#225;veis.
+<p>&lt;dynamic-attributes&gt;true&lt;/dynamic-attributes&gt;
+<ul><li>implements DynamicAttributes
+<ul><li>public void setDynamicAttribute(String arg0, String arg1, Object arg2) throws JspException
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>extends BodyTagSupport ou implementar BodyTag
+<ul><li>setBodyContent()
+<ul><li><p>&#201; chamado quando o m&#233;todo doStartTag() quando retorna EVAL_BODY_BUFFERED. Novo padr&#227;o para o doStartTag()
+</li>
+</ul>
+</li>
+<li>doInitBody()
+
+</li>
+
+</ul></li>
+</ul><p>getParent()
+<ul><li>Tags cl&#225;ssicas retornam um objeto de "Tag"
+
+</li>
+<li>Simple Tags retorna o objeto "JspTag"
+
+</li>
+<li>Tags cl&#225;ssicas s&#243; podem ter parents cl&#225;ssico "Tag"
+
+</li>
+<li>Tags simples podem ter parents cl&#225;ssico e simples. "Tag" ou "JspTag"
+
+</li>
+
+</ul><p>findAncestorWithClass(tagInicial this, classe da Tag que vc deseja)
+<p>JspContext
+<ul><li>getAttribute(String name) - pageScope
+
+</li>
+<li>getAttribute(String name, int scope)
+
+</li>
+<li>getAttributeNamesInScope(int scope)
+
+</li>
+<li>findAttribute(String name)
+
+</li>
+<li>getOut(): JspWriter
+
+</li>
+
+</ul><p>Tag Files
+<ul><li><p>S&#243; poder&#225; existir dentro da pasta /WEB-INF/tags e subdiret&#243;rios, tamb&#233;m no /META-INF/tags dentro do /WEB-INF/lib e subdiret&#243;rios.
+<p>As extens&#245;es .tag ou .tagx
+<p>&lt;%@taglib prefix="xxx" tagdir="/WEB-INF/tags" %&gt; - Atributo tagdir na diretiva taglib
+<p>&lt;%@attribute name="xxx" required="true" rtexprvalue="true" %&gt; - Atributos para a tag ${xxx}
+<p>&lt;jsp:doBody /&gt;
+<ul><li>Recupera o corpo da tag
+
+</li>
+
+</ul><p>&lt;%@tag body-content="tagdependent" %&gt;
+</li>
+</ul><p>Tags obrigat&#243;rias
+<ul><li>&lt;tlib-version&gt;&lt;/tlib-version&gt;
+
+</li>
+<li>&lt;short-name&gt;&lt;/short-name&gt;
+<ul><li>s&#243; a tag &#233;&nbsp;obrigat&#243;ria n&#227;o seu conte&#250;do
+
+</li>
+
+</ul>
+</li>
+
+</ul></li>
+</ul></li>
+</ul>
+</li>
+<li>P&#225;ginas de erro
+<ul><li>&lt;%@page isErrorPage="true" %&gt;
+<ul><li><p>Indica que a p&#225;gina &#233;&nbsp;uma p&#225;gina de erro. &#201;&nbsp;necess&#225;rio que a p&#225;gina contenha essa declara&#231;&#227;o para obter acesso ao objeto impl&#237;cito exception
+</li>
+</ul>
+</li>
+<li>&lt;%@page errorPage="errorPage.jsp" %&gt;
+<ul><li>Indica ao container que caso ocorra alguma exce&#231;&#227;o encaminhar a solicita&#231;&#227;o para a p&#225;gina informada
+
+</li>
+
+</ul>
+</li>
+<li>DD - web.xml
+<ul><li>&lt;error-page&gt;&lt;exception-type&gt;&lt;/exception-type&gt;&lt;location&gt;/errorPage.jsp&lt;/location&gt;&lt;/eror-page&gt;
+
+</li>
+
+</ul>
+</li>
+<li>&lt;error-code&gt;404&lt;/error-code&gt;
+
+</li>
+<li>&lt;c:catch var="myException"&gt;&lt;/c:catch&gt;
+<ul><li>O atributo myException fica dispon&#237;vel no escopo de p&#225;gina
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">Sintaxe documentos JSP</span>
+<ul><li>Diretivas
+<ul><li>&lt;%@page import="java.util.*" %&gt; equivalente a &lt;jsp:directive.page import="java.util.*" /&gt;
+<ul><li>Exceto diretiva taglib
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Declara&#231;&#227;o
+<ul><li>&lt;%! int y = 3; %&gt; equivalente a &nbsp;&lt;jsp:declaration&gt;int y = 3;&lt;/jsp:declaration&gt;
+
+</li>
+
+</ul>
+</li>
+<li>Scriplet
+<ul><li>&lt;% list.add("feed"); %&gt; equivalente a &lt;jsp:scriplet&gt;list.add("feed");&lt;/jsp:scriplet&gt;
+
+</li>
+
+</ul>
+</li>
+<li>Texto
+<ul><li>Texto equivalente a &lt;jsp:text&gt;Texto&lt;/jsp:text&gt;
+
+</li>
+
+</ul>
+</li>
+<li>Express&#227;o de script
+<ul><li>&lt;%= it.next() %&gt; equivalente a &lt;jsp:expression&gt;it.next()&lt;/jsp:expression&gt;
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Deployment Descriptor - DD web.xml
+<ul><li>EJB
+<ul><li>local
+<ul><li><p>&lt;ejb-local-ref&gt;&lt;ejb-ref-name&gt;&lt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;local-home&gt;&lt;/local-home&gt;&lt;local&gt;&lt;/local&gt;&lt;ejb-link&gt;&lt;/ejb-link&gt;&lt;/ejb-local-ref&gt;
+</li>
+</ul>
+</li>
+<li>remoto
+<ul><li><p>&lt;ejb-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;home&gt;&lt;/home&gt;&lt;remote&gt;&lt;/remote&gt;&lt;/ejb-ref&gt;
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li>&lt;env-entry&gt;
+<ul><li><p>&lt;env-entry&gt;&lt;env-entry-name&gt;&lt;/env-entry-name&gt;&lt;env-entry-type&gt;&lt;/env-entry-type&gt;&lt;env-entry-value&gt;&lt;/env-entry-value&gt;&lt;/env-entry&gt;
+<ul><li>Par&#226;metros para os EJB&#180;s que ser&#227;o recuperados pelo &lt;env-entry-name&gt;
+
+</li>
+<li>&lt;env-entry-type&gt; N&#227;o pode ser um primitivo.
+
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li>Servlets Preced&#234;ncia
+<ul><li>caminho exato &lt;url-pattern&gt;/Diretorio/TesteServlet&lt;/url-pattern&gt;
+
+</li>
+<li>diret&#243;rios &lt;url-pattern&gt;/Diretorio/*&lt;/url-pattern&gt;
+
+</li>
+<li>extens&#227;o &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
+
+</li>
+
+</ul>
+</li>
+<li>&lt;mime-mapping&gt;
+<ul><li>&lt;mime-mapping&gt;&lt;extension&gt;mpg&lt;/extension&gt;&lt;mime-type&gt;video/mpeg&lt;/mime-type&gt;&lt;mime-mapping&gt;
+
+</li>
+
+</ul>
+</li>
+<li>&lt;welcome-file-list&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;/welcome-file-list&gt;
+
+</li>
+
+</ul>
+</li>
+<li>Filtros
+<ul><li><p>&#201; toda classe que implementa a interface &lt;&lt;javax.servlet.Filter&gt;&gt;
+<p>Deve implementar os tr&#234;s m&#233;todos
+<ul><li>void doInit(Filterconfig) throws ServletException
+
+</li>
+<li>void doFilter(ServletRequest, ServletResponse, FilterChain) throws ServletException, IOException
+
+</li>
+<li>void destroy()
+
+</li>
+
+</ul><p>&lt;filter&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;filter-class&gt;&lt;/filter-class&gt;&lt;init-param&gt;&lt;/init-param&gt;&lt;/filter&gt;
+<p>&lt;filter-mapping&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;url-pattern&gt;&lt;/url-pattern&gt;&lt;/filter-mapping&gt; ou &lt;servlet-name&gt; lugar do url-pattern
+<p>preced&#234;ncia
+<ul><li>&nbsp;
+<ul><li><p>1&#170; - Os que estiverem com as URL&#180;s correspondentes levando em considera&#231;&#227;o a ordem em que foram definidos no DD web.xml
+</li>
+</ul>
+</li>
+<li>2&#170; - Depois &#233;&nbsp;feita a mesma coisa com os filtros com servlet-name correspondentes
+
+</li>
+
+</ul><p>&lt;dispatcher&gt;
+<ul><li>REQUEST
+<ul><li>dispatcher padr&#227;o quando n&#227;o informado
+
+</li>
+
+</ul>
+</li>
+<li>INCLUDE
+
+</li>
+<li>FORWARD
+
+</li>
+<li>ERROR
+
+</li>
+<li>Pode haver nenhum ou at&#233; quatro dispatcher&#180;s dentro do filter-mapping
+
+</li>
+
+</ul><p>Classes wrapper
+<ul><li>ServletRequestWrapper
+
+</li>
+<li>ServletResponseWrapper
+
+</li>
+<li>HttpServletRequestWrapper
+
+</li>
+<li>HttpServletResponseWrapper
+
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li>Protocolo HTTP
+<ul><li>GET - Solicita&#231;&#227;o simples
+
+</li>
+<li>POST - Solicita&#231;&#227;o de um recurso com informa&#231;&#245;es do usu&#225;rio. Ex: Formul&#225;rio
+
+</li>
+<li>Outros m&#233;todos: HEAD, TRACE, PUT, DELETE, OPTIONS e CONNECT
+
+</li>
+
+</ul>
+</li>
+<li>Servlet
+<ul><li>Classe abstrata GenericServlet
+<ul><li><p>Implementa a maioria dos m&#233;todos b&#225;sicos do servlet incluindo os m&#233;todos da interface servlet que a mesma implementa
+</li>
+</ul>
+</li>
+<li>Classe abstrata HttpServlet
+<ul><li>Implementa o m&#233;todo service para refletir as caracter&#237;sticas HTTP
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Headers
+<ul><li><p>setHeader("", "") --&gt; Substitui o valor existente para o header.
+<p>addHeader("", "") --&gt; Se o Header existir adiciona mais um valor ao header sen&#227;o cria um novo header.
+</li>
+</ul>
+</li>
+<li>Interface - ServletResponse
+<ul><li>m&#233;todos getBufferSize(), setContentType(), getOutputStream(), getWriter(), setContentLenght()
+
+</li>
+
+</ul>
+</li>
+<li>Interface - ServletRequest
+<ul><li><p><span style="font-family: SansSerif, sans-serif; ">getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames()</span>
+</li>
+</ul>
+</li>
+<li>Classe abstrata GenericServlet
+<ul><li><p>service(ServletRequest, ServletResponse), init(ServletConfig), init(), destroy(), getServletConfig(), getServletInfo(), getInitParameter(String), getInitParameterNames(), getServletContext(), log(String), log(String, Throwable)
+</li>
+</ul>
+</li>
+<li>Listeners
+<ul><li>&lt;&lt;interface&gt;&gt; javax.selvlet.ServletContextListener
+<ul><li>contextInitialized(ServletContextEvent)
+
+</li>
+<li>contextDestroyed(ServletContextEvent)
+
+</li>
+
+</ul>
+</li>
+<li>Cen&#225;rios
+<ul><li><p>Voc&#234; quer saber se um atributo em um contexto da aplica&#231;&#227;o foi adicionado, removido ou substitu&#237;do.
+<ul><li>&lt;&lt;interface&gt;&gt; javax.servlet.ServletContextAttributeListener
+<ul><li>ServletContextAttributeEvent
+
+</li>
+<li>attributeAdded
+
+</li>
+<li>attributeRemoved
+
+</li>
+<li>attributeReplaced
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Voc&#234; quer saber quantos usu&#225;rios concorrentes existem. Em outras palavras voc&#234; quer rastrear as sess&#245;es ativas.
+<ul><li>&lt;&lt;interface&gt;&gt; javax.servlet.http.HttpSessionListener
+<ul><li>sessionCreated
+
+</li>
+<li>sessionDestroyed
+
+</li>
+<li>HttpSessionEvent
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Voc&#234; quer saber todas as vezes que uma solicita&#231;&#227;o chegar, para ent&#227;o poder log&#225;-las.
+<ul><li>&lt;&lt; interface &gt;&gt; javax.servlet.ServletRequestListener
+<ul><li>ServletRequestEvent
+
+</li>
+<li>requestInitialized
+
+</li>
+<li>requestDestoyed
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Voc&#234; quer saber se um atributo da solicita&#231;&#227;o foi adicionado, removido ou substitu&#237;do.
+<ul><li>&lt;&lt; interface &gt;&gt; javax.servlet.ServletRequestAttributeListener
+<ul><li>ServletRequestAttributeEvent
+
+</li>
+<li>attributeAdded
+
+</li>
+<li>attributeRemoved
+<ul><li><p>O objeto ServletRequestAttributeEvent no momento do removed cont&#233;m o valor atualizado do atributo. Ex.: event.getValue();
+</li>
+</ul>
+</li>
+<li>attributeReplaced
+<ul><li><p>O objeto ServletRequestAttributeEvent no momento do replaced ainda cont&#233;m o valor antigo. Ex.: event.getValue();
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><p>Voc&#234; tem uma classe de atributo (uma classe para um objeto que ser&#225; colocado em um atributo) e voc&#234; quer que os objetos desse tipo sejam notificados quando eles forem associados ou removidos de uma sess&#227;o.
+<ul><li>&lt;&lt; interface &gt;&gt; javax.servlet.http.HttpSessionBindingListener
+<ul><li>HttpSessionBindingEvent
+
+</li>
+<li>valueBound
+
+</li>
+<li>valueUnbound
+
+</li>
+<li>N&#227;o precisa ser declarado no DD.
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Voc&#234; quer saber quando um atributo de sess&#227;o foi acrescentado, removido ou substitu&#237;do.
+<ul><li>&lt;&lt; interface &gt;&gt; javax.servlet.http.HttpSessionAttributeListener
+<ul><li>HttpSessionBindingEvent
+
+</li>
+<li>attributeAdded
+
+</li>
+<li>attributeRemoved
+
+</li>
+<li>attributeReplaced
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Voc&#234; quer saber se um contexto foi criado ou destru&#237;do.
+<ul><li>&lt;&lt; interface &gt;&gt; javax.servlet.ServletContextListener
+<ul><li>ServletContextEvent
+
+</li>
+<li>contextInitialized
+
+</li>
+<li>contextDestroyed
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Voc&#234; tem uma classe de atributo e voc&#234; quer que objetos deste tipo sejam notificados quando a sess&#227;o na qual eles est&#227;o associados estiver migrando entre JVM&#180;s.
+<ul><li>&lt;&lt; interface &gt;&gt; javax.servlet.http.HttpSessionActivationListener
+<ul><li>HttpSessionEvent
+
+</li>
+<li>sessionDidActivate
+
+</li>
+<li>sessionWillPassivate
+
+</li>
+
+</ul>
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li>O listener HttpSessionBindingListener &#233;&nbsp;o &#250;nico listener que n&#227;o precisa ser declarado no DD.
+
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">Sess&#245;es</span>
+<ul><li><p>Existe duas maneiras de objter a sess&#227;o.
+<ul><li>request.getSession(); - Requisi&#231;&#227;o
+
+</li>
+<li>HttpSessionEvent e sua subClasse HttpSessionBindingEvent - Listeners de sess&#227;o.
+<ul><li><span style="font-family: SansSerif, sans-serif; ">Os dois eventos possuem um m&#233;todo getSession();</span>
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Recuperando uma sess&#227;o pr&#233;-existente
+<ul><li><p>getSession(boolean) &nbsp;- request.getSession(false); devolve a sess&#227;o pr&#233;-existente, se n&#227;o existir retorna null.
+</li>
+</ul><p>O m&#233;todo isNew() - Booleano que informa se a sess&#227;o acabou de ser criada no m&#233;todo: getSession().
+<p>Reescrita de URL
+<ul><li>S&#243; &#233;&nbsp;feita na inst&#226;ncia da classe HttpServletResponse
+<ul><li>encodeURL("");
+<ul><li>&#201; usado para links normais dentro de suas p&#225;ginas HTML
+
+</li>
+
+</ul>
+</li>
+<li>encodeRedirectURL("");
+<ul><li>&#201; para um link que voc&#234; est&#225; passando para response.sendRedirect("")
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><p>Principais m&#233;todos
+<ul><li>getCreationTime()
+
+</li>
+<li>getLastAccessedTime() - milisegundos
+
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">setMaxInactiveInterval() - segundos</span>
+
+</li>
+<li>getMaxInactiveInterval() - segundos
+
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">invaliade()</span>
+
+</li>
+
+</ul><p>Timeouts
+<ul><li>No DD &lt;session-config&gt;&lt;session-timeout&gt;15&lt;/session-timeout&gt;&lt;/session-config&gt;
+<ul><li>&#201; configurado em minutos e &#233;&nbsp;utilizado por todas as sess&#245;es.
+
+</li>
+
+</ul>
+</li>
+<li>Na aplica&#231;&#227;o - session.setMaxInactiveInterval()
+<ul><li>&#201; configurado em segundos e fica espec&#237;fico da sess&#227;o configurada.
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Depois de chamado o session.invalidade() ou se a sess&#227;o foi configurada com o session.setMaxInactiveInterval(0), Ocorrer&#225; uma exce&#231;&#227;o IllegalStateException.
+<p>O servidor envia um header na resposta sob o nome: Set-Cookie e depois o cliente devolve com um header na solicita&#231;&#227;o sob o nome Cookie com os mesmos dados que vieram no Set-Cookie.
+<p>Cookies
+<ul><li><p><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">setMaxAge() - &#201;&nbsp;definido em segundos. Se configurar com "-1" ele s&#243; ser&#225; removido quando o browser fechar. Mesmo exemplo do cookie: JSESSIONID</span>
+<p>N&#227;o existe um getCookie(""), a &#250;nica forma &#233;&nbsp;um array de cookies: request.getCookies();
+</li>
+</ul><p>As sess&#245;es s&#227;o os &#250;nicos objetos que n&#227;o s&#227;o duplicados em JVM&#180;s diferentes.
+</li>
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">File upload</span>
+<ul><li>@MultipartConfig
+<ul><li>Atributos v&#225;lidos
+<ul><li>fileSizeThreshold 
+
+</li>
+<li>location
+
+</li>
+<li>maxFileSize
+
+</li>
+<li>maxRequestSize
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">Seguran&#231;a</span>
+<ul><li>web.xml - DD
+<ul><li>&lt;security-constraint&gt;
+<ul><li><p>&lt;web-resource-collection&gt; obrigat&#243;rio e pode ter mais de um.
+<ul><li><p>&lt;web-resource-name&gt;UpdateRecipes&lt;/web-resource-name&gt;
+<p>&lt;url-pattern&gt;/TesteServlet3&lt;/url-pattern&gt; Um &nbsp;ou mais. Obrigat&#243;rio
+<p>&lt;http-method&gt;&lt;/http-method&gt; Opcional, zero ou mais. Se n&#227;o for informado o container assume todos os m&#233;todos HTTP.
+<ul><li>GET
+
+</li>
+<li>POST
+
+</li>
+<li>PUT
+
+</li>
+<li>TRACE
+
+</li>
+<li>DELETE
+
+</li>
+<li>HEAD
+
+</li>
+<li>OPTIONS
+
+</li>
+
+</ul><p>&lt;description&gt;&lt;/description&gt; Opcional.
+</li>
+</ul><p>&lt;auth-constraint&gt;&lt;/auth-constraint&gt;
+<ul><li><p>&lt;description&gt;&lt;/description&gt;
+<ul><li>Opcional
+
+</li>
+
+</ul><p>&lt;role-name&gt;&lt;/role-name&gt;
+<ul><li>S&#227;o case sensitive
+
+</li>
+<li>Opcional - se n&#227;o existir nenhum usu&#225;rio tem acesso ao recurso
+
+</li>
+<li>&lt;role-name&gt;*&lt;/role-name&gt;
+<ul><li>Todos os usu&#225;rios s&#227;o permitidos.
+
+</li>
+
+</ul>
+</li>
+<li>Pode existir mais de um no &lt;auth-constraint&gt;
+
+</li>
+
+</ul><p>Aplica a todos os elementos &lt;web-resource-collection&gt;
+<p>Opcional.
+<p>Se existir o elemento &lt;auth-constraint&gt; o container deve realizar a autentica&#231;&#227;o nas urls associadas.
+<p>Se n&#227;o existir o elemento &lt;auth-constraint&gt; o container deve permitir acesso n&#227;o autenticado nas urls mencionadas.
+<p>&lt;role-name&gt;Admin&lt;/role-name&gt; + &lt;role-name&gt;Guest&lt;/role-name&gt;
+<ul><li>Admin e Guest
+
+</li>
+
+</ul><p>&lt;role-name&gt;*&lt;/role-name&gt; + &lt;role-name&gt;Admin&lt;/role-name&gt;
+<ul><li>Todos
+
+</li>
+
+</ul><p>&lt;auth-constraint /&gt; tag vazia + &lt;auth-constraint&gt;&lt;role-name&gt;Admin&lt;/role-name&gt;&lt;/auth-constraint&gt;
+<ul><li>Nenhum a tag vazia tem preced&#234;ncia
+
+</li>
+
+</ul><p>&lt;auth-constraint /&gt; tag vazia + &lt;auth-constraint&gt;&lt;role-name&gt;*&lt;/role-name&gt;&lt;/auth-constraint&gt;
+<ul><li>?
+
+</li>
+
+</ul><p>Nenhum elemento &lt;auth-constraint /&gt; + &lt;auth-constraint&gt;&lt;role-name&gt;Admin&lt;/role-name&gt;&lt;/auth-constraint&gt;
+<ul><li>Todos
+
+</li>
+
+</ul></li>
+</ul><p>&lt;user-data-constraint&gt;&lt;transport-guarantee&gt;CONFIDENTIAL&lt;/transport-guarantee&gt;&lt;/user-data-constraint&gt; - S&#243; pode haver um para cada &lt;security-constraint&gt;
+<ul><li>NONE
+<ul><li>Default e n&#227;o h&#225; prote&#231;&#227;o aos dados.
+
+</li>
+
+</ul>
+</li>
+<li>INTEGRAL
+<ul><li>Os dados n&#227;o podem ser modificados ao longo do caminho.
+
+</li>
+
+</ul>
+</li>
+<li>CONFIDENTIAL
+<ul><li>Os dados n&#227;o podem ser vistos por ningu&#233;m ao longo do caminho.
+
+</li>
+
+</ul>
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li>&lt;login-config&gt;&lt;auth-method&gt;BASIC&lt;/auth-method&gt;&lt;/login-config&gt;
+
+</li>
+<li>&lt;security-role&gt;&lt;role-name&gt;Admin&lt;/role-name&gt;&lt;/security-role&gt;
+
+</li>
+
+</ul>
+</li>
+<li>Seguran&#231;a program&#225;tica
+<ul><li><p>request.isUserInRole("Manager");
+<p>&lt;servlet&gt;&lt;security-role-ref&gt;&lt;role-name&gt;Manager&lt;/role-name&gt;&lt;role-link&gt;Admin&lt;/role-link&gt;&lt;/security-role-ref&gt;&lt;/servlet&gt;
+<ul><li>Vincula a role-name program&#225;tica com a role-name declarativa do web.xml
+
+</li>
+<li>Tem preced&#234;ncia sobre outras role-name declaradas no web.xml
+
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li>Tipos de autentica&#231;&#227;o
+<ul><li>BASIC
+
+</li>
+<li>DIGEST
+
+</li>
+<li>CLIENT-CERT
+<ul><li>O client precisa de certificado.
+
+</li>
+
+</ul>
+</li>
+<li>FORM
+<ul><li><p>Pode utilizar um formul&#225;rio pr&#243;prio para autentica&#231;&#227;o.
+<p>&lt;login-config&gt;&lt;auth-method&gt;FORM&lt;/auth-method&gt;&lt;form-login-config&gt;&lt;form-login-page&gt;&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;&lt;/login-config&gt;
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul></body>
+</html>

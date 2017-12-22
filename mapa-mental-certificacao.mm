@@ -16,7 +16,7 @@
 </node>
 <node CREATED="1508797595765" ID="ID_1799908126" MODIFIED="1509400670888" POSITION="left" TEXT="Ciclo de vida Servlet">
 <node CREATED="1508797615662" ID="ID_194615133" MODIFIED="1509400670888" TEXT="O Container Web chama o m&#xe9;todo init() depois de instanciado, possibilita que inicialize o Servlet antes de tratar a solicita&#xe7;&#xe3;o do cliente. Roda apenas uma vez no ciclo de vida do servlet."/>
-<node CREATED="1508797789691" ID="ID_971615184" MODIFIED="1513177261670" TEXT="Quando chega a primeira solicita&#xe7;&#xe3;o do cliente o container Web o container cria ou aloca uma nova thread do pool de threads fazendo com que o m&#xe9;todo service do servlet seja ativado, analisa a solicita&#xe7;&#xe3;o e verifica qual m&#xe9;todo ser&#xe1; chamado doGet e/ou doPost. O m&#xe9;todo service nunca pode ser sobrescrito."/>
+<node CREATED="1508797789691" ID="ID_971615184" MODIFIED="1513945272862" TEXT="Quando chega a primeira solicita&#xe7;&#xe3;o do cliente o container Web cria ou aloca uma nova thread do pool de threads fazendo com que o m&#xe9;todo service do servlet seja ativado, analisa a solicita&#xe7;&#xe3;o e verifica qual m&#xe9;todo ser&#xe1; chamado doGet e/ou doPost. O m&#xe9;todo service nunca pode ser sobrescrito."/>
 <node CREATED="1508798011667" ID="ID_615238334" MODIFIED="1513593483027" TEXT="Agora &#xe9; o ciclo dos m&#xe9;todos doGet e/ou doPost onde tudo come&#xe7;a. Respons&#xe1;vel por tudo que esperamos da aplica&#xe7;&#xe3;o."/>
 </node>
 <node CREATED="1508962211455" ID="ID_1807574844" MODIFIED="1513177296470" POSITION="left" TEXT="M&#xe9;todos HTTP">
@@ -36,10 +36,10 @@
 </node>
 <node CREATED="1508967835678" ID="ID_1507773308" MODIFIED="1509400670898" POSITION="left" TEXT="Redirecionamento">
 <node CREATED="1508967183140" ID="ID_275407495" MODIFIED="1509400670898" TEXT="URLs relativas no response.sendRedirect(&quot;foo/stuff.html&quot;); --&gt; retira o nome do servlet da url e adiciona o que est&#xe1; sendo informado. response.sendRedirect(&quot;/foo/stuff.html&quot;); --&gt; raiz do servidor ex: http://localhost:8080/foo/stuff.html - O trabalho &#xe9; feito pelo cliente (browser) e a URL muda e o cliente sabe que foi redirecionado."/>
-<node CREATED="1508967551061" ID="ID_1678644419" MODIFIED="1509400670901" TEXT="RequestDiaspatcher view = request.getRequestDiaspatcher(&quot;teste.jsp&quot;); view.forward(request, response); O trabalho &#xe9; feito pelo servidor. A URL n&#xe3;o muda e o cliente n&#xe3;o sabe que foi redirecionado."/>
+<node CREATED="1508967551061" ID="ID_1678644419" MODIFIED="1513769214906" TEXT="RequestDiaspatcher view = request.getRequestDispatcher(&quot;teste.jsp&quot;); view.forward(request, response); O trabalho &#xe9; feito pelo servidor. A URL n&#xe3;o muda e o cliente n&#xe3;o sabe que foi redirecionado."/>
 </node>
 <node CREATED="1509051017536" ID="ID_357585972" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletResponse">
-<node CREATED="1509051036183" ID="ID_757927878" MODIFIED="1509400670903" TEXT="m&#xe9;todos getBufferSize(), setContentType(), getOutPutStream(), getWriter(), setContentLenght()"/>
+<node CREATED="1509051036183" ID="ID_757927878" MODIFIED="1513766862441" TEXT="m&#xe9;todos getBufferSize(), setContentType(), getOutputStream(), getWriter(), setContentLenght()"/>
 </node>
 <node CREATED="1509051179734" HGAP="-72" ID="ID_1742763790" MODIFIED="1510153606023" POSITION="left" TEXT="Interface - HttpServletResponse" VSHIFT="93">
 <node CREATED="1509051207670" ID="ID_1655201396" MODIFIED="1513177675123" TEXT="addCookie(), addHeader(), encodeURL(), sendError(), setStatus(), sendRedirect()"/>
@@ -241,8 +241,8 @@
 <node CREATED="1510928198745" ID="ID_1042147760" MODIFIED="1510928204502" TEXT="session"/>
 <node CREATED="1510928205889" ID="ID_1040402083" MODIFIED="1510928213661" TEXT="pageContext"/>
 </node>
-<node CREATED="1510928320817" ID="ID_696358875" MODIFIED="1510928355572" TEXT="PageContext">
-<node CREATED="1510928356151" ID="ID_210100099" MODIFIED="1510928359355" TEXT="JspContext">
+<node CREATED="1510928320817" ID="ID_696358875" MODIFIED="1513946665786" TEXT="PageContext">
+<node CREATED="1510928356151" ID="ID_210100099" MODIFIED="1513946669354" TEXT="JspContext">
 <node CREATED="1510928393309" ID="ID_393353501" MODIFIED="1510928402233" TEXT="getAttribute(String)"/>
 <node CREATED="1510928403628" ID="ID_1184603116" MODIFIED="1510928436839" TEXT="getAttribute(String, int) - Aqui voc&#xea; pode passar o escopo."/>
 <node CREATED="1510928438338" ID="ID_1669554866" MODIFIED="1510928452477" TEXT="getAttributeNamesInScope(int)"/>
@@ -428,7 +428,7 @@
 <node CREATED="1512502029677" ID="ID_416861707" MODIFIED="1512502111020" TEXT="Dentro do m&#xe9;todo doTag() da classe que extends SimpleTagSupport">
 <node CREATED="1512502158325" ID="ID_40020938" MODIFIED="1512505179590" TEXT="getJspBody()">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
-<node CREATED="1512502177299" ID="ID_1779759643" MODIFIED="1512505196055" TEXT="getJspBody(). getJspContext();"/>
+<node CREATED="1512502177299" ID="ID_1779759643" MODIFIED="1513771576634" TEXT="getJspBody().getJspContext();"/>
 <node CREATED="1512505147385" ID="ID_1828481008" MODIFIED="1512554846928" TEXT="getJspBody().invoke(null);">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1512505168209" ID="ID_273963151" MODIFIED="1512554842140" TEXT="Avalia o corpo da tag."/>
@@ -525,7 +525,11 @@
 </node>
 </node>
 <node CREATED="1512557281179" ID="ID_1396641679" MODIFIED="1513262010685" TEXT="Funciona diferente da tag simples, as vari&#xe1;veis de inst&#xe2;ncia tem que ser reiniciadas na execu&#xe7;&#xe3;o do m&#xe9;todo doStartTag() j&#xe1; na SimpleTagSupport as tags n&#xe3;o s&#xe3;o reutiliz&#xe1;veis."/>
-<node CREATED="1512559494829" ID="ID_589689528" MODIFIED="1512559513480" TEXT="&lt;dynamic-attributes&gt;true&lt;/dynamic-attributes&gt;"/>
+<node CREATED="1512559494829" ID="ID_589689528" MODIFIED="1512559513480" TEXT="&lt;dynamic-attributes&gt;true&lt;/dynamic-attributes&gt;">
+<node CREATED="1513772074222" ID="ID_819857990" MODIFIED="1513772081594" TEXT="implements DynamicAttributes">
+<node CREATED="1513772083149" ID="ID_1443253360" MODIFIED="1513772241447" TEXT="public void setDynamicAttribute(String arg0, String arg1, Object arg2) throws JspException"/>
+</node>
+</node>
 <node CREATED="1512560280642" ID="ID_1317786225" MODIFIED="1512560843618" TEXT="extends BodyTagSupport ou implementar BodyTag">
 <node CREATED="1512560288834" ID="ID_664740806" MODIFIED="1512560299141" TEXT="setBodyContent()">
 <node CREATED="1512560418553" ID="ID_221025055" MODIFIED="1512560541062" TEXT="&#xc9; chamado quando o m&#xe9;todo doStartTag() quando retorna EVAL_BODY_BUFFERED. Novo padr&#xe3;o para o doStartTag()"/>
@@ -615,7 +619,7 @@
 <node CREATED="1512576256654" ID="ID_656178226" MODIFIED="1512576274505" POSITION="left" TEXT="Deployment Descriptor - DD web.xml">
 <node CREATED="1512576275924" ID="ID_1198289159" MODIFIED="1512576283384" TEXT="EJB">
 <node CREATED="1512576360431" ID="ID_824791475" MODIFIED="1512576362523" TEXT="local">
-<node CREATED="1512576284356" ID="ID_1382917373" MODIFIED="1513342050557" TEXT="&lt;ejb-local-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;local-home&gt;&lt;/local-home&gt;&lt;local&gt;&lt;/local&gt;&lt;ejb-link&gt;&lt;/ejb-link&gt;&lt;/ejb-local-ref&gt;"/>
+<node CREATED="1512576284356" ID="ID_1382917373" MODIFIED="1513772733968" TEXT="&lt;ejb-local-ref&gt;&lt;ejb-ref-name&gt;&lt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;local-home&gt;&lt;/local-home&gt;&lt;local&gt;&lt;/local&gt;&lt;ejb-link&gt;&lt;/ejb-link&gt;&lt;/ejb-local-ref&gt;"/>
 </node>
 <node CREATED="1512576369182" ID="ID_1558004243" MODIFIED="1512576370531" TEXT="remoto">
 <node CREATED="1512576372310" ID="ID_1197127717" MODIFIED="1512576464940" TEXT="&lt;ejb-ref&gt;&lt;ejb-ref-name&gt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;home&gt;&lt;/home&gt;&lt;remote&gt;&lt;/remote&gt;&lt;/ejb-ref&gt;"/>
@@ -724,12 +728,12 @@
 <node CREATED="1512725787019" ID="ID_1337150465" MODIFIED="1512725790247" POSITION="left" TEXT="Filtros">
 <node CREATED="1512726051578" ID="ID_1930909883" MODIFIED="1512726569569" TEXT="&#xc9; toda classe que implementa a interface &lt;&lt;javax.servlet.Filter&gt;&gt;"/>
 <node CREATED="1512726208360" ID="ID_1626500768" MODIFIED="1512726230755" TEXT="Deve implementar os tr&#xea;s m&#xe9;todos">
-<node CREATED="1512726232526" ID="ID_1317955832" MODIFIED="1512726247506" TEXT="void doInit(Filterconfig) throws ServletException"/>
+<node CREATED="1512726232526" ID="ID_1317955832" MODIFIED="1513954312353" TEXT="void doInit(FilterConfig) throws ServletException"/>
 <node CREATED="1512726250813" ID="ID_21455708" MODIFIED="1512726280624" TEXT="void doFilter(ServletRequest, ServletResponse, FilterChain) throws ServletException, IOException"/>
 <node CREATED="1512726289875" ID="ID_665515233" MODIFIED="1512726294447" TEXT="void destroy()"/>
 </node>
 <node CREATED="1512727431745" ID="ID_1339884111" MODIFIED="1513266766858" TEXT="&lt;filter&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;filter-class&gt;&lt;/filter-class&gt;&lt;init-param&gt;&lt;/init-param&gt;&lt;/filter&gt;"/>
-<node CREATED="1512727461671" ID="ID_614250306" MODIFIED="1512728072140" TEXT="&lt;filter-mapping&gt;&lt;filter-name&gt;&lt;/filter-name&lt;url-pattern&gt;&lt;/url-pattern&gt;&lt;/filter-mapping&gt; ou &lt;servlet-name&gt; lugar do url-pattern"/>
+<node CREATED="1512727461671" ID="ID_614250306" MODIFIED="1513772870511" TEXT="&lt;filter-mapping&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;url-pattern&gt;&lt;/url-pattern&gt;&lt;/filter-mapping&gt; ou &lt;servlet-name&gt; lugar do url-pattern"/>
 <node CREATED="1512727700816" ID="ID_1627839238" MODIFIED="1512727707212" TEXT="preced&#xea;ncia">
 <node CREATED="1512727708399" ID="ID_367117353" MODIFIED="1512727708399" TEXT="">
 <node CREATED="1512727729374" ID="ID_984382865" MODIFIED="1512727784903" TEXT="1&#xaa; - Os que estiverem com as URL&#xb4;s correspondentes levando em considera&#xe7;&#xe3;o a ordem em que foram definidos no DD web.xml"/>
