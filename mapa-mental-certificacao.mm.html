@@ -905,7 +905,7 @@
 </ul>
 </li>
 <li>Deployment Descriptor - DD web.xml
-<ul><li>EJB
+<ul><li><p>EJB
 <ul><li>local
 <ul><li><p>&lt;ejb-local-ref&gt;&lt;ejb-ref-name&gt;&lt;/ejb-ref-name&gt;&lt;ejb-ref-type&gt;&lt;/ejb-ref-type&gt;&lt;local-home&gt;&lt;/local-home&gt;&lt;local&gt;&lt;/local&gt;&lt;ejb-link&gt;&lt;/ejb-link&gt;&lt;/ejb-local-ref&gt;
 </li>
@@ -917,9 +917,7 @@
 </ul>
 </li>
 
-</ul>
-</li>
-<li>&lt;env-entry&gt;
+</ul><p>&lt;env-entry&gt;
 <ul><li><p>&lt;env-entry&gt;&lt;env-entry-name&gt;&lt;/env-entry-name&gt;&lt;env-entry-type&gt;&lt;/env-entry-type&gt;&lt;env-entry-value&gt;&lt;/env-entry-value&gt;&lt;/env-entry&gt;
 <ul><li>Par&#226;metros para os EJB&#180;s que ser&#227;o recuperados pelo &lt;env-entry-name&gt;
 
@@ -929,9 +927,7 @@
 </li>
 
 </ul></li>
-</ul>
-</li>
-<li>Servlets Preced&#234;ncia
+</ul><p>Servlets Preced&#234;ncia
 <ul><li>caminho exato &lt;url-pattern&gt;/Diretorio/TesteServlet&lt;/url-pattern&gt;
 
 </li>
@@ -942,25 +938,21 @@
 
 </li>
 
-</ul>
-</li>
-<li>&lt;mime-mapping&gt;
+</ul><p>&lt;mime-mapping&gt;
 <ul><li>&lt;mime-mapping&gt;&lt;extension&gt;mpg&lt;/extension&gt;&lt;mime-type&gt;video/mpeg&lt;/mime-type&gt;&lt;mime-mapping&gt;
 
 </li>
 
-</ul>
+</ul><p>&lt;welcome-file-list&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;/welcome-file-list&gt;
+<p>&lt;resource-ref&gt;&lt;description&gt;&lt;/description&gt;&lt;res-ref-name&gt;&lt;/res-ref-name&gt;&lt;res-type&gt;&lt;/res-type&gt;&lt;res-auth&gt;Container&lt;/res-auth&gt;&lt;/resource-ref&gt;
+<p>&lt;resource-env-ref&gt;&lt;resource-env-ref-name&gt;&lt;/resource-env-ref-name&gt;&lt;resource-env-ref-type&gt;&lt;/resource-env-ref-type&gt;&lt;/resource-env-ref&gt;
 </li>
-<li>&lt;welcome-file-list&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;/welcome-file-list&gt;
-
-</li>
-
 </ul>
 </li>
 <li>Filtros
 <ul><li><p>&#201; toda classe que implementa a interface &lt;&lt;javax.servlet.Filter&gt;&gt;
 <p>Deve implementar os tr&#234;s m&#233;todos
-<ul><li>void doInit(Filterconfig) throws ServletException
+<ul><li>void doInit(FilterConfig) throws ServletException
 
 </li>
 <li>void doFilter(ServletRequest, ServletResponse, FilterChain) throws ServletException, IOException
