@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1512590425713" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
+<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1514300351572" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
 <node CREATED="1508186603022" ID="ID_490295773" MODIFIED="1509400670885" POSITION="right" STYLE="fork" TEXT="Protocolo HTTP">
 <node CREATED="1508186641763" ID="ID_549836734" MODIFIED="1509400670885" TEXT="GET - Solicita&#xe7;&#xe3;o simples"/>
 <node CREATED="1508186659228" ID="ID_1537363229" MODIFIED="1509400670885" TEXT="POST - Solicita&#xe7;&#xe3;o de um recurso com informa&#xe7;&#xf5;es do usu&#xe1;rio. Ex: Formul&#xe1;rio"/>
@@ -42,7 +42,7 @@
 <node CREATED="1509051036183" ID="ID_757927878" MODIFIED="1513766862441" TEXT="m&#xe9;todos getBufferSize(), setContentType(), getOutputStream(), getWriter(), setContentLenght()"/>
 </node>
 <node CREATED="1509051179734" HGAP="-72" ID="ID_1742763790" MODIFIED="1510153606023" POSITION="left" TEXT="Interface - HttpServletResponse" VSHIFT="93">
-<node CREATED="1509051207670" ID="ID_1655201396" MODIFIED="1513177675123" TEXT="addCookie(), addHeader(), encodeURL(), sendError(), setStatus(), sendRedirect()"/>
+<node CREATED="1509051207670" ID="ID_1655201396" MODIFIED="1514300461352" TEXT="addCookie(), addHeader(), setHeader(), encodeURL(), encodeRedirectUrl(), sendError(), setStatus(), sendRedirect() "/>
 </node>
 <node CREATED="1509051285797" ID="ID_1513252555" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletRequest">
 <node CREATED="1509051313010" ID="ID_87909527" MODIFIED="1513177159669" TEXT="getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames()">
@@ -56,7 +56,7 @@
 <node CREATED="1509054210865" ID="ID_377899945" MODIFIED="1513592356779" TEXT="service(ServletRequest, ServletResponse), init(ServletConfig), init(), destroy(), getServletConfig(), getServletInfo(), getInitParameter(String), getInitParameterNames(), getServletContext(), log(String), log(String, Throwable)"/>
 </node>
 <node CREATED="1509054333224" HGAP="-111" ID="ID_708576079" MODIFIED="1510232414801" POSITION="left" TEXT="Interface - ServletConfig" VSHIFT="42">
-<node CREATED="1509054357489" ID="ID_866106118" MODIFIED="1509400670910" TEXT="getInitParameter(String), Enumeration - getInitParameterNames(), getServletContext(), getServletNames()"/>
+<node CREATED="1509054357489" ID="ID_866106118" MODIFIED="1514300984076" TEXT="getInitParameter(String), Enumeration - getInitParameterNames(), getServletContext(), getServletName()"/>
 </node>
 <node CREATED="1509400683852" ID="ID_1912751497" MODIFIED="1510001683506" POSITION="right" TEXT="Listeners">
 <node CREATED="1509400695583" ID="ID_1364960084" MODIFIED="1509400797591" TEXT="&lt;&lt;interface&gt;&gt; javax.selvlet.ServletContextListener">
@@ -241,7 +241,7 @@
 <node CREATED="1510928198745" ID="ID_1042147760" MODIFIED="1510928204502" TEXT="session"/>
 <node CREATED="1510928205889" ID="ID_1040402083" MODIFIED="1510928213661" TEXT="pageContext"/>
 </node>
-<node CREATED="1510928320817" ID="ID_696358875" MODIFIED="1513946665786" TEXT="PageContext">
+<node CREATED="1510928320817" ID="ID_696358875" MODIFIED="1514301578678" TEXT="PageContext">
 <node CREATED="1510928356151" ID="ID_210100099" MODIFIED="1513946669354" TEXT="JspContext">
 <node CREATED="1510928393309" ID="ID_393353501" MODIFIED="1510928402233" TEXT="getAttribute(String)"/>
 <node CREATED="1510928403628" ID="ID_1184603116" MODIFIED="1510928436839" TEXT="getAttribute(String, int) - Aqui voc&#xea; pode passar o escopo."/>
@@ -392,7 +392,7 @@
 <node CREATED="1512141924763" ID="ID_324391694" MODIFIED="1512141952798" TEXT="Nas urls n&#xe3;o podem conter espa&#xe7;os, S&#xe3;o substitu&#xed;dos por &quot;+&quot;"/>
 </node>
 <node CREATED="1512400343073" ID="ID_1197640765" MODIFIED="1513255009909" TEXT="Taglib customizadas">
-<node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1512558127273" TEXT="&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;">
+<node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1514371205400" TEXT="&lt;taglib&gt;&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;&lt;/taglib&gt;">
 <node CREATED="1512400467617" ID="ID_451643882" MODIFIED="1512400482204" TEXT="Se n&#xe3;o informar o rtexprvalue o valor padr&#xe3;o &#xe9; sempre false"/>
 </node>
 <node CREATED="1512400727696" ID="ID_716574812" MODIFIED="1513600001655" TEXT="Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;empty&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#xe1; existir a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:attribute name=&quot;user&quot;&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag."/>
@@ -417,7 +417,7 @@
 </node>
 </node>
 <node CREATED="1512499328346" ID="ID_1621901865" MODIFIED="1512499550046" TEXT="Atributos da tag">
-<node CREATED="1512499346505" ID="ID_110028977" MODIFIED="1512499403706" TEXT="&lt;%@attributte name=&quot;&quot; required=&quot;true&quot; rtexprvalue=&quot;true&quot; %&gt;"/>
+<node CREATED="1512499346505" ID="ID_110028977" MODIFIED="1514371712761" TEXT="&lt;%@attribute name=&quot;&quot; required=&quot;true&quot; rtexprvalue=&quot;true&quot; %&gt;"/>
 <node CREATED="1512499423204" ID="ID_1002470761" MODIFIED="1512558026446" TEXT="&lt;attribute&gt;&lt;name&gt;&lt;/name&gt;&lt;required&gt;&lt;/required&gt;&lt;rtexprvalue&gt;&lt;rtexprvalue&gt;&lt;type&gt;java.util.List&lt;/type&gt;&lt;/attribute&gt;"/>
 <node CREATED="1512499551252" ID="ID_1449087262" MODIFIED="1512499580423" TEXT="Se n&#xe3;o informar os atributos que est&#xe3;o como required. JasperException"/>
 <node CREATED="1512500368696" ID="ID_1166707947" MODIFIED="1512500401890" TEXT="&lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
@@ -640,6 +640,8 @@
 <node CREATED="1512578548970" ID="ID_534708967" MODIFIED="1512578626394" TEXT="&lt;mime-mapping&gt;&lt;extension&gt;mpg&lt;/extension&gt;&lt;mime-type&gt;video/mpeg&lt;/mime-type&gt;&lt;mime-mapping&gt;"/>
 </node>
 <node CREATED="1512579034444" ID="ID_1961972872" MODIFIED="1512585290698" TEXT="&lt;welcome-file-list&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;welcome-file&gt;&lt;/welcome-file&gt;&lt;/welcome-file-list&gt;"/>
+<node CREATED="1513959190947" ID="ID_684897502" MODIFIED="1513959339580" TEXT="&lt;resource-ref&gt;&lt;description&gt;&lt;/description&gt;&lt;res-ref-name&gt;&lt;/res-ref-name&gt;&lt;res-type&gt;&lt;/res-type&gt;&lt;res-auth&gt;Container&lt;/res-auth&gt;&lt;/resource-ref&gt;"/>
+<node CREATED="1513959463503" ID="ID_941520400" MODIFIED="1513959486306" TEXT="&lt;resource-env-ref&gt;&lt;resource-env-ref-name&gt;&lt;/resource-env-ref-name&gt;&lt;resource-env-ref-type&gt;&lt;/resource-env-ref-type&gt;&lt;/resource-env-ref&gt;"/>
 </node>
 <node CREATED="1512585495996" ID="ID_1982038145" MODIFIED="1512590440686" POSITION="right" TEXT="Seguran&#xe7;a">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
