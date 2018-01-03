@@ -281,6 +281,7 @@
 <node CREATED="1511273799190" ID="ID_277480177" MODIFIED="1511274961968" TEXT="&lt;jsp:useBean id=&quot;&quot; class=&quot;sub-classe concreta ou implementa&#xe7;&#xe3;o da classe referenciada no type&quot; scope=&quot;&quot; type=&quot;classe abstrata ou interface&quot; /&gt;">
 <node CREATED="1511274018832" ID="ID_857522395" MODIFIED="1511274039371" TEXT="Se n&#xe3;o existir o bean no escopo informado ele cria um novo."/>
 <node CREATED="1511275044846" ID="ID_1937961177" MODIFIED="1511275086992" TEXT="Se o type for usado sem um class o bean j&#xe1; dever&#xe1; existir sen&#xe3;o java.lang.InstantiationException"/>
+<node CREATED="1514989957551" ID="ID_1439074357" MODIFIED="1514989970820" TEXT="beanName &#xe9; usado com o type"/>
 </node>
 <node CREATED="1511273832596" ID="ID_1946073304" MODIFIED="1511273850031" TEXT="&lt;jsp:getProperty name=&quot;&quot; property=&quot;&quot; /&gt;">
 <node CREATED="1511277843002" ID="ID_1231209758" MODIFIED="1511277918074" TEXT="S&#xf3; acessa as propriedades do bean mencionado em name=&quot;&quot;. N&#xe3;o acessa objetos aninhados. Ex: person.dog.name com isso tem que usar EL: ${person.dog.name}"/>
@@ -425,7 +426,7 @@
 <node CREATED="1512499677468" ID="ID_715291519" MODIFIED="1513255416141" TEXT="&lt;jsp:doBody /&gt;">
 <node CREATED="1512499685292" ID="ID_775145341" MODIFIED="1512499701135" TEXT="Recupera o corpo da tag."/>
 </node>
-<node CREATED="1512502029677" ID="ID_416861707" MODIFIED="1512502111020" TEXT="Dentro do m&#xe9;todo doTag() da classe que extends SimpleTagSupport">
+<node CREATED="1512502029677" ID="ID_416861707" MODIFIED="1514371807017" TEXT="Dentro do m&#xe9;todo doTag() da classe que extends SimpleTagSupport">
 <node CREATED="1512502158325" ID="ID_40020938" MODIFIED="1512505179590" TEXT="getJspBody()">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1512502177299" ID="ID_1779759643" MODIFIED="1513771576634" TEXT="getJspBody().getJspContext();"/>
@@ -730,16 +731,14 @@
 <node CREATED="1512725787019" ID="ID_1337150465" MODIFIED="1512725790247" POSITION="left" TEXT="Filtros">
 <node CREATED="1512726051578" ID="ID_1930909883" MODIFIED="1512726569569" TEXT="&#xc9; toda classe que implementa a interface &lt;&lt;javax.servlet.Filter&gt;&gt;"/>
 <node CREATED="1512726208360" ID="ID_1626500768" MODIFIED="1512726230755" TEXT="Deve implementar os tr&#xea;s m&#xe9;todos">
-<node CREATED="1512726232526" ID="ID_1317955832" MODIFIED="1513954312353" TEXT="void doInit(FilterConfig) throws ServletException"/>
+<node CREATED="1512726232526" ID="ID_1317955832" MODIFIED="1514375231788" TEXT="void init(FilterConfig) throws ServletException"/>
 <node CREATED="1512726250813" ID="ID_21455708" MODIFIED="1512726280624" TEXT="void doFilter(ServletRequest, ServletResponse, FilterChain) throws ServletException, IOException"/>
 <node CREATED="1512726289875" ID="ID_665515233" MODIFIED="1512726294447" TEXT="void destroy()"/>
 </node>
 <node CREATED="1512727431745" ID="ID_1339884111" MODIFIED="1513266766858" TEXT="&lt;filter&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;filter-class&gt;&lt;/filter-class&gt;&lt;init-param&gt;&lt;/init-param&gt;&lt;/filter&gt;"/>
 <node CREATED="1512727461671" ID="ID_614250306" MODIFIED="1513772870511" TEXT="&lt;filter-mapping&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;url-pattern&gt;&lt;/url-pattern&gt;&lt;/filter-mapping&gt; ou &lt;servlet-name&gt; lugar do url-pattern"/>
 <node CREATED="1512727700816" ID="ID_1627839238" MODIFIED="1512727707212" TEXT="preced&#xea;ncia">
-<node CREATED="1512727708399" ID="ID_367117353" MODIFIED="1512727708399" TEXT="">
 <node CREATED="1512727729374" ID="ID_984382865" MODIFIED="1512727784903" TEXT="1&#xaa; - Os que estiverem com as URL&#xb4;s correspondentes levando em considera&#xe7;&#xe3;o a ordem em que foram definidos no DD web.xml"/>
-</node>
 <node CREATED="1512727846919" ID="ID_922089913" MODIFIED="1512727871689" TEXT="2&#xaa; - Depois &#xe9; feita a mesma coisa com os filtros com servlet-name correspondentes"/>
 </node>
 <node CREATED="1512728021611" ID="ID_1545577753" MODIFIED="1512728023320" TEXT="&lt;dispatcher&gt;">
