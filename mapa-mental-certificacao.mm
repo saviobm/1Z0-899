@@ -30,8 +30,8 @@
 </node>
 <node CREATED="1508967171537" ID="ID_427853416" MODIFIED="1509400670898" POSITION="left" TEXT="Response">
 <node CREATED="1508966642904" ID="ID_1885508790" MODIFIED="1509400670898" TEXT="Op&#xe7;&#xf5;es de sa&#xed;da no HttpServletResponse">
-<node CREATED="1508966667420" ID="ID_1173077233" MODIFIED="1509400670898" TEXT="PrintWriter writer = response.getWriter(); writer.println(&quot;&quot;);"/>
-<node CREATED="1508966711173" ID="ID_580515631" MODIFIED="1509400670898" TEXT="ServletOutputStream out = response.getOutputStream(); out.write(&quot;&quot;);"/>
+<node CREATED="1508966667420" ID="ID_1173077233" MODIFIED="1515518013700" TEXT="PrintWriter writer = response.getWriter(); writer.println(&quot;&quot;); writer.write(&quot;&quot;);"/>
+<node CREATED="1508966711173" ID="ID_580515631" MODIFIED="1515518104974" TEXT="ServletOutputStream out = response.getOutputStream(); out.write(byte[]); out.println(&quot;&quot;);"/>
 </node>
 </node>
 <node CREATED="1508967835678" ID="ID_1507773308" MODIFIED="1509400670898" POSITION="left" TEXT="Redirecionamento">
@@ -39,13 +39,13 @@
 <node CREATED="1508967551061" ID="ID_1678644419" MODIFIED="1513769214906" TEXT="RequestDiaspatcher view = request.getRequestDispatcher(&quot;teste.jsp&quot;); view.forward(request, response); O trabalho &#xe9; feito pelo servidor. A URL n&#xe3;o muda e o cliente n&#xe3;o sabe que foi redirecionado."/>
 </node>
 <node CREATED="1509051017536" ID="ID_357585972" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletResponse">
-<node CREATED="1509051036183" ID="ID_757927878" MODIFIED="1513766862441" TEXT="m&#xe9;todos getBufferSize(), setContentType(), getOutputStream(), getWriter(), setContentLenght()"/>
+<node CREATED="1509051036183" ID="ID_757927878" MODIFIED="1515516741214" TEXT="m&#xe9;todos getBufferSize(), setContentType(), getOutputStream(), getWriter(), setContentLenght()"/>
 </node>
 <node CREATED="1509051179734" HGAP="-72" ID="ID_1742763790" MODIFIED="1510153606023" POSITION="left" TEXT="Interface - HttpServletResponse" VSHIFT="93">
 <node CREATED="1509051207670" ID="ID_1655201396" MODIFIED="1514300461352" TEXT="addCookie(), addHeader(), setHeader(), encodeURL(), encodeRedirectUrl(), sendError(), setStatus(), sendRedirect() "/>
 </node>
 <node CREATED="1509051285797" ID="ID_1513252555" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletRequest">
-<node CREATED="1509051313010" ID="ID_87909527" MODIFIED="1513177159669" TEXT="getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames()">
+<node CREATED="1509051313010" ID="ID_87909527" MODIFIED="1515516754293" TEXT="getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames() e getReader()">
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
@@ -188,7 +188,7 @@
 <node CREATED="1510327089838" ID="ID_1524540961" MODIFIED="1513180182413" TEXT="setMaxAge() - &#xc9; definido em segundos. Se configurar com &quot;-1&quot; ele s&#xf3; ser&#xe1; removido quando o browser fechar. Mesmo exemplo do cookie: JSESSIONID">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 </node>
-<node CREATED="1510327729421" ID="ID_727019585" MODIFIED="1510327790110" TEXT="N&#xe3;o existe um getCookie(&quot;&quot;), a &#xfa;nica forma &#xe9; um array de cookies: request.getCookies();"/>
+<node CREATED="1510327729421" ID="ID_727019585" MODIFIED="1515525852797" TEXT="N&#xe3;o existe um getCookie(&quot;&quot;), a &#xfa;nica forma &#xe9; um array de objetos Cookie: request.getCookies();"/>
 </node>
 <node CREATED="1510584224198" ID="ID_1214562147" MODIFIED="1510584270623" TEXT="As sess&#xf5;es s&#xe3;o os &#xfa;nicos objetos que n&#xe3;o s&#xe3;o duplicados em JVM&#xb4;s diferentes."/>
 </node>
@@ -216,7 +216,7 @@
 <node CREATED="1510842494277" ID="ID_1685340257" MODIFIED="1510842527775" TEXT="Equivalente a: out.print(&quot;&quot;) - Por isso depois da express&#xe3;o n&#xe3;o &#xe9; colocado um &quot;;&quot;"/>
 </node>
 <node CREATED="1510843994668" ID="ID_1120122037" MODIFIED="1510844172904" TEXT="Declara&#xe7;&#xe3;o: &lt;%!  int count = 0; %&gt;">
-<node CREATED="1510844033134" ID="ID_1311901559" MODIFIED="1510844161247" TEXT="Aqui precisa de um &quot;;&quot;, todas as vari&#xe1;veis e m&#xe9;todos declarados com &lt;%!%&gt; ser&#xe1; colocado fora do m&#xe9;todo _jspService(HttpServletRequest, HttpServletResponse) sendo vari&#xe1;veis e m&#xe9;todos da classe."/>
+<node CREATED="1510844033134" ID="ID_1311901559" MODIFIED="1515519520428" TEXT="Aqui precisa de um &quot;;&quot;, todas as vari&#xe1;veis e m&#xe9;todos declarados com &lt;%!%&gt; ser&#xe3;o colocados fora do m&#xe9;todo _jspService(HttpServletRequest, HttpServletResponse) sendo vari&#xe1;veis e m&#xe9;todos da classe."/>
 </node>
 <node CREATED="1510844683458" ID="ID_782014591" MODIFIED="1510844687982" TEXT="Ciclo de Vida">
 <node CREATED="1510844688954" ID="ID_195229597" MODIFIED="1510844701254" TEXT="M&#xe9;todos">
@@ -465,7 +465,7 @@
 <node CREATED="1512504692201" ID="ID_2914772" MODIFIED="1512504697341" TEXT="doTag()"/>
 </node>
 </node>
-<node CREATED="1512554551213" ID="ID_1024187441" MODIFIED="1512555092827" TEXT="Tag Cl&#xe1;ssica">
+<node CREATED="1512554551213" ID="ID_1024187441" MODIFIED="1515522025858" TEXT="Tag Cl&#xe1;ssica">
 <node CREATED="1512554556942" ID="ID_311662940" MODIFIED="1512554568539" TEXT="extends TagSupport"/>
 <node CREATED="1512554571846" ID="ID_715584296" MODIFIED="1512554592907" TEXT="doStartTag() throws JspException">
 <node CREATED="1512554597967" ID="ID_644756719" MODIFIED="1512554631373" TEXT="N&#xe3;o declara um IOException"/>
@@ -705,6 +705,9 @@
 <node CREATED="1512669899603" ID="ID_651471300" MODIFIED="1512669903063" TEXT="CONFIDENTIAL">
 <node CREATED="1513606545998" ID="ID_123788478" MODIFIED="1513606564842" TEXT="Os dados n&#xe3;o podem ser vistos por ningu&#xe9;m ao longo do caminho."/>
 </node>
+<node CREATED="1515526253909" ID="ID_1371206086" MODIFIED="1515526332609" TEXT="No Enum ServletSecurity.TransportGuarantee s&#xf3; existem os valores NONE e CONFIDENTIAL.">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+</node>
 </node>
 </node>
 <node CREATED="1512589941068" ID="ID_1216458225" MODIFIED="1512589961339" TEXT="&lt;login-config&gt;&lt;auth-method&gt;BASIC&lt;/auth-method&gt;&lt;/login-config&gt;"/>
@@ -773,6 +776,12 @@
 <node CREATED="1515496558523" ID="ID_1596626536" MODIFIED="1515496561520" TEXT="@RunAs"/>
 <node CREATED="1515496569411" ID="ID_1726262086" MODIFIED="1515496572247" TEXT="@WebServiceRef   "/>
 <node CREATED="1515496578778" ID="ID_396674506" MODIFIED="1515496581710" TEXT="@WebServiceRefs  "/>
+</node>
+<node CREATED="1515526898150" ID="ID_151893825" MODIFIED="1515526902994" POSITION="right" TEXT="Observa&#xe7;&#xf5;es">
+<node CREATED="1515526913141" ID="ID_323679787" MODIFIED="1515526915297" TEXT="https protocol &#xe9; usado para sess&#xf5;es quando o browser n&#xe3;o suporta cookies."/>
+<node CREATED="1515526920988" ID="ID_438852013" MODIFIED="1515526922041" TEXT="JSP document n&#xe3;o poder&#xe1; conter &lt; &gt; e sim &amp;lt; e &amp;gt;"/>
+<node CREATED="1515526923212" ID="ID_1855564080" MODIFIED="1515526930336" TEXT="HttpJspBase _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException."/>
+<node CREATED="1515526935779" ID="ID_1041911254" MODIFIED="1515526936896" TEXT="Nas p&#xe1;ginas JSP o request.getSession(false); sempre retornar&#xe1; uma sess&#xe3;o pr&#xe9;-existente. Porque a JSP por padr&#xe3;o j&#xe1; existe o objeto session instanciado."/>
 </node>
 </node>
 </map>
