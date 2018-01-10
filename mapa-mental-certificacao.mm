@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1514300351572" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
+<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1515607425002" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
 <node CREATED="1508186603022" ID="ID_490295773" MODIFIED="1509400670885" POSITION="right" STYLE="fork" TEXT="Protocolo HTTP">
 <node CREATED="1508186641763" ID="ID_549836734" MODIFIED="1509400670885" TEXT="GET - Solicita&#xe7;&#xe3;o simples"/>
 <node CREATED="1508186659228" ID="ID_1537363229" MODIFIED="1509400670885" TEXT="POST - Solicita&#xe7;&#xe3;o de um recurso com informa&#xe7;&#xf5;es do usu&#xe1;rio. Ex: Formul&#xe1;rio"/>
@@ -226,7 +226,9 @@
 </node>
 </node>
 <node CREATED="1510845066330" ID="ID_1402170215" MODIFIED="1510845071726" TEXT="Objetos Impl&#xed;citos">
-<node CREATED="1510845072649" ID="ID_1773025466" MODIFIED="1510845086829" TEXT="out --&gt; JspWriter"/>
+<node CREATED="1510845072649" ID="ID_1773025466" MODIFIED="1510845086829" TEXT="out --&gt; JspWriter">
+<node CREATED="1515585375631" ID="ID_115456893" MODIFIED="1515585403996" TEXT="javax.servlet.jsp.JspWriter"/>
+</node>
 <node CREATED="1510845088352" ID="ID_1345773855" MODIFIED="1510845098380" TEXT="request --&gt; HttpServletRequest"/>
 <node CREATED="1510845099783" ID="ID_1378896638" MODIFIED="1510845184591" TEXT="response --&gt; HttpServletResponse"/>
 <node CREATED="1510845110215" ID="ID_1420122222" MODIFIED="1510845180143" TEXT="session --&gt; HttpSession"/>
@@ -777,11 +779,34 @@
 <node CREATED="1515496569411" ID="ID_1726262086" MODIFIED="1515496572247" TEXT="@WebServiceRef   "/>
 <node CREATED="1515496578778" ID="ID_396674506" MODIFIED="1515496581710" TEXT="@WebServiceRefs  "/>
 </node>
-<node CREATED="1515526898150" ID="ID_151893825" MODIFIED="1515526902994" POSITION="right" TEXT="Observa&#xe7;&#xf5;es">
+<node CREATED="1515526898150" ID="ID_151893825" MODIFIED="1515607436058" POSITION="right" TEXT="Observa&#xe7;&#xf5;es">
 <node CREATED="1515526913141" ID="ID_323679787" MODIFIED="1515526915297" TEXT="https protocol &#xe9; usado para sess&#xf5;es quando o browser n&#xe3;o suporta cookies."/>
 <node CREATED="1515526920988" ID="ID_438852013" MODIFIED="1515526922041" TEXT="JSP document n&#xe3;o poder&#xe1; conter &lt; &gt; e sim &amp;lt; e &amp;gt;"/>
 <node CREATED="1515526923212" ID="ID_1855564080" MODIFIED="1515526930336" TEXT="HttpJspBase _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException."/>
-<node CREATED="1515526935779" ID="ID_1041911254" MODIFIED="1515526936896" TEXT="Nas p&#xe1;ginas JSP o request.getSession(false); sempre retornar&#xe1; uma sess&#xe3;o pr&#xe9;-existente. Porque a JSP por padr&#xe3;o j&#xe1; existe o objeto session instanciado."/>
+<node CREATED="1515526935779" ID="ID_1041911254" MODIFIED="1515528569087" TEXT="Nas p&#xe1;ginas JSP o request.getSession(false); sempre retornar&#xe1; uma sess&#xe3;o pr&#xe9;-existente. Porque a JSP por padr&#xe3;o j&#xe1; existe o objeto session instanciado ao mesnos que a propriedade session=&quot;false&quot; &lt;%@ page session=&quot;true&quot; %&gt; o padr&#xe3;o do session sempre &#xe9; &quot;true&quot;."/>
+<node CREATED="1515582539440" ID="ID_735201155" MODIFIED="1515582771517" TEXT="@ServletSecurity(@HttpConstraint(rolesAllowed = {&quot;&quot;, &quot;&quot;}, transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL ou NONE, value = EmptyRoleSemantic.PERMIT ou DENY))"/>
+<node CREATED="1515607437087" ID="ID_354229974" MODIFIED="1515607465738" TEXT="O objeto AsyncContext cont&#xe9;m o m&#xe9;todo dispatch(&quot;/destination.jsp&quot;);"/>
+<node CREATED="1515607517435" ID="ID_1450297557" MODIFIED="1515607540973" TEXT="Quando voc&#xea; pode registrar um servlet ou um filtro dinamicamente com uma aplica&#xe7;&#xe3;o web? Somente durante a inicializa&#xe7;&#xe3;o do contexto.">
+<node CREATED="1515610954365" ID="ID_1235313145" MODIFIED="1515610955945" TEXT="ServletContainerInitializer">
+<node CREATED="1515610961957" ID="ID_860977999" MODIFIED="1515610963201" TEXT="onStartup(Set&lt;Class&lt;?&gt;&gt; c, ServletContext ctx) throws ServletException "/>
+<node CREATED="1515610972804" ID="ID_1848807385" MODIFIED="1515610973872" TEXT="ctx.setInitParameter(&quot;&quot;, &quot;&quot;);"/>
+</node>
+</node>
+<node CREATED="1515608970705" ID="ID_623802126" MODIFIED="1515608981582" TEXT="&lt;body-content&gt;tagdependent&lt;/body-content&gt;">
+<node CREATED="1515608982474" ID="ID_66618020" MODIFIED="1515609010143" TEXT="Tudo que for colocado dentro do corpo da tag vira texto. Ex.: &lt;%= 3*4 %&gt; vai sair &lt;%= 3*4 %&gt;."/>
+</node>
+<node CREATED="1515611274336" ID="ID_485211087" MODIFIED="1515611275437" TEXT="javax.servlet.ServletContext">
+<node CREATED="1515611280968" ID="ID_1674639393" MODIFIED="1515611292052" TEXT="getResource()">
+<node CREATED="1515611293271" ID="ID_1131500693" MODIFIED="1515611304011" TEXT="Retorno do m&#xe9;todo java.net.URL object."/>
+</node>
+</node>
+<node CREATED="1515611610875" ID="ID_1531799438" MODIFIED="1515611890010" TEXT="Quando faz o override do m&#xe9;todo jspInit() na p&#xe1;gina JSP nenhum dos objetos impl&#xed;citos est&#xe3;o acess&#xed;veis e sim no m&#xe9;todo _jspService()">
+<node CREATED="1515611654008" ID="ID_118741201" MODIFIED="1515611683883" TEXT="Ex: application.getAttribute(&quot;&quot;) n&#xe3;o funciona"/>
+</node>
+<node CREATED="1515611950301" ID="ID_1119768612" MODIFIED="1515611970816" TEXT="Veri&#xe1;vel impl&#xed;cita page &#xe9; devolvida como java.lang.Object."/>
+<node CREATED="1515612178646" ID="ID_1573222405" MODIFIED="1515612201909" TEXT="Se quiser enviar um cookie para um servlet em particular ter&#xe1; que acrescentar">
+<node CREATED="1515612212427" ID="ID_1423986920" MODIFIED="1515612226857" TEXT="cookie.setPath(request.getContextPath()+&quot;/showbook&quot;);"/>
+</node>
 </node>
 </node>
 </map>
