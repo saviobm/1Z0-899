@@ -32,10 +32,10 @@
 </li>
 <li>Response
 <ul><li>Op&#231;&#245;es de sa&#237;da no HttpServletResponse
-<ul><li>PrintWriter writer = response.getWriter(); writer.println("");
+<ul><li>PrintWriter writer = response.getWriter(); writer.println(""); writer.write("");
 
 </li>
-<li>ServletOutputStream out = response.getOutputStream(); out.write("");
+<li>ServletOutputStream out = response.getOutputStream(); out.write(byte[]); out.println("");
 
 </li>
 
@@ -51,10 +51,8 @@
 </ul>
 </li>
 <li>Interface - HttpServletResponse
-<ul><li>addCookie(), addHeader(), encodeURL(), sendError(), setStatus(), sendRedirect()
-
+<ul><li><p>addCookie(), addHeader(), setHeader(), encodeURL(), encodeRedirectUrl(), sendError(), setStatus(), sendRedirect() 
 </li>
-
 </ul>
 </li>
 <li>Interface - HttpServletRequest
@@ -63,7 +61,7 @@
 </ul>
 </li>
 <li>Interface - ServletConfig
-<ul><li><p>getInitParameter(String), Enumeration - getInitParameterNames(), getServletContext(), getServletNames()
+<ul><li><p>getInitParameter(String), Enumeration - getInitParameterNames(), getServletContext(), getServletName()
 </li>
 </ul>
 </li>
@@ -97,6 +95,7 @@
 <p>isELIgnored - S&#243; funciona se no DD estiver configurado um padr&#227;o de Url que atenda a p&#225;gina informada.
 <p>isErrorPage
 <p>errorPage
+<p>autoFlush
 </li>
 </ul>
 </li>
@@ -126,7 +125,7 @@
 </ul>
 </li>
 <li>Declara&#231;&#227;o: &lt;%! &nbsp;int count = 0; %&gt;
-<ul><li><p>Aqui precisa de um ";", todas as vari&#225;veis e m&#233;todos declarados com &lt;%!%&gt; ser&#225; colocado fora do m&#233;todo _jspService(HttpServletRequest, HttpServletResponse) sendo vari&#225;veis e m&#233;todos da classe.
+<ul><li><p>Aqui precisa de um ";", todas as vari&#225;veis e m&#233;todos declarados com &lt;%!%&gt; ser&#227;o colocados fora do m&#233;todo _jspService(HttpServletRequest, HttpServletResponse) sendo vari&#225;veis e m&#233;todos da classe.
 </li>
 </ul>
 </li>
@@ -149,7 +148,11 @@
 </li>
 <li>Objetos Impl&#237;citos
 <ul><li>out --&gt; JspWriter
+<ul><li>javax.servlet.jsp.JspWriter
 
+</li>
+
+</ul>
 </li>
 <li>request --&gt; HttpServletRequest
 
@@ -284,6 +287,9 @@
 
 </li>
 <li>Se o type for usado sem um class o bean j&#225; dever&#225; existir sen&#227;o java.lang.InstantiationException
+
+</li>
+<li>beanName &#233;&nbsp;usado com o type
 
 </li>
 
@@ -509,7 +515,7 @@
 </li>
 
 </ul><p>Taglib customizadas
-<ul><li><p>&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;
+<ul><li><p>&lt;taglib&gt;&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;&lt;/taglib&gt;
 <ul><li>Se n&#227;o informar o rtexprvalue o valor padr&#227;o &#233;&nbsp;sempre false
 
 </li>
@@ -548,7 +554,7 @@
 </li>
 
 </ul><p>Atributos da tag
-<ul><li><p>&lt;%@attributte name="" required="true" rtexprvalue="true" %&gt;
+<ul><li><p>&lt;%@attribute name="" required="true" rtexprvalue="true" %&gt;
 <p>&lt;attribute&gt;&lt;name&gt;&lt;/name&gt;&lt;required&gt;&lt;/required&gt;&lt;rtexprvalue&gt;&lt;rtexprvalue&gt;&lt;type&gt;java.util.List&lt;/type&gt;&lt;/attribute&gt;
 <p>Se n&#227;o informar os atributos que est&#227;o como required. JasperException
 <p>&lt;jsp:attribute name=""&gt;valor&lt;/jsp:attribute&gt;
@@ -952,7 +958,7 @@
 <li>Filtros
 <ul><li><p>&#201; toda classe que implementa a interface &lt;&lt;javax.servlet.Filter&gt;&gt;
 <p>Deve implementar os tr&#234;s m&#233;todos
-<ul><li>void doInit(FilterConfig) throws ServletException
+<ul><li>void init(FilterConfig) throws ServletException
 
 </li>
 <li>void doFilter(ServletRequest, ServletResponse, FilterChain) throws ServletException, IOException
@@ -965,15 +971,9 @@
 </ul><p>&lt;filter&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;filter-class&gt;&lt;/filter-class&gt;&lt;init-param&gt;&lt;/init-param&gt;&lt;/filter&gt;
 <p>&lt;filter-mapping&gt;&lt;filter-name&gt;&lt;/filter-name&gt;&lt;url-pattern&gt;&lt;/url-pattern&gt;&lt;/filter-mapping&gt; ou &lt;servlet-name&gt; lugar do url-pattern
 <p>preced&#234;ncia
-<ul><li>&nbsp;
 <ul><li><p>1&#170; - Os que estiverem com as URL&#180;s correspondentes levando em considera&#231;&#227;o a ordem em que foram definidos no DD web.xml
+<p>2&#170; - Depois &#233;&nbsp;feita a mesma coisa com os filtros com servlet-name correspondentes
 </li>
-</ul>
-</li>
-<li>2&#170; - Depois &#233;&nbsp;feita a mesma coisa com os filtros com servlet-name correspondentes
-
-</li>
-
 </ul><p>&lt;dispatcher&gt;
 <ul><li>REQUEST
 <ul><li>dispatcher padr&#227;o quando n&#227;o informado
@@ -1055,7 +1055,7 @@
 </ul>
 </li>
 <li>Interface - ServletRequest
-<ul><li><p><span style="font-family: SansSerif, sans-serif; ">getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames()</span>
+<ul><li><p><span style="font-family: SansSerif, sans-serif; ">getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames() e getReader()</span>
 </li>
 </ul>
 </li>
@@ -1295,7 +1295,7 @@
 <p>O servidor envia um header na resposta sob o nome: Set-Cookie e depois o cliente devolve com um header na solicita&#231;&#227;o sob o nome Cookie com os mesmos dados que vieram no Set-Cookie.
 <p>Cookies
 <ul><li><p><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">setMaxAge() - &#201;&nbsp;definido em segundos. Se configurar com "-1" ele s&#243; ser&#225; removido quando o browser fechar. Mesmo exemplo do cookie: JSESSIONID</span>
-<p>N&#227;o existe um getCookie(""), a &#250;nica forma &#233;&nbsp;um array de cookies: request.getCookies();
+<p>N&#227;o existe um getCookie(""), a &#250;nica forma &#233;&nbsp;um array de objetos Cookie: request.getCookies();
 </li>
 </ul><p>As sess&#245;es s&#227;o os &#250;nicos objetos que n&#227;o s&#227;o duplicados em JVM&#180;s diferentes.
 </li>
@@ -1432,6 +1432,9 @@
 
 </ul>
 </li>
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">No Enum ServletSecurity.TransportGuarantee s&#243; existem os valores NONE e CONFIDENTIAL.</span>
+
+</li>
 
 </ul></li>
 </ul>
@@ -1482,6 +1485,99 @@
 </ul>
 </li>
 
+</ul>
+</li>
+<li>Anotations JSP 3.0
+<ul><li>@DeclareRoles
+
+</li>
+<li>@EJB
+
+</li>
+<li>@EJBs
+
+</li>
+<li>@Resource
+
+</li>
+<li>@Resources
+
+</li>
+<li>@PersistenceContext
+
+</li>
+<li>@PersistenceContexts
+
+</li>
+<li>@PersistenceUnit
+
+</li>
+<li>@PersistenceUnits
+
+</li>
+<li>@PostConstruct
+
+</li>
+<li>@PreDestroy 
+
+</li>
+<li>@RunAs
+
+</li>
+<li>@WebServiceRef &nbsp;&nbsp;
+
+</li>
+<li>@WebServiceRefs &nbsp;
+
+</li>
+
+</ul>
+</li>
+<li>Observa&#231;&#245;es
+<ul><li><p>https protocol &#233;&nbsp;usado para sess&#245;es quando o browser n&#227;o suporta cookies.
+<p>JSP document n&#227;o poder&#225; conter &lt; &gt; e sim &amp;lt; e &amp;gt;
+<p>HttpJspBase _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException.
+<p>Nas p&#225;ginas JSP o request.getSession(false); sempre retornar&#225; uma sess&#227;o pr&#233;-existente. Porque a JSP por padr&#227;o j&#225; existe o objeto session instanciado ao mesnos que a propriedade session="false" &lt;%@ page session="true" %&gt; o padr&#227;o do session sempre &#233;&nbsp;"true".
+<p>@ServletSecurity(@HttpConstraint(rolesAllowed = {"", ""}, transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL ou NONE, value = EmptyRoleSemantic.PERMIT ou DENY))
+<p>O objeto AsyncContext cont&#233;m o m&#233;todo dispatch("/destination.jsp");
+<p>Quando voc&#234; pode registrar um servlet ou um filtro dinamicamente com uma aplica&#231;&#227;o web? Somente durante a inicializa&#231;&#227;o do contexto.
+<ul><li>ServletContainerInitializer
+<ul><li>onStartup(Set&lt;Class&lt;?&gt;&gt; c, ServletContext ctx) throws ServletException 
+
+</li>
+<li>ctx.setInitParameter("", "");
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>&lt;body-content&gt;tagdependent&lt;/body-content&gt;
+<ul><li>Tudo que for colocado dentro do corpo da tag vira texto. Ex.: &lt;%= 3*4 %&gt; vai sair &lt;%= 3*4 %&gt;.
+
+</li>
+
+</ul><p>javax.servlet.ServletContext
+<ul><li>getResource()
+<ul><li>Retorno do m&#233;todo java.net.URL object.
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Quando faz o override do m&#233;todo jspInit() na p&#225;gina JSP nenhum dos objetos impl&#237;citos est&#227;o acess&#237;veis e sim no m&#233;todo _jspService()
+<ul><li>Ex: application.getAttribute("") n&#227;o funciona
+
+</li>
+
+</ul><p>Veri&#225;vel impl&#237;cita page &#233;&nbsp;devolvida como java.lang.Object.
+<p>Se quiser enviar um cookie para um servlet em particular ter&#225; que acrescentar
+<ul><li>cookie.setPath(request.getContextPath()+"/showbook");
+
+</li>
+
+</ul></li>
 </ul>
 </li>
 
