@@ -52,11 +52,22 @@
 </li>
 <li>Interface - HttpServletResponse
 <ul><li><p>addCookie(), addHeader(), setHeader(), encodeURL(), encodeRedirectUrl(), sendError(), setStatus(), sendRedirect() 
+<p>Cookie
+<ul><li>setSecure
+
 </li>
+<li>setPath
+
+</li>
+<li>setDomain
+
+</li>
+
+</ul></li>
 </ul>
 </li>
 <li>Interface - HttpServletRequest
-<ul><li><p>getContextPath(), getCookies(), getHeader(String), getIntHeader(String), getMethod(), getQueryString(), getSession()
+<ul><li><p>getContextPath(), getCookies(), getHeader(String), getIntHeader(String), getMethod(), getQueryString(), getSession() e getDateHeader(String)
 </li>
 </ul>
 </li>
@@ -97,6 +108,11 @@
 <p>errorPage
 <p>autoFlush
 <p>session
+<p>info
+<p>pageEncoding
+<p>buffer
+<p>extends
+<p>language
 </li>
 </ul>
 </li>
@@ -533,7 +549,7 @@
 </li>
 </ul>
 </li>
-<li>scriptless
+<li><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">scriptless</span>
 <ul><li><p>A tag n&#227;o pode ter elementos de scripts (scripts, experess&#245;es de scripts ou declara&#231;&#245;es), mas pode ter texto e templates EL, a&#231;&#245;es padr&#227;o e customizadas.
 <p><span style="font-family: SansSerif, sans-serif; font-weight: bold; ">&#201; o body-content padr&#227;o para todas as tags</span>
 </li>
@@ -1357,6 +1373,9 @@
 <li>OPTIONS
 
 </li>
+<li>CONNECT
+
+</li>
 
 </ul><p>&lt;description&gt;&lt;/description&gt; Opcional.
 </li>
@@ -1581,7 +1600,14 @@
 
 </li>
 
-</ul></li>
+</ul><p>@WebFilter o primeiro atributo &#233;&nbsp;urlPatterns quando n&#227;o informa o nome do atributo. Ex.: @WebFilter(urlPatterns={"/wftest2"}) &#233;&nbsp;equivalente a @WebFilter("/wftest2")
+<p>Vari&#225;vel impl&#237;cita no JSP para recuperar o resource e realizar &nbsp;o forward
+<ul><li>application
+
+</li>
+
+</ul><p>Para diminuir o tr&#225;fego de dados pela banda existe o m&#233;todo http HEAD que exibe o conte&#250;do do recurso em cache caso o recurso n&#227;o seja alterado.
+</li>
 </ul>
 </li>
 

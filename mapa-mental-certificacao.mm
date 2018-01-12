@@ -43,6 +43,11 @@
 </node>
 <node CREATED="1509051179734" HGAP="-72" ID="ID_1742763790" MODIFIED="1510153606023" POSITION="left" TEXT="Interface - HttpServletResponse" VSHIFT="93">
 <node CREATED="1509051207670" ID="ID_1655201396" MODIFIED="1514300461352" TEXT="addCookie(), addHeader(), setHeader(), encodeURL(), encodeRedirectUrl(), sendError(), setStatus(), sendRedirect() "/>
+<node CREATED="1515770790864" ID="ID_551317709" MODIFIED="1515770794509" TEXT="Cookie">
+<node CREATED="1515770795433" ID="ID_1310004874" MODIFIED="1515770796333" TEXT="setSecure"/>
+<node CREATED="1515770806973" ID="ID_520842285" MODIFIED="1515770807654" TEXT="setPath"/>
+<node CREATED="1515770814714" ID="ID_747723286" MODIFIED="1515770815463" TEXT="setDomain"/>
+</node>
 </node>
 <node CREATED="1509051285797" ID="ID_1513252555" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletRequest">
 <node CREATED="1509051313010" ID="ID_87909527" MODIFIED="1515516754293" TEXT="getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames() e getReader()">
@@ -50,7 +55,7 @@
 </node>
 </node>
 <node CREATED="1509051410045" HGAP="-92" ID="ID_261169795" MODIFIED="1509400670905" POSITION="left" TEXT="Interface - HttpServletRequest" VSHIFT="32">
-<node CREATED="1509051440923" ID="ID_726788840" MODIFIED="1509400670905" TEXT="getContextPath(), getCookies(), getHeader(String), getIntHeader(String), getMethod(), getQueryString(), getSession()"/>
+<node CREATED="1509051440923" ID="ID_726788840" MODIFIED="1515763927353" TEXT="getContextPath(), getCookies(), getHeader(String), getIntHeader(String), getMethod(), getQueryString(), getSession() e getDateHeader(String)"/>
 </node>
 <node CREATED="1509054191224" ID="ID_1856006342" MODIFIED="1509400670907" POSITION="right" TEXT="Classe abstrata GenericServlet">
 <node CREATED="1509054210865" ID="ID_377899945" MODIFIED="1513592356779" TEXT="service(ServletRequest, ServletResponse), init(ServletConfig), init(), destroy(), getServletConfig(), getServletInfo(), getInitParameter(String), getInitParameterNames(), getServletContext(), log(String), log(String, Throwable)"/>
@@ -192,7 +197,7 @@
 </node>
 <node CREATED="1510584224198" ID="ID_1214562147" MODIFIED="1510584270623" TEXT="As sess&#xf5;es s&#xe3;o os &#xfa;nicos objetos que n&#xe3;o s&#xe3;o duplicados em JVM&#xb4;s diferentes."/>
 </node>
-<node CREATED="1510843978085" ID="ID_188006675" MODIFIED="1512590449654" POSITION="left" TEXT="JSP">
+<node CREATED="1510843978085" ID="ID_188006675" MODIFIED="1515764068062" POSITION="left" TEXT="JSP">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1510842030047" ID="ID_1246914587" MODIFIED="1510844184112" TEXT="Diretivas JSP: Sempre come&#xe7;am com @, e existem tr&#xea;s diretivas.">
 <font NAME="SansSerif" SIZE="12"/>
@@ -206,6 +211,11 @@
 <node CREATED="1510931139830" ID="ID_694947990" MODIFIED="1510931145810" TEXT="errorPage"/>
 <node CREATED="1515066501837" ID="ID_695724298" MODIFIED="1515066505346" TEXT="autoFlush"/>
 <node CREATED="1515675026936" ID="ID_482930480" MODIFIED="1515675029124" TEXT="session"/>
+<node CREATED="1515770655582" ID="ID_1849776758" MODIFIED="1515770657835" TEXT="info"/>
+<node CREATED="1515770660671" ID="ID_392029308" MODIFIED="1515770662339" TEXT="pageEncoding"/>
+<node CREATED="1515770719207" ID="ID_54384892" MODIFIED="1515770720003" TEXT="buffer"/>
+<node CREATED="1515770728856" ID="ID_1146346823" MODIFIED="1515770729741" TEXT="extends"/>
+<node CREATED="1515770735337" ID="ID_451621526" MODIFIED="1515770736053" TEXT="language"/>
 </node>
 <node CREATED="1513180463437" ID="ID_1772248570" MODIFIED="1513180485882" TEXT="&lt;%@page import=&quot;x.*&quot; import=&quot;y.*&quot; %&gt;"/>
 <node CREATED="1513180517710" ID="ID_310684779" MODIFIED="1513180660800" TEXT="&lt;%@page import=&quot;com.test.*,java.util.*&quot; %&gt;"/>
@@ -302,7 +312,7 @@
 <node CREATED="1510931317795" ID="ID_548191267" MODIFIED="1510931352237" TEXT="A&#xe7;&#xf5;es customizadas &lt;c:set /&gt;"/>
 </node>
 <node CREATED="1511278148286" ID="ID_1585161127" MODIFIED="1511278156146" TEXT="EL - Expression Language">
-<node CREATED="1511278229937" ID="ID_1882234354" MODIFIED="1511279209079" TEXT="Objetos impl&#xed;citos - S&#xf3; map&#xb4;s e bean">
+<node CREATED="1511278229937" ID="ID_1882234354" MODIFIED="1515754606482" TEXT="Objetos impl&#xed;citos - S&#xf3; map&#xb4;s e bean">
 <node CREATED="1511278344082" ID="ID_1367612085" MODIFIED="1511278349054" TEXT="pageContext">
 <node CREATED="1511278506903" ID="ID_753872231" MODIFIED="1511278538834" TEXT="&#xc9; o &#xfa;nico objeto impl&#xed;cito que n&#xe3;o &#xe9; um HashMap ou HashTable e sim um JavaBean"/>
 </node>
@@ -398,7 +408,7 @@
 <node CREATED="1512141924763" ID="ID_324391694" MODIFIED="1512141952798" TEXT="Nas urls n&#xe3;o podem conter espa&#xe7;os, S&#xe3;o substitu&#xed;dos por &quot;+&quot;"/>
 </node>
 <node CREATED="1512400343073" ID="ID_1197640765" MODIFIED="1513255009909" TEXT="Taglib customizadas">
-<node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1514371205400" TEXT="&lt;taglib&gt;&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;&lt;/taglib&gt;">
+<node CREATED="1512400390165" ID="ID_929486769" MODIFIED="1515765527001" TEXT="&lt;taglib&gt;&lt;tag&gt;&lt;name&gt;&lt;/name&gt;&lt;tag-class&gt;&lt;/tag-class&gt;&lt;body-content&gt;&lt;/body-content&gt;&lt;attribute&gt;&lt;name&gt;user&lt;/name&lt;required&gt;true&lt;/required&gt;&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;&lt;/attribute&gt;&lt;/tag&gt;&lt;/taglib&gt;">
 <node CREATED="1512400467617" ID="ID_451643882" MODIFIED="1512400482204" TEXT="Se n&#xe3;o informar o rtexprvalue o valor padr&#xe3;o &#xe9; sempre false"/>
 </node>
 <node CREATED="1512400727696" ID="ID_716574812" MODIFIED="1513600001655" TEXT="Se a tag contiver o &lt;tag&gt;&lt;body-content&gt;empty&lt;/body-content&gt;&lt;/tag&gt;, ainda assim poder&#xe1; existir a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:attribute name=&quot;user&quot;&gt;${userName}&lt;/jsp:attribute&gt; no corpo da tag."/>
@@ -408,7 +418,8 @@
 <node CREATED="1512495967432" ID="ID_545112592" MODIFIED="1512495971629" TEXT="n&#xe3;o pode ter corpo"/>
 <node CREATED="1512496259906" ID="ID_102678688" MODIFIED="1512496338784" TEXT="A &#xfa;nica coisa que pode ser inserida com o body-content empty &#xe9; &lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
 </node>
-<node CREATED="1512495973048" ID="ID_1543863339" MODIFIED="1512495980076" TEXT="scriptless">
+<node CREATED="1512495973048" ID="ID_1543863339" MODIFIED="1515755545243" TEXT="scriptless">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node CREATED="1512495987367" ID="ID_84211830" MODIFIED="1513600134646" TEXT="A tag n&#xe3;o pode ter elementos de scripts (scripts, experess&#xf5;es de scripts ou declara&#xe7;&#xf5;es), mas pode ter texto e templates EL, a&#xe7;&#xf5;es padr&#xe3;o e customizadas."/>
 <node CREATED="1512499933580" ID="ID_241219753" MODIFIED="1512499962859" TEXT="&#xc9; o body-content padr&#xe3;o para todas as tags">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
@@ -664,6 +675,7 @@
 <node CREATED="1512585924201" ID="ID_535412145" MODIFIED="1512585927484" TEXT="DELETE"/>
 <node CREATED="1512585885139" ID="ID_568474084" MODIFIED="1512585886623" TEXT="HEAD"/>
 <node CREATED="1512585887859" ID="ID_383315854" MODIFIED="1512585893167" TEXT="OPTIONS"/>
+<node CREATED="1515760326475" ID="ID_1332912382" MODIFIED="1515760329672" TEXT="CONNECT"/>
 </node>
 <node CREATED="1512585780570" ID="ID_1157597312" MODIFIED="1512585797149" TEXT="&lt;description&gt;&lt;/description&gt; Opcional."/>
 </node>
@@ -809,6 +821,11 @@
 <node CREATED="1515612178646" ID="ID_1573222405" MODIFIED="1515612201909" TEXT="Se quiser enviar um cookie para um servlet em particular ter&#xe1; que acrescentar">
 <node CREATED="1515612212427" ID="ID_1423986920" MODIFIED="1515612226857" TEXT="cookie.setPath(request.getContextPath()+&quot;/showbook&quot;);"/>
 </node>
+<node CREATED="1515763250731" ID="ID_1555189052" MODIFIED="1515763308277" TEXT="@WebFilter o primeiro atributo &#xe9; urlPatterns quando n&#xe3;o informa o nome do atributo. Ex.: @WebFilter(urlPatterns={&quot;/wftest2&quot;}) &#xe9; equivalente a @WebFilter(&quot;/wftest2&quot;)"/>
+<node CREATED="1515770272439" ID="ID_1635725668" MODIFIED="1515770309738" TEXT="Vari&#xe1;vel impl&#xed;cita no JSP para recuperar o resource e realizar  o forward">
+<node CREATED="1515770322500" ID="ID_820327467" MODIFIED="1515770323961" TEXT="application"/>
+</node>
+<node CREATED="1515770562850" ID="ID_1390583464" MODIFIED="1515770608524" TEXT="Para diminuir o tr&#xe1;fego de dados pela banda existe o m&#xe9;todo http HEAD que exibe o conte&#xfa;do do recurso em cache caso o recurso n&#xe3;o seja alterado."/>
 </node>
 </node>
 </map>
