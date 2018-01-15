@@ -826,6 +826,19 @@
 <node CREATED="1515770322500" ID="ID_820327467" MODIFIED="1515770323961" TEXT="application"/>
 </node>
 <node CREATED="1515770562850" ID="ID_1390583464" MODIFIED="1515770608524" TEXT="Para diminuir o tr&#xe1;fego de dados pela banda existe o m&#xe9;todo http HEAD que exibe o conte&#xfa;do do recurso em cache caso o recurso n&#xe3;o seja alterado."/>
+<node CREATED="1516027495674" ID="ID_1988435129" MODIFIED="1516027528694" TEXT="&lt;login-config&gt; &#xe9; utilizado durante a autentica&#xe7;&#xe3;o"/>
+<node CREATED="1516027799024" ID="ID_1017936776" MODIFIED="1516027860840" TEXT="Dentro de um &lt;jsp:useBean id=&quot;prd&quot;&gt; pode ser usado scriptlet&#xb4;s no lugar do &lt;jsp:setProperty&gt; ex: &lt;%prd.setPid(request.getParameter(&quot;id&quot;));%&gt;"/>
+<node CREATED="1516028239595" ID="ID_401833746" MODIFIED="1516028273086" TEXT="&lt;/role-link&gt; referen-se aos roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml"/>
+<node CREATED="1516028354604" ID="ID_1363318820" MODIFIED="1516028364728" TEXT="Ordem dos m&#xe9;todos de autentica&#xe7;&#xe3;o">
+<node CREATED="1516028366467" ID="ID_1011993741" MODIFIED="1516028368135" TEXT="BASIC"/>
+<node CREATED="1516028370059" ID="ID_969792121" MODIFIED="1516028371807" TEXT="FORM"/>
+<node CREATED="1516028372851" ID="ID_1678401133" MODIFIED="1516028375231" TEXT="DIGEST"/>
+<node CREATED="1516028376322" ID="ID_618852411" MODIFIED="1516028379271" TEXT="CLIENT-CERT"/>
+</node>
+<node CREATED="1516028496579" ID="ID_1717022173" MODIFIED="1516028513014" TEXT="Mecanismo de autentica&#xe7;&#xe3;o opcional para o container.">
+<node CREATED="1516028517249" ID="ID_725117963" MODIFIED="1516028522765" TEXT="DIGEST"/>
+</node>
+<node CREATED="1516029402976" ID="ID_831161283" MODIFIED="1516029580961" TEXT="Quando se usa a diretira &lt;@ inclue file=&quot;&quot;&gt; a p&#xe1;gina inclu&#xed;da n&#xe3;o pode existir a diretira &lt;@ page errorPage=&quot;advancederrorhandler.jsp&quot;&gt; diferente da &lt;@ page errorPage=&quot;&quot; %&gt; da &#xe1;gina que a incluiu. Agora quando se usa a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:include page=&quot;&quot; /&gt; &#xe9; poss&#xed;vel ter diretiras com errorPage distintos pelo motivo das p&#xe1;ginas serem compiladas separadamente."/>
 </node>
 </node>
 </map>
