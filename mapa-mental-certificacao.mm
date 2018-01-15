@@ -311,7 +311,7 @@
 </node>
 <node CREATED="1510931317795" ID="ID_548191267" MODIFIED="1510931352237" TEXT="A&#xe7;&#xf5;es customizadas &lt;c:set /&gt;"/>
 </node>
-<node CREATED="1511278148286" ID="ID_1585161127" MODIFIED="1511278156146" TEXT="EL - Expression Language">
+<node CREATED="1511278148286" ID="ID_1585161127" MODIFIED="1516033940472" TEXT="EL - Expression Language">
 <node CREATED="1511278229937" ID="ID_1882234354" MODIFIED="1515754606482" TEXT="Objetos impl&#xed;citos - S&#xf3; map&#xb4;s e bean">
 <node CREATED="1511278344082" ID="ID_1367612085" MODIFIED="1511278349054" TEXT="pageContext">
 <node CREATED="1511278506903" ID="ID_753872231" MODIFIED="1511278538834" TEXT="&#xc9; o &#xfa;nico objeto impl&#xed;cito que n&#xe3;o &#xe9; um HashMap ou HashTable e sim um JavaBean"/>
@@ -559,6 +559,7 @@
 <node CREATED="1512561189625" ID="ID_160669659" MODIFIED="1512561236208" TEXT="Simple Tags retorna o objeto &quot;JspTag&quot;"/>
 <node CREATED="1512561561479" ID="ID_1929925318" MODIFIED="1512561580620" TEXT="Tags cl&#xe1;ssicas s&#xf3; podem ter parents cl&#xe1;ssico &quot;Tag&quot;"/>
 <node CREATED="1512561581775" ID="ID_877266329" MODIFIED="1512561605012" TEXT="Tags simples podem ter parents cl&#xe1;ssico e simples. &quot;Tag&quot; ou &quot;JspTag&quot;"/>
+<node CREATED="1516036136032" ID="ID_1319469666" MODIFIED="1516036150804" TEXT="javax.servlet.jsp.tagext.Tag extends javax.servlet.jsp.tagext.JspTag"/>
 </node>
 <node CREATED="1512562340030" ID="ID_1083113017" MODIFIED="1512562413077" TEXT="findAncestorWithClass(tagInicial this, classe da Tag que vc deseja)"/>
 <node CREATED="1512563006323" ID="ID_1371781208" MODIFIED="1512563015623" TEXT="JspContext">
