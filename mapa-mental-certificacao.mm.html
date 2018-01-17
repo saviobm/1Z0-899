@@ -1612,7 +1612,7 @@
 </ul><p>Para diminuir o tr&#225;fego de dados pela banda existe o m&#233;todo http HEAD que exibe o conte&#250;do do recurso em cache caso o recurso n&#227;o seja alterado.
 <p>&lt;login-config&gt; &#233;&nbsp;utilizado durante a autentica&#231;&#227;o
 <p>Dentro de um &lt;jsp:useBean id="prd"&gt; pode ser usado scriptlet&#180;s no lugar do &lt;jsp:setProperty&gt; ex: &lt;%prd.setPid(request.getParameter("id"));%&gt;
-<p>&lt;/role-link&gt; referen-se aos roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml
+<p>&lt;/role-link&gt; referem-se aos roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml
 <p>Ordem dos m&#233;todos de autentica&#231;&#227;o
 <ul><li>BASIC
 
@@ -1633,6 +1633,20 @@
 </li>
 
 </ul><p>Quando se usa a diretira &lt;@ inclue file=""&gt; a p&#225;gina inclu&#237;da n&#227;o pode existir a diretira &lt;@ page errorPage="advancederrorhandler.jsp"&gt; diferente da &lt;@ page errorPage="" %&gt; da &#225;gina que a incluiu. Agora quando se usa a a&#231;&#227;o padr&#227;o &lt;jsp:include page="" /&gt; &#233;&nbsp;poss&#237;vel ter diretiras com errorPage distintos pelo motivo das p&#225;ginas serem compiladas separadamente.
+<p>HttpServletRequest.logout() retorna null nos seguintes m&#233;todos
+<ul><li>getUserPrincipal()
+
+</li>
+<li>getRemoteUser()
+
+</li>
+<li>getAuthType()
+
+</li>
+
+</ul><p>Se utilizar o sendError da classe HttpServletResponse e logo ap&#243;s do sendError voc&#234; escrever na resposta, o container n&#227;o lan&#231;a nenhuma exce&#231;&#227;o.
+<p>asyncContext.setTimeout(10*60*1000); &#233;&nbsp;setado em milisegundos.
+<p>Para retornar o url-pattern do link acessado &#233;&nbsp;s&#243; usar o m&#233;todo getPathInfo()
 </li>
 </ul>
 </li>

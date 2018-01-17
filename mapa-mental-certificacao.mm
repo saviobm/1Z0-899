@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1515607425002" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
+<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1516183236784" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
 <node CREATED="1508186603022" ID="ID_490295773" MODIFIED="1509400670885" POSITION="right" STYLE="fork" TEXT="Protocolo HTTP">
 <node CREATED="1508186641763" ID="ID_549836734" MODIFIED="1509400670885" TEXT="GET - Solicita&#xe7;&#xe3;o simples"/>
 <node CREATED="1508186659228" ID="ID_1537363229" MODIFIED="1509400670885" TEXT="POST - Solicita&#xe7;&#xe3;o de um recurso com informa&#xe7;&#xf5;es do usu&#xe1;rio. Ex: Formul&#xe1;rio"/>
@@ -465,7 +465,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1512504559923" ID="ID_1039321678" MODIFIED="1512555142665" TEXT="Ciclo de vida tag simples">
+<node CREATED="1512504559923" ID="ID_1039321678" MODIFIED="1516043277753" TEXT="Ciclo de vida tag simples">
 <node CREATED="1512504580221" ID="ID_1851432737" MODIFIED="1512504593082" TEXT="Ordem execu&#xe7;&#xe3;o dos m&#xe9;todos">
 <node CREATED="1512504593541" ID="ID_750318754" MODIFIED="1512504609810" TEXT="setJspContext()"/>
 <node CREATED="1512504610926" ID="ID_1787949632" MODIFIED="1512504619802" TEXT="setParent()">
@@ -829,7 +829,7 @@
 <node CREATED="1515770562850" ID="ID_1390583464" MODIFIED="1515770608524" TEXT="Para diminuir o tr&#xe1;fego de dados pela banda existe o m&#xe9;todo http HEAD que exibe o conte&#xfa;do do recurso em cache caso o recurso n&#xe3;o seja alterado."/>
 <node CREATED="1516027495674" ID="ID_1988435129" MODIFIED="1516027528694" TEXT="&lt;login-config&gt; &#xe9; utilizado durante a autentica&#xe7;&#xe3;o"/>
 <node CREATED="1516027799024" ID="ID_1017936776" MODIFIED="1516027860840" TEXT="Dentro de um &lt;jsp:useBean id=&quot;prd&quot;&gt; pode ser usado scriptlet&#xb4;s no lugar do &lt;jsp:setProperty&gt; ex: &lt;%prd.setPid(request.getParameter(&quot;id&quot;));%&gt;"/>
-<node CREATED="1516028239595" ID="ID_401833746" MODIFIED="1516028273086" TEXT="&lt;/role-link&gt; referen-se aos roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml"/>
+<node CREATED="1516028239595" ID="ID_401833746" MODIFIED="1516040283426" TEXT="&lt;/role-link&gt; referem-se aos roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml"/>
 <node CREATED="1516028354604" ID="ID_1363318820" MODIFIED="1516028364728" TEXT="Ordem dos m&#xe9;todos de autentica&#xe7;&#xe3;o">
 <node CREATED="1516028366467" ID="ID_1011993741" MODIFIED="1516028368135" TEXT="BASIC"/>
 <node CREATED="1516028370059" ID="ID_969792121" MODIFIED="1516028371807" TEXT="FORM"/>
@@ -840,6 +840,14 @@
 <node CREATED="1516028517249" ID="ID_725117963" MODIFIED="1516028522765" TEXT="DIGEST"/>
 </node>
 <node CREATED="1516029402976" ID="ID_831161283" MODIFIED="1516029580961" TEXT="Quando se usa a diretira &lt;@ inclue file=&quot;&quot;&gt; a p&#xe1;gina inclu&#xed;da n&#xe3;o pode existir a diretira &lt;@ page errorPage=&quot;advancederrorhandler.jsp&quot;&gt; diferente da &lt;@ page errorPage=&quot;&quot; %&gt; da &#xe1;gina que a incluiu. Agora quando se usa a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:include page=&quot;&quot; /&gt; &#xe9; poss&#xed;vel ter diretiras com errorPage distintos pelo motivo das p&#xe1;ginas serem compiladas separadamente."/>
+<node CREATED="1516190553419" ID="ID_1597446869" MODIFIED="1516190620555" TEXT="HttpServletRequest.logout() retorna null nos seguintes m&#xe9;todos">
+<node CREATED="1516190621695" ID="ID_1787256004" MODIFIED="1516190642154" TEXT="getUserPrincipal()"/>
+<node CREATED="1516190643773" ID="ID_120186264" MODIFIED="1516190650721" TEXT="getRemoteUser()"/>
+<node CREATED="1516190654781" ID="ID_885736620" MODIFIED="1516190660137" TEXT="getAuthType()"/>
+</node>
+<node CREATED="1516190892685" ID="ID_554689051" MODIFIED="1516191000803" TEXT="Se utilizar o sendError da classe HttpServletResponse e logo ap&#xf3;s do sendError voc&#xea; escrever na resposta, o container n&#xe3;o lan&#xe7;a nenhuma exce&#xe7;&#xe3;o."/>
+<node CREATED="1516191400749" ID="ID_1733107216" MODIFIED="1516191412912" TEXT="asyncContext.setTimeout(10*60*1000); &#xe9; setado em milisegundos."/>
+<node CREATED="1516191666980" ID="ID_10547115" MODIFIED="1516191712359" TEXT="Para retornar o url-pattern do link acessado &#xe9; s&#xf3; usar o m&#xe9;todo getPathInfo()"/>
 </node>
 </node>
 </map>
