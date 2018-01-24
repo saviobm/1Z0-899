@@ -47,23 +47,13 @@
 <li>Redirecionamento
 <ul><li><p>URLs relativas no response.sendRedirect("foo/stuff.html"); --&gt; retira o nome do servlet da url e adiciona o que est&#225; sendo informado. response.sendRedirect("/foo/stuff.html"); --&gt; raiz do servidor ex: http://localhost:8080/foo/stuff.html - O trabalho &#233;&nbsp;feito pelo cliente (browser) e a URL muda e o cliente sabe que foi redirecionado.
 <p>RequestDiaspatcher view = request.getRequestDispatcher("teste.jsp"); view.forward(request, response); O trabalho &#233;&nbsp;feito pelo servidor. A URL n&#227;o muda e o cliente n&#227;o sabe que foi redirecionado.
+<p>response.sendRedirect("") o conte&#250;do pode estar fora da applica&#231;&#227;o web.
 </li>
 </ul>
 </li>
 <li>Interface - HttpServletResponse
 <ul><li><p>addCookie(), addHeader(), setHeader(), encodeURL(), encodeRedirectUrl(), sendError(), setStatus(), sendRedirect() 
-<p>Cookie
-<ul><li>setSecure
-
 </li>
-<li>setPath
-
-</li>
-<li>setDomain
-
-</li>
-
-</ul></li>
 </ul>
 </li>
 <li>Interface - HttpServletRequest
@@ -327,6 +317,9 @@
 
 </li>
 <li>&lt;jsp:forward page=""&gt;&lt;jsp:param name="" value="" /&gt;&lt;/jsp:forward&gt;
+
+</li>
+<li>&lt;jsp:attribute name=""&gt;valor&lt;/jsp:attribute&gt;
 
 </li>
 
@@ -930,6 +923,19 @@
 
 </ul>
 </li>
+<li>Cookie
+<ul><li>setSecure
+
+</li>
+<li>setDomain
+
+</li>
+<li>setPath
+
+</li>
+
+</ul>
+</li>
 
 </ul>
 </li>
@@ -1392,7 +1398,7 @@
 <ul><li>S&#227;o case sensitive
 
 </li>
-<li>Opcional - se n&#227;o existir nenhum usu&#225;rio tem acesso ao recurso
+<li>Opcional - se n&#227;o existir, nenhum usu&#225;rio tem acesso ao recurso.
 
 </li>
 <li>&lt;role-name&gt;*&lt;/role-name&gt;
@@ -1563,7 +1569,7 @@
 <ul><li><p>https protocol &#233;&nbsp;usado para sess&#245;es quando o browser n&#227;o suporta cookies.
 <p>JSP document n&#227;o poder&#225; conter &lt; &gt; e sim &amp;lt; e &amp;gt;
 <p>HttpJspBase _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException.
-<p>Nas p&#225;ginas JSP o request.getSession(false); sempre retornar&#225; uma sess&#227;o pr&#233;-existente. Porque a JSP por padr&#227;o j&#225; existe o objeto session instanciado ao mesnos que a propriedade session="false" &lt;%@ page session="true" %&gt; o padr&#227;o do session sempre &#233;&nbsp;"true".
+<p>Nas p&#225;ginas JSP o request.getSession(false); sempre retornar&#225; uma sess&#227;o pr&#233;-existente. Porque a JSP por padr&#227;o j&#225; existe o objeto session instanciado ao menos que a propriedade session="false" &lt;%@ page session="true" %&gt; o padr&#227;o do session sempre &#233;&nbsp;"true".
 <p>@ServletSecurity(@HttpConstraint(rolesAllowed = {"", ""}, transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL ou NONE, value = EmptyRoleSemantic.PERMIT ou DENY))
 <p>O objeto AsyncContext cont&#233;m o m&#233;todo dispatch("/destination.jsp");
 <p>Quando voc&#234; pode registrar um servlet ou um filtro dinamicamente com uma aplica&#231;&#227;o web? Somente durante a inicializa&#231;&#227;o do contexto.
@@ -1612,7 +1618,7 @@
 </ul><p>Para diminuir o tr&#225;fego de dados pela banda existe o m&#233;todo http HEAD que exibe o conte&#250;do do recurso em cache caso o recurso n&#227;o seja alterado.
 <p>&lt;login-config&gt; &#233;&nbsp;utilizado durante a autentica&#231;&#227;o
 <p>Dentro de um &lt;jsp:useBean id="prd"&gt; pode ser usado scriptlet&#180;s no lugar do &lt;jsp:setProperty&gt; ex: &lt;%prd.setPid(request.getParameter("id"));%&gt;
-<p>&lt;/role-link&gt; referem-se aos roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml
+<p>&lt;/role-link&gt; referem-se as roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml
 <p>Ordem dos m&#233;todos de autentica&#231;&#227;o
 <ul><li>BASIC
 
@@ -1632,7 +1638,7 @@
 
 </li>
 
-</ul><p>Quando se usa a diretira &lt;@ inclue file=""&gt; a p&#225;gina inclu&#237;da n&#227;o pode existir a diretira &lt;@ page errorPage="advancederrorhandler.jsp"&gt; diferente da &lt;@ page errorPage="" %&gt; da &#225;gina que a incluiu. Agora quando se usa a a&#231;&#227;o padr&#227;o &lt;jsp:include page="" /&gt; &#233;&nbsp;poss&#237;vel ter diretiras com errorPage distintos pelo motivo das p&#225;ginas serem compiladas separadamente.
+</ul><p>Quando se usa a diretiva &lt;@ inclue file=""&gt; a p&#225;gina inclu&#237;da n&#227;o pode existir a diretiva &lt;@ page errorPage="advancederrorhandler.jsp"&gt; diferente da &lt;@ page errorPage="" %&gt; da p&#225;gina que a incluiu. Agora quando se usa a a&#231;&#227;o padr&#227;o &lt;jsp:include page="" /&gt; &#233;&nbsp;poss&#237;vel ter diretiras com errorPage distintos pelo motivo das p&#225;ginas serem compiladas separadamente.
 <p>HttpServletRequest.logout() retorna null nos seguintes m&#233;todos
 <ul><li>getUserPrincipal()
 
@@ -1647,6 +1653,18 @@
 </ul><p>Se utilizar o sendError da classe HttpServletResponse e logo ap&#243;s do sendError voc&#234; escrever na resposta, o container n&#227;o lan&#231;a nenhuma exce&#231;&#227;o.
 <p>asyncContext.setTimeout(10*60*1000); &#233;&nbsp;setado em milisegundos.
 <p>Para retornar o url-pattern do link acessado &#233;&nbsp;s&#243; usar o m&#233;todo getPathInfo()
+<p>cookie.setHttpOnly(true);
+<ul><li>Previne contra cross site scripting attack
+
+</li>
+
+</ul><p>&lt;web-resource-collection&gt;&lt;http-method-omission&gt;GET&lt;/http-method-omission&gt;&lt;/web-resource-collection&gt;
+<p>SSL
+<ul><li>&lt;session-config&gt;&lt;tracking-mode&gt;SSL&lt;/tracking-mode&gt;&lt;/session-config&gt;
+
+</li>
+
+</ul><p>O m&#233;todo HTTP GET n&#227;o pode enviar dados bin&#225;rios para o servidor.
 </li>
 </ul>
 </li>

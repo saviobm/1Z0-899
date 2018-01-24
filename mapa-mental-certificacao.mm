@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1516183236784" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
+<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1516384855448" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
 <node CREATED="1508186603022" ID="ID_490295773" MODIFIED="1509400670885" POSITION="right" STYLE="fork" TEXT="Protocolo HTTP">
 <node CREATED="1508186641763" ID="ID_549836734" MODIFIED="1509400670885" TEXT="GET - Solicita&#xe7;&#xe3;o simples"/>
 <node CREATED="1508186659228" ID="ID_1537363229" MODIFIED="1509400670885" TEXT="POST - Solicita&#xe7;&#xe3;o de um recurso com informa&#xe7;&#xf5;es do usu&#xe1;rio. Ex: Formul&#xe1;rio"/>
@@ -19,7 +19,7 @@
 <node CREATED="1508797789691" ID="ID_971615184" MODIFIED="1513945272862" TEXT="Quando chega a primeira solicita&#xe7;&#xe3;o do cliente o container Web cria ou aloca uma nova thread do pool de threads fazendo com que o m&#xe9;todo service do servlet seja ativado, analisa a solicita&#xe7;&#xe3;o e verifica qual m&#xe9;todo ser&#xe1; chamado doGet e/ou doPost. O m&#xe9;todo service nunca pode ser sobrescrito."/>
 <node CREATED="1508798011667" ID="ID_615238334" MODIFIED="1513593483027" TEXT="Agora &#xe9; o ciclo dos m&#xe9;todos doGet e/ou doPost onde tudo come&#xe7;a. Respons&#xe1;vel por tudo que esperamos da aplica&#xe7;&#xe3;o."/>
 </node>
-<node CREATED="1508962211455" ID="ID_1807574844" MODIFIED="1513177296470" POSITION="left" TEXT="M&#xe9;todos HTTP">
+<node CREATED="1508962211455" ID="ID_1807574844" MODIFIED="1516734281027" POSITION="left" TEXT="M&#xe9;todos HTTP">
 <node CREATED="1508962226279" ID="ID_979220854" MODIFIED="1513593564670" TEXT="GET (Indempotente -&gt; Capaz de rodar v&#xe1;rias vezes sem afetar os dados.), POST (N&#xe3;o idempotente - Tem que garantir os dados ao receber v&#xe1;rias solicita&#xe7;&#xf5;es do mesmo cliente.), HEAD, TRACE, OPTIONS, PUT, DELETE e CONNECT.">
 <font NAME="SansSerif" SIZE="12"/>
 </node>
@@ -37,17 +37,13 @@
 <node CREATED="1508967835678" ID="ID_1507773308" MODIFIED="1509400670898" POSITION="left" TEXT="Redirecionamento">
 <node CREATED="1508967183140" ID="ID_275407495" MODIFIED="1509400670898" TEXT="URLs relativas no response.sendRedirect(&quot;foo/stuff.html&quot;); --&gt; retira o nome do servlet da url e adiciona o que est&#xe1; sendo informado. response.sendRedirect(&quot;/foo/stuff.html&quot;); --&gt; raiz do servidor ex: http://localhost:8080/foo/stuff.html - O trabalho &#xe9; feito pelo cliente (browser) e a URL muda e o cliente sabe que foi redirecionado."/>
 <node CREATED="1508967551061" ID="ID_1678644419" MODIFIED="1513769214906" TEXT="RequestDiaspatcher view = request.getRequestDispatcher(&quot;teste.jsp&quot;); view.forward(request, response); O trabalho &#xe9; feito pelo servidor. A URL n&#xe3;o muda e o cliente n&#xe3;o sabe que foi redirecionado."/>
+<node CREATED="1516204024826" ID="ID_1527644019" MODIFIED="1516204052796" TEXT="response.sendRedirect(&quot;&quot;) o conte&#xfa;do pode estar fora da applica&#xe7;&#xe3;o web."/>
 </node>
 <node CREATED="1509051017536" ID="ID_357585972" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletResponse">
 <node CREATED="1509051036183" ID="ID_757927878" MODIFIED="1515516741214" TEXT="m&#xe9;todos getBufferSize(), setContentType(), getOutputStream(), getWriter(), setContentLenght()"/>
 </node>
 <node CREATED="1509051179734" HGAP="-72" ID="ID_1742763790" MODIFIED="1510153606023" POSITION="left" TEXT="Interface - HttpServletResponse" VSHIFT="93">
 <node CREATED="1509051207670" ID="ID_1655201396" MODIFIED="1514300461352" TEXT="addCookie(), addHeader(), setHeader(), encodeURL(), encodeRedirectUrl(), sendError(), setStatus(), sendRedirect() "/>
-<node CREATED="1515770790864" ID="ID_551317709" MODIFIED="1515770794509" TEXT="Cookie">
-<node CREATED="1515770795433" ID="ID_1310004874" MODIFIED="1515770796333" TEXT="setSecure"/>
-<node CREATED="1515770806973" ID="ID_520842285" MODIFIED="1515770807654" TEXT="setPath"/>
-<node CREATED="1515770814714" ID="ID_747723286" MODIFIED="1515770815463" TEXT="setDomain"/>
-</node>
 </node>
 <node CREATED="1509051285797" ID="ID_1513252555" MODIFIED="1509400670903" POSITION="right" TEXT="Interface - ServletRequest">
 <node CREATED="1509051313010" ID="ID_87909527" MODIFIED="1515516754293" TEXT="getAttribute(String), getContentLenght(), getInputStream(), getLocalPort(), getRemotePort(), getServletPort(), getParameter(String), getParameterValues(String), getParameterNames() e getReader()">
@@ -237,7 +233,7 @@
 <node CREATED="1510844739591" ID="ID_1495139343" MODIFIED="1510844776409" TEXT="_jspService(HttpServletRequest, HttpServletResponse)"/>
 </node>
 </node>
-<node CREATED="1510845066330" ID="ID_1402170215" MODIFIED="1510845071726" TEXT="Objetos Impl&#xed;citos">
+<node CREATED="1510845066330" ID="ID_1402170215" MODIFIED="1516735114937" TEXT="Objetos Impl&#xed;citos">
 <node CREATED="1510845072649" ID="ID_1773025466" MODIFIED="1510845086829" TEXT="out --&gt; JspWriter">
 <node CREATED="1515585375631" ID="ID_115456893" MODIFIED="1515585403996" TEXT="javax.servlet.jsp.JspWriter"/>
 </node>
@@ -308,6 +304,7 @@
 </node>
 <node CREATED="1511275864169" ID="ID_179633022" MODIFIED="1513191243426" TEXT="&lt;jsp:include page=&quot;&quot; /&gt;"/>
 <node CREATED="1511431311659" ID="ID_1530270957" MODIFIED="1513191270418" TEXT="&lt;jsp:forward page=&quot;&quot;&gt;&lt;jsp:param name=&quot;&quot; value=&quot;&quot; /&gt;&lt;/jsp:forward&gt;"/>
+<node CREATED="1516205625499" ID="ID_110153205" MODIFIED="1516205645326" TEXT="&lt;jsp:attribute name=&quot;&quot;&gt;valor&lt;/jsp:attribute&gt;"/>
 </node>
 <node CREATED="1510931317795" ID="ID_548191267" MODIFIED="1510931352237" TEXT="A&#xe7;&#xf5;es customizadas &lt;c:set /&gt;"/>
 </node>
@@ -480,7 +477,7 @@
 <node CREATED="1512504692201" ID="ID_2914772" MODIFIED="1512504697341" TEXT="doTag()"/>
 </node>
 </node>
-<node CREATED="1512554551213" ID="ID_1024187441" MODIFIED="1515522025858" TEXT="Tag Cl&#xe1;ssica">
+<node CREATED="1512554551213" ID="ID_1024187441" MODIFIED="1516206841523" TEXT="Tag Cl&#xe1;ssica">
 <node CREATED="1512554556942" ID="ID_311662940" MODIFIED="1512554568539" TEXT="extends TagSupport"/>
 <node CREATED="1512554571846" ID="ID_715584296" MODIFIED="1512554592907" TEXT="doStartTag() throws JspException">
 <node CREATED="1512554597967" ID="ID_644756719" MODIFIED="1512554631373" TEXT="N&#xe3;o declara um IOException"/>
@@ -622,6 +619,11 @@
 <node CREATED="1512575716967" ID="ID_390710582" MODIFIED="1512575772629" TEXT="&lt;%= it.next() %&gt; equivalente a &lt;jsp:expression&gt;it.next()&lt;/jsp:expression&gt;"/>
 </node>
 </node>
+<node CREATED="1516204225381" ID="ID_85797630" MODIFIED="1516204230865" TEXT="Cookie">
+<node CREATED="1515770795433" ID="ID_1310004874" MODIFIED="1515770796333" TEXT="setSecure"/>
+<node CREATED="1515770814714" ID="ID_747723286" MODIFIED="1515770815463" TEXT="setDomain"/>
+<node CREATED="1515770806973" ID="ID_520842285" MODIFIED="1515770807654" TEXT="setPath"/>
+</node>
 </node>
 <node CREATED="1512485955323" ID="ID_102371873" MODIFIED="1512590459759" POSITION="right" TEXT="File upload">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
@@ -686,7 +688,7 @@
 </node>
 <node CREATED="1512587592781" ID="ID_1980333028" MODIFIED="1512587624087" TEXT="&lt;role-name&gt;&lt;/role-name&gt;">
 <node CREATED="1512587561159" ID="ID_136906821" MODIFIED="1512587573603" TEXT="S&#xe3;o case sensitive"/>
-<node CREATED="1512586213531" ID="ID_589591608" MODIFIED="1512587620760" TEXT="Opcional - se n&#xe3;o existir nenhum usu&#xe1;rio tem acesso ao recurso"/>
+<node CREATED="1512586213531" ID="ID_589591608" MODIFIED="1516738980679" TEXT="Opcional - se n&#xe3;o existir, nenhum usu&#xe1;rio tem acesso ao recurso."/>
 <node CREATED="1512587497755" ID="ID_1471424439" MODIFIED="1512587506879" TEXT="&lt;role-name&gt;*&lt;/role-name&gt;">
 <node CREATED="1512587507851" ID="ID_1502076908" MODIFIED="1512587524294" TEXT="Todos os usu&#xe1;rios s&#xe3;o permitidos."/>
 </node>
@@ -798,7 +800,7 @@
 <node CREATED="1515526913141" ID="ID_323679787" MODIFIED="1515526915297" TEXT="https protocol &#xe9; usado para sess&#xf5;es quando o browser n&#xe3;o suporta cookies."/>
 <node CREATED="1515526920988" ID="ID_438852013" MODIFIED="1515526922041" TEXT="JSP document n&#xe3;o poder&#xe1; conter &lt; &gt; e sim &amp;lt; e &amp;gt;"/>
 <node CREATED="1515526923212" ID="ID_1855564080" MODIFIED="1515526930336" TEXT="HttpJspBase _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException."/>
-<node CREATED="1515526935779" ID="ID_1041911254" MODIFIED="1515528569087" TEXT="Nas p&#xe1;ginas JSP o request.getSession(false); sempre retornar&#xe1; uma sess&#xe3;o pr&#xe9;-existente. Porque a JSP por padr&#xe3;o j&#xe1; existe o objeto session instanciado ao mesnos que a propriedade session=&quot;false&quot; &lt;%@ page session=&quot;true&quot; %&gt; o padr&#xe3;o do session sempre &#xe9; &quot;true&quot;."/>
+<node CREATED="1515526935779" ID="ID_1041911254" MODIFIED="1516631625396" TEXT="Nas p&#xe1;ginas JSP o request.getSession(false); sempre retornar&#xe1; uma sess&#xe3;o pr&#xe9;-existente. Porque a JSP por padr&#xe3;o j&#xe1; existe o objeto session instanciado ao menos que a propriedade session=&quot;false&quot; &lt;%@ page session=&quot;true&quot; %&gt; o padr&#xe3;o do session sempre &#xe9; &quot;true&quot;."/>
 <node CREATED="1515582539440" ID="ID_735201155" MODIFIED="1515582771517" TEXT="@ServletSecurity(@HttpConstraint(rolesAllowed = {&quot;&quot;, &quot;&quot;}, transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL ou NONE, value = EmptyRoleSemantic.PERMIT ou DENY))"/>
 <node CREATED="1515607437087" ID="ID_354229974" MODIFIED="1515607465738" TEXT="O objeto AsyncContext cont&#xe9;m o m&#xe9;todo dispatch(&quot;/destination.jsp&quot;);"/>
 <node CREATED="1515607517435" ID="ID_1450297557" MODIFIED="1515607540973" TEXT="Quando voc&#xea; pode registrar um servlet ou um filtro dinamicamente com uma aplica&#xe7;&#xe3;o web? Somente durante a inicializa&#xe7;&#xe3;o do contexto.">
@@ -829,7 +831,7 @@
 <node CREATED="1515770562850" ID="ID_1390583464" MODIFIED="1515770608524" TEXT="Para diminuir o tr&#xe1;fego de dados pela banda existe o m&#xe9;todo http HEAD que exibe o conte&#xfa;do do recurso em cache caso o recurso n&#xe3;o seja alterado."/>
 <node CREATED="1516027495674" ID="ID_1988435129" MODIFIED="1516027528694" TEXT="&lt;login-config&gt; &#xe9; utilizado durante a autentica&#xe7;&#xe3;o"/>
 <node CREATED="1516027799024" ID="ID_1017936776" MODIFIED="1516027860840" TEXT="Dentro de um &lt;jsp:useBean id=&quot;prd&quot;&gt; pode ser usado scriptlet&#xb4;s no lugar do &lt;jsp:setProperty&gt; ex: &lt;%prd.setPid(request.getParameter(&quot;id&quot;));%&gt;"/>
-<node CREATED="1516028239595" ID="ID_401833746" MODIFIED="1516040283426" TEXT="&lt;/role-link&gt; referem-se aos roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml"/>
+<node CREATED="1516028239595" ID="ID_401833746" MODIFIED="1516632049555" TEXT="&lt;/role-link&gt; referem-se as roles dentro do web.xml ou as configuradas no container. Ex.: tomcat-users.xml"/>
 <node CREATED="1516028354604" ID="ID_1363318820" MODIFIED="1516028364728" TEXT="Ordem dos m&#xe9;todos de autentica&#xe7;&#xe3;o">
 <node CREATED="1516028366467" ID="ID_1011993741" MODIFIED="1516028368135" TEXT="BASIC"/>
 <node CREATED="1516028370059" ID="ID_969792121" MODIFIED="1516028371807" TEXT="FORM"/>
@@ -839,7 +841,7 @@
 <node CREATED="1516028496579" ID="ID_1717022173" MODIFIED="1516028513014" TEXT="Mecanismo de autentica&#xe7;&#xe3;o opcional para o container.">
 <node CREATED="1516028517249" ID="ID_725117963" MODIFIED="1516028522765" TEXT="DIGEST"/>
 </node>
-<node CREATED="1516029402976" ID="ID_831161283" MODIFIED="1516029580961" TEXT="Quando se usa a diretira &lt;@ inclue file=&quot;&quot;&gt; a p&#xe1;gina inclu&#xed;da n&#xe3;o pode existir a diretira &lt;@ page errorPage=&quot;advancederrorhandler.jsp&quot;&gt; diferente da &lt;@ page errorPage=&quot;&quot; %&gt; da &#xe1;gina que a incluiu. Agora quando se usa a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:include page=&quot;&quot; /&gt; &#xe9; poss&#xed;vel ter diretiras com errorPage distintos pelo motivo das p&#xe1;ginas serem compiladas separadamente."/>
+<node CREATED="1516029402976" ID="ID_831161283" MODIFIED="1516632171452" TEXT="Quando se usa a diretiva &lt;@ inclue file=&quot;&quot;&gt; a p&#xe1;gina inclu&#xed;da n&#xe3;o pode existir a diretiva &lt;@ page errorPage=&quot;advancederrorhandler.jsp&quot;&gt; diferente da &lt;@ page errorPage=&quot;&quot; %&gt; da p&#xe1;gina que a incluiu. Agora quando se usa a a&#xe7;&#xe3;o padr&#xe3;o &lt;jsp:include page=&quot;&quot; /&gt; &#xe9; poss&#xed;vel ter diretiras com errorPage distintos pelo motivo das p&#xe1;ginas serem compiladas separadamente."/>
 <node CREATED="1516190553419" ID="ID_1597446869" MODIFIED="1516190620555" TEXT="HttpServletRequest.logout() retorna null nos seguintes m&#xe9;todos">
 <node CREATED="1516190621695" ID="ID_1787256004" MODIFIED="1516190642154" TEXT="getUserPrincipal()"/>
 <node CREATED="1516190643773" ID="ID_120186264" MODIFIED="1516190650721" TEXT="getRemoteUser()"/>
@@ -848,6 +850,14 @@
 <node CREATED="1516190892685" ID="ID_554689051" MODIFIED="1516191000803" TEXT="Se utilizar o sendError da classe HttpServletResponse e logo ap&#xf3;s do sendError voc&#xea; escrever na resposta, o container n&#xe3;o lan&#xe7;a nenhuma exce&#xe7;&#xe3;o."/>
 <node CREATED="1516191400749" ID="ID_1733107216" MODIFIED="1516191412912" TEXT="asyncContext.setTimeout(10*60*1000); &#xe9; setado em milisegundos."/>
 <node CREATED="1516191666980" ID="ID_10547115" MODIFIED="1516191712359" TEXT="Para retornar o url-pattern do link acessado &#xe9; s&#xf3; usar o m&#xe9;todo getPathInfo()"/>
+<node CREATED="1516198092479" ID="ID_1728021575" MODIFIED="1516198100819" TEXT="cookie.setHttpOnly(true);">
+<node CREATED="1516198112949" ID="ID_916680140" MODIFIED="1516198137160" TEXT="Previne contra cross site scripting attack"/>
+</node>
+<node CREATED="1516632999353" ID="ID_43449948" MODIFIED="1516788639577" TEXT="&lt;web-resource-collection&gt;&lt;http-method-omission&gt;GET&lt;/http-method-omission&gt;&lt;/web-resource-collection&gt;"/>
+<node CREATED="1516633245977" ID="ID_682566265" MODIFIED="1516633250181" TEXT="SSL">
+<node CREATED="1516633251057" ID="ID_887438428" MODIFIED="1516633263788" TEXT="&lt;session-config&gt;&lt;tracking-mode&gt;SSL&lt;/tracking-mode&gt;&lt;/session-config&gt;"/>
+</node>
+<node CREATED="1516633791006" ID="ID_1527583932" MODIFIED="1516633820585" TEXT="O m&#xe9;todo HTTP GET n&#xe3;o pode enviar dados bin&#xe1;rios para o servidor."/>
 </node>
 </node>
 </map>
