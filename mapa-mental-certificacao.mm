@@ -858,6 +858,19 @@
 <node CREATED="1516633251057" ID="ID_887438428" MODIFIED="1516633263788" TEXT="&lt;session-config&gt;&lt;tracking-mode&gt;SSL&lt;/tracking-mode&gt;&lt;/session-config&gt;"/>
 </node>
 <node CREATED="1516633791006" ID="ID_1527583932" MODIFIED="1516633820585" TEXT="O m&#xe9;todo HTTP GET n&#xe3;o pode enviar dados bin&#xe1;rios para o servidor."/>
+<node CREATED="1516802435003" ID="ID_1392702574" MODIFIED="1516802458682" TEXT=" ServletContext&apos;s getResource() n&#xe3;o aceita caminhos relativos apenas absolutos come&#xe7;ando com um &quot;/&quot;."/>
+<node CREATED="1516804466567" ID="ID_620744986" MODIFIED="1516804706257" TEXT="Sequ&#xea;ncia de a&#xe7;&#xf5;es executadas antes de servir qualquer requisi&#xe7;&#xe3;o">
+<node CREATED="1516804550809" ID="ID_378460208" MODIFIED="1516804571879" TEXT="Instanciar os listeners definidos no web.xml"/>
+<node CREATED="1516804573098" ID="ID_1541284267" MODIFIED="1516804733887" TEXT="Chamar o m&#xe9;todo contextInitialized dos listeners que implementam a interface ServletContextListener"/>
+<node CREATED="1516804627058" ID="ID_1564047431" MODIFIED="1516804646013" TEXT="Inicializa os filtros definidos no web.xml"/>
+<node CREATED="1516804647824" ID="ID_9125693" MODIFIED="1516804677091" TEXT="Inicializa os servlets que est&#xe3;o definidos com &lt;load-on-statup&gt;"/>
+</node>
+<node CREATED="1516804929614" ID="ID_1390451367" MODIFIED="1516804939194" TEXT="Se o servlet extends GenericServlet">
+<node CREATED="1516804939997" ID="ID_1054251277" MODIFIED="1516804959705" TEXT="Tem que implementar o m&#xe9;todo service() para a classe compilar sem erros."/>
+</node>
+<node CREATED="1516805434118" ID="ID_1276722256" MODIFIED="1516805482887" TEXT="Na JSP o &#xfa;nico m&#xe9;todo que n&#xe3;o pode ser sobrescrito &#xe9; o _jspService(), o jspInit() e o jspDestroy() podem ser sobrescritos."/>
+<node CREATED="1516805787447" ID="ID_1721486479" MODIFIED="1516805869046" TEXT="O m&#xe9;todo de autentica&#xe7;&#xe3;o &lt;auth-method&gt;CLIENT-CERT&lt;/auth-method&gt; pode user as propriedades do FORM &lt;form-login-config&gt;&lt;form-login-page&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;"/>
+<node CREATED="1516806000033" ID="ID_65389265" MODIFIED="1516806075697" TEXT="javax.servlet.jsp.JspPage implementa os seguintes m&#xe9;todos jspInit() and jspDestroy()"/>
 </node>
 </node>
 </map>

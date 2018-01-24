@@ -1665,6 +1665,29 @@
 </li>
 
 </ul><p>O m&#233;todo HTTP GET n&#227;o pode enviar dados bin&#225;rios para o servidor.
+<p> ServletContext's getResource() n&#227;o aceita caminhos relativos apenas absolutos come&#231;ando com um "/".
+<p>Sequ&#234;ncia de a&#231;&#245;es executadas antes de servir qualquer requisi&#231;&#227;o
+<ul><li>Instanciar os listeners definidos no web.xml
+
+</li>
+<li>Chamar o m&#233;todo contextInitialized dos listeners que implementam a interface ServletContextListener
+
+</li>
+<li>Inicializa os filtros definidos no web.xml
+
+</li>
+<li>Inicializa os servlets que est&#227;o definidos com &lt;load-on-statup&gt;
+
+</li>
+
+</ul><p>Se o servlet extends GenericServlet
+<ul><li>Tem que implementar o m&#233;todo service() para a classe compilar sem erros.
+
+</li>
+
+</ul><p>Na JSP o &#250;nico m&#233;todo que n&#227;o pode ser sobrescrito &#233;&nbsp;o _jspService(), o jspInit() e o jspDestroy() podem ser sobrescritos.
+<p>O m&#233;todo de autentica&#231;&#227;o &lt;auth-method&gt;CLIENT-CERT&lt;/auth-method&gt; pode user as propriedades do FORM &lt;form-login-config&gt;&lt;form-login-page&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;
+<p>javax.servlet.jsp.JspPage implementa os seguintes m&#233;todos jspInit() and jspDestroy()
 </li>
 </ul>
 </li>
