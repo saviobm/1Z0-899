@@ -1568,7 +1568,7 @@
 <li>Observa&#231;&#245;es
 <ul><li><p>https protocol &#233;&nbsp;usado para sess&#245;es quando o browser n&#227;o suporta cookies.
 <p>JSP document n&#227;o poder&#225; conter &lt; &gt; e sim &amp;lt; e &amp;gt;
-<p>HttpJspBase _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException.
+<p>javax.servlet.jsp.HttpJspPage _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException.
 <p>Nas p&#225;ginas JSP o request.getSession(false); sempre retornar&#225; uma sess&#227;o pr&#233;-existente. Porque a JSP por padr&#227;o j&#225; existe o objeto session instanciado ao menos que a propriedade session="false" &lt;%@ page session="true" %&gt; o padr&#227;o do session sempre &#233;&nbsp;"true".
 <p>@ServletSecurity(@HttpConstraint(rolesAllowed = {"", ""}, transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL ou NONE, value = EmptyRoleSemantic.PERMIT ou DENY))
 <p>O objeto AsyncContext cont&#233;m o m&#233;todo dispatch("/destination.jsp");
@@ -1688,6 +1688,15 @@
 </ul><p>Na JSP o &#250;nico m&#233;todo que n&#227;o pode ser sobrescrito &#233;&nbsp;o _jspService(), o jspInit() e o jspDestroy() podem ser sobrescritos.
 <p>O m&#233;todo de autentica&#231;&#227;o &lt;auth-method&gt;CLIENT-CERT&lt;/auth-method&gt; pode user as propriedades do FORM &lt;form-login-config&gt;&lt;form-login-page&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;
 <p>javax.servlet.jsp.JspPage implementa os seguintes m&#233;todos jspInit() and jspDestroy()
+<p>RequestDispatcher
+<ul><li><p>Quando &#233;&nbsp;chamado pelo ServletContext ele s&#243; aceita caminhos absolutos ex: getServletContext().getRequestDispatcher("/html/copyright.html") agora quando &#233;&nbsp;chamado pelo request ele aceita tanto o absoluto como o relativo ex: request.getRequestDispatcher("../html/copyright.html")
+</li>
+</ul><p>Se voc&#234; estiver usando v&#225;rios atributos para @WebServlet, voc&#234; deve especificar o nome do argumento para cada um. Ent&#227;o, "/ test" deve ser urlPatterns = {"/ test"}.
+<p>Documento JSP implica que a p&#225;gina est&#225; escrita em XML. Na sintaxe XML, os atributos de tempo de solicita&#231;&#227;o s&#227;o especificados usando %= e %. isto &#233;, sem &lt; e &gt;. Pode ser usado tamb&#233;m o &amp;lt; no lugar de &lt; e &amp;gt; no lugar de &gt;.
+<p>Para acessar o bean no arquivo "com/enthu/GUI.ser" usa-se: Ex.: &lt;jsp:useBean id="pref" beanName="com.enthu.GUI" type="com.enthu.GUI"/&gt;
+<p>&lt;c:forEach /&gt; Pode iterar sobre cole&#231;&#245;es, bem como mapas.
+<p>@PersistenceUnit &#160;&#160;EntityManagerFactory emf; @PersistenceContext &nbsp;&nbsp;private EntityManager em;
+<p>request.getHeader("Accept") --&gt; O header Accept cont&#233;m strings ex.: image/gif, image/jpeg, image/bmp.
 </li>
 </ul>
 </li>

@@ -796,10 +796,10 @@
 <node CREATED="1515496569411" ID="ID_1726262086" MODIFIED="1515496572247" TEXT="@WebServiceRef   "/>
 <node CREATED="1515496578778" ID="ID_396674506" MODIFIED="1515496581710" TEXT="@WebServiceRefs  "/>
 </node>
-<node CREATED="1515526898150" ID="ID_151893825" MODIFIED="1515607436058" POSITION="right" TEXT="Observa&#xe7;&#xf5;es">
+<node CREATED="1515526898150" ID="ID_151893825" MODIFIED="1516963500416" POSITION="right" TEXT="Observa&#xe7;&#xf5;es">
 <node CREATED="1515526913141" ID="ID_323679787" MODIFIED="1515526915297" TEXT="https protocol &#xe9; usado para sess&#xf5;es quando o browser n&#xe3;o suporta cookies."/>
 <node CREATED="1515526920988" ID="ID_438852013" MODIFIED="1515526922041" TEXT="JSP document n&#xe3;o poder&#xe1; conter &lt; &gt; e sim &amp;lt; e &amp;gt;"/>
-<node CREATED="1515526923212" ID="ID_1855564080" MODIFIED="1515526930336" TEXT="HttpJspBase _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException."/>
+<node CREATED="1515526923212" ID="ID_1855564080" MODIFIED="1516962482537" TEXT="javax.servlet.jsp.HttpJspPage _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException."/>
 <node CREATED="1515526935779" ID="ID_1041911254" MODIFIED="1516631625396" TEXT="Nas p&#xe1;ginas JSP o request.getSession(false); sempre retornar&#xe1; uma sess&#xe3;o pr&#xe9;-existente. Porque a JSP por padr&#xe3;o j&#xe1; existe o objeto session instanciado ao menos que a propriedade session=&quot;false&quot; &lt;%@ page session=&quot;true&quot; %&gt; o padr&#xe3;o do session sempre &#xe9; &quot;true&quot;."/>
 <node CREATED="1515582539440" ID="ID_735201155" MODIFIED="1515582771517" TEXT="@ServletSecurity(@HttpConstraint(rolesAllowed = {&quot;&quot;, &quot;&quot;}, transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL ou NONE, value = EmptyRoleSemantic.PERMIT ou DENY))"/>
 <node CREATED="1515607437087" ID="ID_354229974" MODIFIED="1515607465738" TEXT="O objeto AsyncContext cont&#xe9;m o m&#xe9;todo dispatch(&quot;/destination.jsp&quot;);"/>
@@ -871,6 +871,15 @@
 <node CREATED="1516805434118" ID="ID_1276722256" MODIFIED="1516805482887" TEXT="Na JSP o &#xfa;nico m&#xe9;todo que n&#xe3;o pode ser sobrescrito &#xe9; o _jspService(), o jspInit() e o jspDestroy() podem ser sobrescritos."/>
 <node CREATED="1516805787447" ID="ID_1721486479" MODIFIED="1516805869046" TEXT="O m&#xe9;todo de autentica&#xe7;&#xe3;o &lt;auth-method&gt;CLIENT-CERT&lt;/auth-method&gt; pode user as propriedades do FORM &lt;form-login-config&gt;&lt;form-login-page&lt;/form-login-page&gt;&lt;form-error-page&gt;&lt;/form-error-page&gt;&lt;/form-login-config&gt;"/>
 <node CREATED="1516806000033" ID="ID_65389265" MODIFIED="1516806075697" TEXT="javax.servlet.jsp.JspPage implementa os seguintes m&#xe9;todos jspInit() and jspDestroy()"/>
+<node CREATED="1516962244804" ID="ID_885405425" MODIFIED="1516962251089" TEXT="RequestDispatcher">
+<node CREATED="1516962251973" ID="ID_1807566357" MODIFIED="1516962318995" TEXT="Quando &#xe9; chamado pelo ServletContext ele s&#xf3; aceita caminhos absolutos ex: getServletContext().getRequestDispatcher(&quot;/html/copyright.html&quot;) agora quando &#xe9; chamado pelo request ele aceita tanto o absoluto como o relativo ex: request.getRequestDispatcher(&quot;../html/copyright.html&quot;)"/>
+</node>
+<node CREATED="1516962672411" ID="ID_1667752526" MODIFIED="1516962674359" TEXT="Se voc&#xea; estiver usando v&#xe1;rios atributos para @WebServlet, voc&#xea; deve especificar o nome do argumento para cada um. Ent&#xe3;o, &quot;/ test&quot; deve ser urlPatterns = {&quot;/ test&quot;}."/>
+<node CREATED="1516963130541" ID="ID_1056847829" MODIFIED="1516963198751" TEXT="Documento JSP implica que a p&#xe1;gina est&#xe1; escrita em XML. Na sintaxe XML, os atributos de tempo de solicita&#xe7;&#xe3;o s&#xe3;o especificados usando %= e %. isto &#xe9;, sem &lt; e &gt;. Pode ser usado tamb&#xe9;m o &amp;lt; no lugar de &lt; e &amp;gt; no lugar de &gt;."/>
+<node CREATED="1516963501477" ID="ID_364139053" MODIFIED="1516963565582" TEXT="Para acessar o bean no arquivo &quot;com/enthu/GUI.ser&quot; usa-se: Ex.: &lt;jsp:useBean id=&quot;pref&quot; beanName=&quot;com.enthu.GUI&quot; type=&quot;com.enthu.GUI&quot;/&gt;"/>
+<node CREATED="1516963672658" ID="ID_1939591744" MODIFIED="1516963682678" TEXT="&lt;c:forEach /&gt; Pode iterar sobre cole&#xe7;&#xf5;es, bem como mapas."/>
+<node CREATED="1516964405603" ID="ID_583743410" MODIFIED="1516964453501" TEXT="@PersistenceUnit &#xa0;&#xa0;EntityManagerFactory emf; @PersistenceContext   private EntityManager em;"/>
+<node CREATED="1516964533491" ID="ID_1929400211" MODIFIED="1516964599987" TEXT="request.getHeader(&quot;Accept&quot;) --&gt; O header Accept cont&#xe9;m strings ex.: image/gif, image/jpeg, image/bmp."/>
 </node>
 </node>
 </map>
