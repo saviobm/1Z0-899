@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1516384855448" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
+<node CREATED="1508186603022" ID="ID_440038459" MODIFIED="1516980198467" STYLE="fork" TEXT="Cerifica&#xe7;&#xe3;o 1Z0-899">
 <node CREATED="1508186603022" ID="ID_490295773" MODIFIED="1509400670885" POSITION="right" STYLE="fork" TEXT="Protocolo HTTP">
 <node CREATED="1508186641763" ID="ID_549836734" MODIFIED="1509400670885" TEXT="GET - Solicita&#xe7;&#xe3;o simples"/>
 <node CREATED="1508186659228" ID="ID_1537363229" MODIFIED="1509400670885" TEXT="POST - Solicita&#xe7;&#xe3;o de um recurso com informa&#xe7;&#xf5;es do usu&#xe1;rio. Ex: Formul&#xe1;rio"/>
@@ -796,7 +796,7 @@
 <node CREATED="1515496569411" ID="ID_1726262086" MODIFIED="1515496572247" TEXT="@WebServiceRef   "/>
 <node CREATED="1515496578778" ID="ID_396674506" MODIFIED="1515496581710" TEXT="@WebServiceRefs  "/>
 </node>
-<node CREATED="1515526898150" ID="ID_151893825" MODIFIED="1516963500416" POSITION="right" TEXT="Observa&#xe7;&#xf5;es">
+<node CREATED="1515526898150" ID="ID_151893825" MODIFIED="1516980204679" POSITION="right" TEXT="Observa&#xe7;&#xf5;es">
 <node CREATED="1515526913141" ID="ID_323679787" MODIFIED="1515526915297" TEXT="https protocol &#xe9; usado para sess&#xf5;es quando o browser n&#xe3;o suporta cookies."/>
 <node CREATED="1515526920988" ID="ID_438852013" MODIFIED="1515526922041" TEXT="JSP document n&#xe3;o poder&#xe1; conter &lt; &gt; e sim &amp;lt; e &amp;gt;"/>
 <node CREATED="1515526923212" ID="ID_1855564080" MODIFIED="1516962482537" TEXT="javax.servlet.jsp.HttpJspPage _jspService(HttpServletRequest, HttpServletResponse) throws ServletException, IOException."/>
@@ -880,6 +880,16 @@
 <node CREATED="1516963672658" ID="ID_1939591744" MODIFIED="1516963682678" TEXT="&lt;c:forEach /&gt; Pode iterar sobre cole&#xe7;&#xf5;es, bem como mapas."/>
 <node CREATED="1516964405603" ID="ID_583743410" MODIFIED="1516964453501" TEXT="@PersistenceUnit &#xa0;&#xa0;EntityManagerFactory emf; @PersistenceContext   private EntityManager em;"/>
 <node CREATED="1516964533491" ID="ID_1929400211" MODIFIED="1516964599987" TEXT="request.getHeader(&quot;Accept&quot;) --&gt; O header Accept cont&#xe9;m strings ex.: image/gif, image/jpeg, image/bmp."/>
+<node CREATED="1516978266131" ID="ID_383047138" MODIFIED="1516978371585" TEXT="Headers utilizados junto com o protocolo http HEAD para guardar p&#xe1;ginas de respostas muito grandes em cache. ">
+<node CREATED="1516978383003" ID="ID_1902433550" MODIFIED="1516978385264" TEXT="Last-Modified"/>
+<node CREATED="1516978400930" ID="ID_1228853189" MODIFIED="1516978401623" TEXT="Cache-Control"/>
+</node>
+<node CREATED="1516978961278" ID="ID_1054257624" MODIFIED="1516978963154" TEXT="metadata-complete=&quot;true&quot;">
+<node CREATED="1516978964694" ID="ID_762922811" MODIFIED="1516979000800" TEXT="N&#xe3;o procura mapeamentos em anota&#xe7;&#xf5;es s&#xf3; as que est&#xe3;o no web.xml e/ou nos web-fragment"/>
+</node>
+<node CREATED="1516980205811" ID="ID_1001812748" MODIFIED="1516980292835" TEXT="Se a classe existir v&#xe1;rios listener ex.: MyListener implements HttpSessionBindingListener, HttpSessionListener e especificamente nesse caso quando acionar o c&#xf3;digo session.invalidate(); ele executar&#xe1; o m&#xe9;todo sessionDestroyed antes de qualquer outro m&#xe9;todo de listener."/>
+<node CREATED="1516980503489" ID="ID_154066708" MODIFIED="1516980529015" TEXT="Para enviar uma grande quantidade de dados bin&#xe1;rios para o servidor o m&#xe9;todo a ser utilizado &#xe9; o POST."/>
+<node CREATED="1516980646870" ID="ID_1095260619" MODIFIED="1516980684164" TEXT="O url-pattern para servlet quando voc&#xea; quer indicar todos os servlets e jsp&#xb4;s deve utilizar o *.* sem a barra."/>
 </node>
 </node>
 </map>
